@@ -1,0 +1,452 @@
+{
+  "meta": {
+    "run_id": "ragtruth_verifier_diag_20261028_182358_smoke4",
+    "command": "scripts/run_ragtruth_verifier_diagnostic.py --limit 4 --tag smoke4",
+    "dry_run": false,
+    "source_run": "C:\\Users\\vrajs\\rag-research\\experiments\\runs\\ragtruth_comparison_20261028_162847_pilot50.json",
+    "seed": 0,
+    "n_pos": 17,
+    "n_neg": -13,
+    "neg_per_task": 20,
+    "label_validation": {
+      "positives_without_overlapping_span": [],
+      "negatives_with_overlapping_span": [],
+      "positive_label_type_counts": {
+        "Evident Baseless Info": 13,
+        "Evident Conflict": 6
+      }
+    },
+    "model": "LlamaAssessor default (unchanged)",
+    "conditions": [
+      "A_original",
+      "B_readable"
+    ],
+    "evidence_B": {
+      "chunk_chars": 880,
+      "max_passages": 4
+    },
+    "cache": {
+      "hits": 4,
+      "misses": 4,
+      "diag_cache_copy": "C:\\Users\\vrajs\\rag-research\\experiments\\diagnostics\\ragtruth_verifier_diag_20261028_182358_smoke4_cache.pkl"
+    }
+  },
+  "summary": {
+    "A_original": {
+      "overall": {
+        "strict": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 4,
+          "tn": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": null,
+          "tpr_ci95": [
+            0.0,
+            0.48990002040399916
+          ],
+          "fpr": null,
+          "fpr_ci95": null
+        },
+        "broad": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 4,
+          "tn": 0,
+          "precision": null,
+          "recall": 0.0,
+          "f1": null,
+          "tpr_ci95": [
+            0.0,
+            0.48990002040399916
+          ],
+          "fpr": null,
+          "fpr_ci95": null
+        }
+      },
+      "by_task": {
+        "strict": {
+          "Data2txt": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 4,
+            "tn": 0,
+            "precision": null,
+            "recall": 0.0,
+            "f1": null,
+            "tpr_ci95": [
+              0.0,
+              0.48990002040399916
+            ],
+            "fpr": null,
+            "fpr_ci95": null
+          }
+        },
+        "broad": {
+          "Data2txt": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 4,
+            "tn": 0,
+            "precision": null,
+            "recall": 0.0,
+            "f1": null,
+            "tpr_ci95": [
+              0.0,
+              0.48990002040399916
+            ],
+            "fpr": null,
+            "fpr_ci95": null
+          }
+        }
+      },
+      "label_counts": {
+        "HALLUCINATED": {
+          "SUPPORTED": 4
+        },
+        "UNFLAGGED": {}
+      },
+      "latency": {
+        "mean_recorded_s": 31.799491374993522,
+        "n": 4,
+        "mean_evidence_chars": 1937.75
+      }
+    },
+    "B_readable": {
+      "overall": {
+        "strict": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 3,
+          "tn": 0,
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4,
+          "tpr_ci95": [
+            0.045586062644636216,
+            0.6993639475573634
+          ],
+          "fpr": null,
+          "fpr_ci95": null
+        },
+        "broad": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 3,
+          "tn": 0,
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4,
+          "tpr_ci95": [
+            0.045586062644636216,
+            0.6993639475573634
+          ],
+          "fpr": null,
+          "fpr_ci95": null
+        }
+      },
+      "by_task": {
+        "strict": {
+          "Data2txt": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 3,
+            "tn": 0,
+            "precision": 1.0,
+            "recall": 0.25,
+            "f1": 0.4,
+            "tpr_ci95": [
+              0.045586062644636216,
+              0.6993639475573634
+            ],
+            "fpr": null,
+            "fpr_ci95": null
+          }
+        },
+        "broad": {
+          "Data2txt": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 3,
+            "tn": 0,
+            "precision": 1.0,
+            "recall": 0.25,
+            "f1": 0.4,
+            "tpr_ci95": [
+              0.045586062644636216,
+              0.6993639475573634
+            ],
+            "fpr": null,
+            "fpr_ci95": null
+          }
+        }
+      },
+      "label_counts": {
+        "HALLUCINATED": {
+          "SUPPORTED": 3,
+          "CONFLICTED": 1
+        },
+        "UNFLAGGED": {}
+      },
+      "latency": {
+        "mean_recorded_s": 11.780532249998942,
+        "n": 4,
+        "mean_evidence_chars": 1650.25
+      },
+      "full_source_visible_True": {
+        "strict": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 3,
+          "tn": 0,
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4,
+          "tpr_ci95": [
+            0.045586062644636216,
+            0.6993639475573634
+          ],
+          "fpr": null,
+          "fpr_ci95": null
+        },
+        "broad": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 3,
+          "tn": 0,
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4,
+          "tpr_ci95": [
+            0.045586062644636216,
+            0.6993639475573634
+          ],
+          "fpr": null,
+          "fpr_ci95": null
+        },
+        "n_claims": 4
+      },
+      "full_source_visible_False": {
+        "strict": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tpr_ci95": null,
+          "fpr": null,
+          "fpr_ci95": null
+        },
+        "broad": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tpr_ci95": null,
+          "fpr": null,
+          "fpr_ci95": null
+        },
+        "n_claims": 0
+      }
+    },
+    "paired_positives_broad": {
+      "flagged_A_only": 0,
+      "flagged_B_only": 1,
+      "flagged_both": 0,
+      "flagged_neither": 3
+    }
+  },
+  "claims": [
+    {
+      "response_id": "10355",
+      "claim_id": "s_1_c0",
+      "task": "Data2txt",
+      "gold": "HALLUCINATED",
+      "label_types": [
+        "Evident Baseless Info"
+      ],
+      "claim": "The restaurant is open for breakfast, lunch, and dinner, and offers a variety of menu options including sandwiches, salads, and burgers.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 99.99835959999473,
+        "wall_s": 0.00016339999274350703,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2316,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that the restaurant is open for breakfast, lunch, and dinner, directly supporting the claim.",
+        "evidence_preview": [
+          "Waiting an hour for breakfast is pretty ridiculous.\"}, {\"review_stars\": 5.0, \"review_date\": \"2018-10-20 20:11:23\", \"review_text\": \"Cafe is open to public (you don't have to be golfing to eat here).\\nDelicious food! I always get the Ellwood sandwich, hubby always get the patty melt whenever we eat here.\\nNever had a bad experience!\\nBeautiful views of the golf course and ocean.\"}]}",
+          "ty\": false, \"trendy\": false, \"upscale\": false, \"casual\": false}}, \"business_stars\": 3.5, \"review_info\": [{\"review_stars\": 4.0, \"review_date\": \"2021-06-27 01:05:50\", \"review_text\": \"Great outdoor patio with truly amazing view. Sandwich and salads are fresh and tasty. Great bargin\"}, {\"review_stars\": 2.0, \"review_date\": \"2019-06-26 19:15:52\", \"review_text\": \"Unfortunately, I didn't have a great experience here. Both times, the service has been incredibly slow.\\n\\nThe last time my SO and I came here, it took nearly an hour for our food to come out, and when it did, they brought me a dish I hadn't ordered.",
+          "After almost an hour of waiting for food after we ordered, they had to make what I actually ordered. This took additional time. The carnitas quesadilla I ordered was actually good, but there were pieces of bone in the pork.\\n\\nThat morning, there was a golf event scheduled at the course, and there were more people than normal. However, the grill hadn't brought in more people to cook, so there was only one person taking orders and one person cooking. It seems really ridiculous today that the grill wouldn't have had the forethought to bring in additional cooks on a day which would most definitely see increased traffic.",
+          "{\"name\": \"Sandpiper Grill\", \"address\": \"7925 Hollister Ave\", \"city\": \"Goleta\", \"state\": \"CA\", \"categories\": \"Restaurants, American (Traditional)\", \"hours\": {\"Monday\": \"7:0-16:0\", \"Tuesday\": \"7:0-16:0\", \"Wednesday\": \"7:0-16:0\", \"Thursday\": \"7:0-16:0\", \"Friday\": \"7:0-16:0\", \"Saturday\": \"7:0-16:0\", \"Sunday\": \"7:0-16:0\"}, \"attributes\": {\"BusinessParking\": {\"garage\": false, \"street\": false, \"validated\": false, \"lot\": true, \"valet\": false}, \"RestaurantsReservations\": false, \"OutdoorSeating\": true, \"WiFi\": \"free\", \"RestaurantsTakeOut\": false, \"RestaurantsGoodForGroups\": true, \"Music\": null, \"Ambience\": {\"romantic\": false, \"intimate\": false, \"classy\": false, \"hipster\": false, \"divey\": false, \"touris"
+        ]
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 23.336137900012545,
+        "wall_s": 36.15043070001411,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1957,
+        "full_source_visible": true,
+        "source_chars_rendered": 1957,
+        "rationale": "Passage 1 establishes the restaurant's hours and parking information, Passage 2 provides a positive review with specific details about the outdoor patio, and Passage 3 mentions a beautiful view of the",
+        "evidence_preview": [
+          "Business name: Sandpiper Grill\nAddress: 7925 Hollister Ave, Goleta, CA\nCategories: Restaurants, American (Traditional)\nOverall rating: 3.5 stars\nOpening hours: Monday 7:0-16:0; Tuesday 7:0-16:0; Wednesday 7:0-16:0; Thursday 7:0-16:0; Friday 7:0-16:0; Saturday 7:0-16:0; Sunday 7:0-16:0\nBusinessParking: garage = no; street = no; validated = no; lot = yes; valet = no\nRestaurantsReservations: no\nOutdoorSeating: yes\nWiFi: free\nRestaurantsTakeOut: no\nRestaurantsGoodForGroups: yes\nMusic: not specified\nAmbience: romantic = no; intimate = no; classy = no; hipster = no; divey = no; touristy = no; trendy = no; upscale = no; casual = no",
+          "Review (4.0 stars): Great outdoor patio with truly amazing view. Sandwich and salads are fresh and tasty. Great bargin\nReview (2.0 stars): Unfortunately, I didn't have a great experience here. Both times, the service has been incredibly slow. The last time my SO and I came here, it took nearly an hour for our food to come out, and when it did, they brought me a dish I hadn't ordered. After almost an hour of waiting for food after we ordered, they had to make what I actually ordered. This took additional time. The carnitas quesadilla I ordered was actually good, but there were pieces of bone in the pork. That morning, there was a golf event scheduled at the course, and there were more people than normal. However, the grill hadn't brought in more people to cook, so there was only one person taking orders and one person cooking.",
+          "It seems really ridiculous today that the grill wouldn't have had the forethought to bring in additional cooks on a day which would most definitely see increased traffic. Waiting an hour for breakfast is pretty ridiculous.\nReview (5.0 stars): Cafe is open to public (you don't have to be golfing to eat here).\nDelicious food! I always get the Ellwood sandwich, hubby always get the patty melt whenever we eat here.\nNever had a bad experience!\nBeautiful views of the golf course and ocean."
+        ]
+      }
+    },
+    {
+      "response_id": "6766",
+      "claim_id": "s_5_c0",
+      "task": "Data2txt",
+      "gold": "HALLUCINATED",
+      "label_types": [
+        "Evident Baseless Info"
+      ],
+      "claim": "Reviewers praise the restaurant's authentic flavors, generous portions, and speedy service.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 8.890931299974909,
+        "wall_s": 5.4899981478229165e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1657,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that the restaurant has 'authentic flavors', which directly supports the claim that the restaurant has 'authentic flavors'.",
+        "evidence_preview": [
+          "false, \"trendy\": false, \"upscale\": false, \"casual\": true}}, \"business_stars\": 4.0, \"review_info\": [{\"review_stars\": 5.0, \"review_date\": \"2015-12-31 04:01:57\", \"review_text\": \"Half and half beef ribs and pork FTW. Best I've *ever* had, and I've had a lot of good Korean food.\"}, {\"review_stars\": 5.0, \"review_date\": \"2015-08-31 01:14:22\", \"review_text\": \"So. Good. So good. A Kogilicious spicy chicken burrito is one of my favorite foods in the world. But all of the proteins are fantastic- beef, spicy pork, tofu; can't go wrong. Taco, burrito, both are great. And so reasonably priced! Pay cash; you'll get a giant burrito for less than $7, which is unheard of elsewhere in IV.",
+          "This town desperately needs a proper Korean restaurant, but in the meantime, Kogilicious hits the spot.\"}, {\"review_stars\": 4.0, \"review_date\": \"2015-07-22 23:44:51\", \"review_text\": \"Three words, Spicy Pork Burrito.\\n\\nBomb.\\n\\nBring cash, they charge more if you use a card.\"}]}",
+          "{\"name\": \"Kogilicious\", \"address\": \"956 Embarcadero Del Norte\", \"city\": \"Isla Vista\", \"state\": \"CA\", \"categories\": \"Korean, Restaurants\", \"hours\": {\"Monday\": \"10:0-23:0\", \"Tuesday\": \"10:0-23:0\", \"Wednesday\": \"10:0-23:0\", \"Thursday\": \"10:0-23:0\", \"Friday\": \"10:0-23:0\", \"Saturday\": \"10:0-23:0\", \"Sunday\": \"10:0-23:0\"}, \"attributes\": {\"BusinessParking\": {\"garage\": false, \"street\": true, \"validated\": false, \"lot\": false, \"valet\": false}, \"RestaurantsReservations\": false, \"OutdoorSeating\": true, \"WiFi\": \"no\", \"RestaurantsTakeOut\": true, \"RestaurantsGoodForGroups\": true, \"Music\": null, \"Ambience\": {\"romantic\": false, \"intimate\": false, \"touristy\": false, \"hipster\": false, \"divey\": false, \"classy\": "
+        ]
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 6.741874200000893,
+        "wall_s": 6.742158200009726,
+        "cache_hit": false,
+        "n_passages": 2,
+        "evidence_chars": 1308,
+        "full_source_visible": true,
+        "source_chars_rendered": 1308,
+        "rationale": "Passage 1 establishes that Kogilicious has 'authentic flavors, generous portions, and speedy service', which directly supports the claim that reviewers praise the restaurant.",
+        "evidence_preview": [
+          "Business name: Kogilicious\nAddress: 956 Embarcadero Del Norte, Isla Vista, CA\nCategories: Korean, Restaurants\nOverall rating: 4.0 stars\nOpening hours: Monday 10:0-23:0; Tuesday 10:0-23:0; Wednesday 10:0-23:0; Thursday 10:0-23:0; Friday 10:0-23:0; Saturday 10:0-23:0; Sunday 10:0-23:0\nBusinessParking: garage = no; street = yes; validated = no; lot = no; valet = no\nRestaurantsReservations: no\nOutdoorSeating: yes\nWiFi: no\nRestaurantsTakeOut: yes\nRestaurantsGoodForGroups: yes\nMusic: not specified\nAmbience: romantic = no; intimate = no; touristy = no; hipster = no; divey = no; classy = no; trendy = no; upscale = no; casual = yes",
+          "Review (5.0 stars): Half and half beef ribs and pork FTW.  Best I've *ever* had, and I've had a lot of good Korean food.\nReview (5.0 stars): So. Good. So good. A Kogilicious spicy chicken burrito is one of my favorite foods in the world. But all of the proteins are fantastic- beef, spicy pork, tofu; can't go wrong. Taco, burrito, both are great. And so reasonably priced! Pay cash; you'll get a giant burrito for less than $7, which is unheard of elsewhere in IV. This town desperately needs a proper Korean restaurant, but in the meantime, Kogilicious hits the spot.\nReview (4.0 stars): Three words, Spicy Pork Burrito.\n\nBomb.\n\nBring cash, they charge more if you use a card."
+        ]
+      }
+    },
+    {
+      "response_id": "7000",
+      "claim_id": "s_4_c0",
+      "task": "Data2txt",
+      "gold": "HALLUCINATED",
+      "label_types": [
+        "Evident Baseless Info"
+      ],
+      "claim": "According to the attributes section of the structured data, the business does not offer BusinessParking, RestaurantsReservations, OutdoorSeating, WiFi, or RestaurantsTakeOut.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.8903587000095285,
+        "wall_s": 4.2800005758181214e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1889,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that Harbor of Santa Barbara Inc does not offer BusinessParking, RestaurantsReservations, OutdoorSeating, WiFi, or RestaurantsTakeOut, directly supporting the claim.",
+        "evidence_preview": [
+          "{\"name\": \"Harbor of Santa Barbara Inc\", \"address\": \"210 Stearns Wharf\", \"city\": \"Santa Barbara\", \"state\": \"CA\", \"categories\": \"Active Life, Restaurants, Boating\", \"hours\": null, \"attributes\": {\"BusinessParking\": null, \"RestaurantsReservations\": null, \"OutdoorSeating\": null, \"WiFi\": null, \"RestaurantsTakeOut\": null, \"RestaurantsGoodForGroups\": null, \"Music\": null, \"Ambience\": {\"romantic\": false, \"intimate\": false, \"touristy\": false, \"hipster\": false, \"divey\": false, \"classy\": false, \"trendy\": false, \"upscale\": false, \"casual\": false}}, \"business_stars\": 3.5, \"review_info\": [{\"review_stars\": 2.0, \"review_date\": \"2018-05-12 23:21:14\", \"review_text\": \"Please make your restaurants and drink shops",
+          "A few shops and restaurants are at the end of the pier and they have some parking with a cost. It's really not that awesome but if you come to CA to see the beaches you should walk atleast one beach pier.\"}, {\"review_stars\": 2.0, \"review_date\": \"2012-08-23 07:24:32\", \"review_text\": \"Ive spent too much time here.The dockage fees are insane.The staff is great but thier hands are tied with crazy policies.The place is crawling with snobs that wont give you the time of day unless you have lots of money.Great place for people watching I guess.\"}]}",
+          "go straw less!! So many straws and you are on the ocean! Help the sea animals! Zoos are straw less for the animals. Be straw less for the sea animals!! Please help save the Ocean life!! To all the people that come to these places, say no to straws ahead of time. Bring you're own reusable cups with reusable straws. Have the shops give a discount for those that bring their own reusable straws and cups/bottles. One step at a time and we can do it.\"}, {\"review_stars\": 4.0, \"review_date\": \"2014-06-20 14:45:52\", \"review_text\": \"People come to SB for the beach, here you go! \\n\\nDecent sized pier to walk on and watch the fishermen and rowers."
+        ]
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 8.424304299987853,
+        "wall_s": 8.424611800001003,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1668,
+        "full_source_visible": true,
+        "source_chars_rendered": 1668,
+        "rationale": "Passage 1 establishes that Harbor of Santa Barbara Inc does not offer BusinessParking, RestaurantsReservations, OutdoorSeating, WiFi, or RestaurantsTakeOut, directly supporting the claim.",
+        "evidence_preview": [
+          "Business name: Harbor of Santa Barbara Inc\nAddress: 210 Stearns Wharf, Santa Barbara, CA\nCategories: Active Life, Restaurants, Boating\nOverall rating: 3.5 stars\nOpening hours: not specified\nBusinessParking: not specified\nRestaurantsReservations: not specified\nOutdoorSeating: not specified\nWiFi: not specified\nRestaurantsTakeOut: not specified\nRestaurantsGoodForGroups: not specified\nMusic: not specified\nAmbience: romantic = no; intimate = no; touristy = no; hipster = no; divey = no; classy = no; trendy = no; upscale = no; casual = no",
+          "Review (2.0 stars): Please make your restaurants and drink shops go straw less!! So many straws and you are on the ocean! Help the sea animals! Zoos are straw less for the animals. Be straw less for the sea animals!! Please help save the Ocean life!! To all the people that come to these places, say no to straws ahead of time. Bring you're own reusable cups with reusable straws. Have the shops give a discount for those that bring their own reusable straws and cups/bottles. One step at a time and we can do it.\nReview (4.0 stars): People come to SB for the beach, here you go! \n\nDecent sized pier to walk on and watch the fishermen and rowers.  A few shops and restaurants are at the end of the pier and they have some parking with a cost. It's really not that awesome but if you come to CA to see the beaches you should walk atleast one beach pier.",
+          "Review (2.0 stars): Ive spent too much time here.The dockage fees are insane.The staff is great but thier hands are tied with crazy policies.The place is crawling with snobs that wont give you the time of day unless you have lots of money.Great place for people watching I guess."
+        ]
+      }
+    },
+    {
+      "response_id": "7000",
+      "claim_id": "s_5_c0",
+      "task": "Data2txt",
+      "gold": "HALLUCINATED",
+      "label_types": [
+        "Evident Baseless Info",
+        "Evident Conflict"
+      ],
+      "claim": "However, it does offer Music and Ambience, with a romantic, intimate, touristy, hipster, divey, classy, trendy, upscale, and casual atmosphere.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 10.418315899994923,
+        "wall_s": 3.749999450519681e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1889,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes a romantic, intimate atmosphere, Passage 2 promotes eco-friendly reusable cups, and Passage 3 mentions a pier with parking, all of which contradict the claim that the atmosphere ",
+        "evidence_preview": [
+          "{\"name\": \"Harbor of Santa Barbara Inc\", \"address\": \"210 Stearns Wharf\", \"city\": \"Santa Barbara\", \"state\": \"CA\", \"categories\": \"Active Life, Restaurants, Boating\", \"hours\": null, \"attributes\": {\"BusinessParking\": null, \"RestaurantsReservations\": null, \"OutdoorSeating\": null, \"WiFi\": null, \"RestaurantsTakeOut\": null, \"RestaurantsGoodForGroups\": null, \"Music\": null, \"Ambience\": {\"romantic\": false, \"intimate\": false, \"touristy\": false, \"hipster\": false, \"divey\": false, \"classy\": false, \"trendy\": false, \"upscale\": false, \"casual\": false}}, \"business_stars\": 3.5, \"review_info\": [{\"review_stars\": 2.0, \"review_date\": \"2018-05-12 23:21:14\", \"review_text\": \"Please make your restaurants and drink shops",
+          "go straw less!! So many straws and you are on the ocean! Help the sea animals! Zoos are straw less for the animals. Be straw less for the sea animals!! Please help save the Ocean life!! To all the people that come to these places, say no to straws ahead of time. Bring you're own reusable cups with reusable straws. Have the shops give a discount for those that bring their own reusable straws and cups/bottles. One step at a time and we can do it.\"}, {\"review_stars\": 4.0, \"review_date\": \"2014-06-20 14:45:52\", \"review_text\": \"People come to SB for the beach, here you go! \\n\\nDecent sized pier to walk on and watch the fishermen and rowers.",
+          "A few shops and restaurants are at the end of the pier and they have some parking with a cost. It's really not that awesome but if you come to CA to see the beaches you should walk atleast one beach pier.\"}, {\"review_stars\": 2.0, \"review_date\": \"2012-08-23 07:24:32\", \"review_text\": \"Ive spent too much time here.The dockage fees are insane.The staff is great but thier hands are tied with crazy policies.The place is crawling with snobs that wont give you the time of day unless you have lots of money.Great place for people watching I guess.\"}]}"
+        ]
+      },
+      "B_readable": {
+        "label": "CONFLICTED",
+        "confidence": 0.5,
+        "error": false,
+        "recorded_latency_s": 8.619812599994475,
+        "wall_s": 8.62006770001608,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1668,
+        "full_source_visible": true,
+        "source_chars_rendered": 1668,
+        "rationale": "Passage 1 and Passage 3 both mention the business name and address, but Passage 1 does not mention the atmosphere, and Passage 3 mentions 'snobs' which is not present in Passage 1.",
+        "evidence_preview": [
+          "Business name: Harbor of Santa Barbara Inc\nAddress: 210 Stearns Wharf, Santa Barbara, CA\nCategories: Active Life, Restaurants, Boating\nOverall rating: 3.5 stars\nOpening hours: not specified\nBusinessParking: not specified\nRestaurantsReservations: not specified\nOutdoorSeating: not specified\nWiFi: not specified\nRestaurantsTakeOut: not specified\nRestaurantsGoodForGroups: not specified\nMusic: not specified\nAmbience: romantic = no; intimate = no; touristy = no; hipster = no; divey = no; classy = no; trendy = no; upscale = no; casual = no",
+          "Review (2.0 stars): Please make your restaurants and drink shops go straw less!! So many straws and you are on the ocean! Help the sea animals! Zoos are straw less for the animals. Be straw less for the sea animals!! Please help save the Ocean life!! To all the people that come to these places, say no to straws ahead of time. Bring you're own reusable cups with reusable straws. Have the shops give a discount for those that bring their own reusable straws and cups/bottles. One step at a time and we can do it.\nReview (4.0 stars): People come to SB for the beach, here you go! \n\nDecent sized pier to walk on and watch the fishermen and rowers.  A few shops and restaurants are at the end of the pier and they have some parking with a cost. It's really not that awesome but if you come to CA to see the beaches you should walk atleast one beach pier.",
+          "Review (2.0 stars): Ive spent too much time here.The dockage fees are insane.The staff is great but thier hands are tied with crazy policies.The place is crawling with snobs that wont give you the time of day unless you have lots of money.Great place for people watching I guess."
+        ]
+      }
+    }
+  ]
+}

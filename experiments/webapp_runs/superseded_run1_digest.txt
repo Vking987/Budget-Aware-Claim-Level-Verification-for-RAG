@@ -1,0 +1,44 @@
+[    0.0s] start {}
+[    0.0s] stage {'stage': 'question', 'status': 'done'}
+[    0.0s] stage {'stage': 'retrieval', 'status': 'running'}
+[    2.2s] stage {'stage': 'retrieval', 'status': 'done'}
+[    2.2s] stage {'stage': 'draft', 'status': 'running'}
+[   26.1s] stage {'stage': 'draft', 'status': 'done'}
+[   26.1s] stage {'stage': 'decomposition', 'status': 'running'}
+[   26.1s] stage {'stage': 'decomposition', 'status': 'done'}
+[   26.1s] stage {'stage': 'scoring', 'status': 'running'}
+[   26.1s] stage {'stage': 'scoring', 'status': 'done'}
+[   26.1s] stage {'stage': 'selection', 'status': 'running'}
+[   26.1s] stage {'stage': 'verification', 'status': 'running'}
+[   26.1s] stage {'stage': 'feedback', 'status': 'running'}
+[   26.1s] loop {'phase': 'start'}
+[   26.1s] budget {'round': 1, 'model_calls_used': 0}
+[   26.1s] round {'round': 1, 'model_calls_used': 0, 'chosen': {'claim_id': 's_0_c0', 'action': 'VERIFY'}}
+[   26.1s] verify {'claim_id': 's_0_c0', 'phase': 'start'}
+[  160.0s] verify {'claim_id': 's_0_c0', 'label': 'SUPPORTED', 'phase': 'done'}
+[  160.0s] feedback {'claim_id': 's_0_c0'}
+[  160.0s] budget {'round': 2, 'model_calls_used': 1}
+[  160.0s] round {'round': 2, 'model_calls_used': 1, 'chosen': {'claim_id': 's_2_c0', 'action': 'VERIFY'}}
+[  160.0s] verify {'claim_id': 's_2_c0', 'phase': 'start'}
+[  233.4s] verify {'claim_id': 's_2_c0', 'label': 'SUPPORTED', 'phase': 'done'}
+[  233.4s] feedback {'claim_id': 's_2_c0'}
+[  233.4s] budget {'round': 3, 'model_calls_used': 2}
+[  233.4s] round {'round': 3, 'model_calls_used': 2, 'chosen': {'claim_id': 's_1_c0', 'action': 'VERIFY'}}
+[  233.4s] verify {'claim_id': 's_1_c0', 'phase': 'start'}
+[  319.3s] verify {'claim_id': 's_1_c0', 'label': 'SUPPORTED', 'phase': 'done'}
+[  319.3s] feedback {'claim_id': 's_1_c0'}
+[  319.3s] budget {'round': 4, 'model_calls_used': 3}
+[  319.3s] round {'round': 4, 'model_calls_used': 3, 'chosen': {'claim_id': 's_4_c0', 'action': 'VERIFY'}}
+[  319.3s] verify {'claim_id': 's_4_c0', 'phase': 'start'}
+[  396.1s] verify {'claim_id': 's_4_c0', 'label': 'CONTRADICTED', 'phase': 'done'}
+[  396.1s] feedback {'claim_id': 's_4_c0'}
+[  396.1s] budget {'round': 5, 'model_calls_used': 4}
+[  396.1s] round {'round': 5, 'model_calls_used': 4, 'chosen': {'claim_id': None, 'action': 'STOP'}}
+[  396.1s] stage {'stage': 'selection', 'status': 'done'}
+[  396.1s] stage {'stage': 'verification', 'status': 'done'}
+[  396.1s] stage {'stage': 'feedback', 'status': 'done'}
+[  396.1s] stage {'stage': 'repair', 'status': 'skipped'}
+[  396.1s] budget_check {'model_calls_used': 4}
+[  396.1s] stage {'stage': 'answer', 'status': 'running'}
+[  396.1s] stage {'stage': 'answer', 'status': 'done'}
+[  396.1s] result {}

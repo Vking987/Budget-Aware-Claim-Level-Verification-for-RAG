@@ -1,0 +1,56 @@
+# Python environment & bytecode
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Model weights, embeddings & checkpoints
+*.gguf
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.onnx
+models/
+
+# Vector database & raw dataset directories
+qdrant_storage/
+data/
+*.db
+*.sqlite3
+
+# Caching
+.cache/
+.huggingface/
+
+# Environment variables & secrets
+.env
+.env.*
+*.pem
+*.key
+*.token
+
+# Experiment runs, evaluation logs & temp files
+experiments/runs/
+*.log
+scratch/
+tmp/
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Pickled caches (not safe to share; regenerable)
+*.pkl
+experiments/cache/

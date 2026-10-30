@@ -1,0 +1,617 @@
+[
+ {
+  "question": "Who founded VIT and when was it established?",
+  "source": "wikipedia",
+  "analysis": {
+   "entity_phrases": [
+    "VIT"
+   ],
+   "entity_tokens": [
+    "vit"
+   ],
+   "intent_tokens": [
+    "establish",
+    "found"
+   ],
+   "queries": [
+    "VIT",
+    "founded VIT established"
+   ]
+  },
+  "trace": {
+   "query": "Who founded VIT and when was it established?",
+   "queries": [
+    "VIT",
+    "founded VIT established"
+   ],
+   "hits": {
+    "VIT": [
+     "Vit",
+     "VIT",
+     "Vision transformer",
+     "Vít",
+     "Vellore Institute of Technology",
+     "Balut (food)",
+     "Vít Krejčí",
+     "De Vit"
+    ],
+    "founded VIT established": [
+     "Vellore Institute of Technology",
+     "VIT Bhopal University",
+     "Forza Italia (1994)",
+     "Vitamin",
+     "Riviera (festival)",
+     "Pythagoras",
+     "VIT High School",
+     "VIT, C.A."
+    ]
+   },
+   "pages_considered": [
+    "Vit",
+    "Vellore Institute of Technology",
+    "VIT",
+    "Vision transformer",
+    "Vít",
+    "VIT Bhopal University",
+    "Balut (food)",
+    "Forza Italia (1994)",
+    "Vít Krejčí",
+    "De Vit"
+   ],
+   "dropped_pages": [
+    {
+     "title": "Vit",
+     "reason": "disambiguation page"
+    },
+    {
+     "title": "VIT",
+     "reason": "disambiguation page"
+    },
+    {
+     "title": "Balut (food)",
+     "reason": "does not mention VIT"
+    },
+    {
+     "title": "Forza Italia (1994)",
+     "reason": "does not mention VIT"
+    },
+    {
+     "title": "Vít Krejčí",
+     "reason": "does not mention VIT"
+    }
+   ],
+   "kept_pages": [
+    "Vellore Institute of Technology",
+    "VIT Bhopal University",
+    "De Vit",
+    "Vision transformer",
+    "Vít"
+   ],
+   "full_text_pages": [
+    "Vellore Institute of Technology",
+    "VIT Bhopal University"
+   ],
+   "entity_phrases": [
+    "VIT"
+   ],
+   "entity_tokens": [
+    "vit"
+   ],
+   "page_scores": {
+    "Vellore Institute of Technology": 0.82,
+    "VIT Bhopal University": 0.55,
+    "De Vit": 0.475,
+    "Vision transformer": 0.2,
+    "Vít": 0.15
+   },
+   "n_passages": 5
+  },
+  "passages": [
+   {
+    "title": "Vellore Institute of Technology",
+    "url": "https://en.wikipedia.org/wiki/Vellore_Institute_of_Technology",
+    "score": 1.0,
+    "section": "body",
+    "text": "Vellore Institute of Technology (VIT) is a private deemed university in Vellore, Tamil Nadu, India. The institution offers undergraduate and postgraduate programmes. It has campuses in Vellore and Chennai and three sister universities as di"
+   },
+   {
+    "title": "Vellore Institute of Technology",
+    "url": "https://en.wikipedia.org/wiki/Vellore_Institute_of_Technology",
+    "score": 1.0,
+    "section": "body",
+    "text": "Commenting on the issue, VIT vice president Sekar Viswanathan said: \"The students started a campaign based on the misplaced notion that the university discriminates against women, which is false. They were taken home by their parents.\" An A"
+   },
+   {
+    "title": "VIT Bhopal University",
+    "url": "https://en.wikipedia.org/wiki/VIT_Bhopal_University",
+    "score": 0.965,
+    "section": "body",
+    "text": "VIT Bhopal University (VIT B), is a state private university in Madhya Pradesh situated in Kothri Kalan in Sehore district, Madhya Pradesh, India. It was established by the Vellore Institute of Technology. Plans to establish VIT Bhopal Univ"
+   },
+   {
+    "title": "VIT Bhopal University",
+    "url": "https://en.wikipedia.org/wiki/VIT_Bhopal_University",
+    "score": 0.965,
+    "section": "body",
+    "text": "Teaching and learning are supported by centralized academic infrastructure including libraries, advanced laboratories, auditoriums, cafeterias, and campus-wide Wi-Fi facilities. Academic activities are conducted through multiple streams cov"
+   },
+   {
+    "title": "VIT Bhopal University",
+    "url": "https://en.wikipedia.org/wiki/VIT_Bhopal_University",
+    "score": 0.965,
+    "section": "body",
+    "text": "“Anger had been building among students against the fear-based imposed discipline, which the management completely failed to understand,” explaining why the tensions escalated. \"Instead of calming the agitation, wardens and guards misbehave"
+   }
+  ],
+  "draft": "Vellore Institute of Technology was founded by G. Viswanathan. Vellore Institute of Technology was established in 1984. Vellore Institute of Technology was granted deemed university status in 2001. Vellore Institute of Technology was renamed Vellore Institute of Technology in 2006. Vellore Institute of Technology was renamed Vellore Institute of Technology: Bhopal University in 2016.",
+  "outcome": "answered",
+  "claims_kept": [
+   "Vellore Institute of Technology was founded by G. Viswanathan.",
+   "Vellore Institute of Technology was established in 1984."
+  ],
+  "claims_off_topic": [
+   "Vellore Institute of Technology was granted deemed university status in 2001.",
+   "Vellore Institute of Technology was renamed Vellore Institute of Technology in 2006.",
+   "Vellore Institute of Technology was renamed Vellore Institute of Technology: Bhopal University in 2016."
+  ],
+  "seconds": 17.3
+ },
+ {
+  "question": "Who wrote Frankenstein and when was it first published?",
+  "source": "wikipedia",
+  "analysis": {
+   "entity_phrases": [
+    "Frankenstein"
+   ],
+   "entity_tokens": [
+    "frankenstein"
+   ],
+   "intent_tokens": [
+    "first",
+    "publish",
+    "wrote"
+   ],
+   "queries": [
+    "Frankenstein",
+    "wrote Frankenstein first published"
+   ]
+  },
+  "trace": {
+   "query": "Who wrote Frankenstein and when was it first published?",
+   "queries": [
+    "Frankenstein",
+    "wrote Frankenstein first published"
+   ],
+   "hits": {
+    "Frankenstein": [
+     "Frankenstein",
+     "Frankenstein (2025 film)",
+     "Frankenstein (1931 film)",
+     "Frankenstein's monster",
+     "Victor Frankenstein",
+     "Young Frankenstein",
+     "Bride of Frankenstein",
+     "Frankenstein (disambiguation)"
+    ],
+    "wrote Frankenstein first published": [
+     "Victor Frankenstein",
+     "Frankenstein (1931 film)",
+     "Frankenstein (1910 film)",
+     "Young Frankenstein",
+     "The Man Who Wrote Frankenstein",
+     "Frankenstein's monster",
+     "Mary Shelley",
+     "Frankenstein"
+    ]
+   },
+   "pages_considered": [
+    "Frankenstein",
+    "Victor Frankenstein",
+    "Frankenstein (1931 film)",
+    "Frankenstein (2025 film)",
+    "Frankenstein's monster",
+    "Young Frankenstein",
+    "Frankenstein (1910 film)",
+    "Bride of Frankenstein",
+    "Frankenstein (disambiguation)",
+    "The Man Who Wrote Frankenstein"
+   ],
+   "dropped_pages": [
+    {
+     "title": "Frankenstein (disambiguation)",
+     "reason": "disambiguation page"
+    }
+   ],
+   "kept_pages": [
+    "Frankenstein",
+    "Victor Frankenstein",
+    "Frankenstein (1931 film)",
+    "Frankenstein (2025 film)",
+    "Young Frankenstein",
+    "Frankenstein (1910 film)",
+    "Bride of Frankenstein",
+    "The Man Who Wrote Frankenstein",
+    "Frankenstein's monster"
+   ],
+   "full_text_pages": [
+    "Frankenstein",
+    "Victor Frankenstein"
+   ],
+   "entity_phrases": [
+    "Frankenstein"
+   ],
+   "entity_tokens": [
+    "frankenstein"
+   ],
+   "page_scores": {
+    "Frankenstein": 1.0,
+    "Victor Frankenstein": 0.795,
+    "Frankenstein (1931 film)": 0.729,
+    "Frankenstein (2025 film)": 0.682,
+    "Young Frankenstein": 0.565,
+    "Frankenstein (1910 film)": 0.494,
+    "Bride of Frankenstein": 0.481,
+    "The Man Who Wrote Frankenstein": 0.456,
+    "Frankenstein's monster": 0.188
+   },
+   "n_passages": 5
+  },
+  "passages": [
+   {
+    "title": "Frankenstein",
+    "url": "https://en.wikipedia.org/wiki/Frankenstein",
+    "score": 1.0,
+    "section": "lead",
+    "text": "Frankenstein; or, The Modern Prometheus is an 1818 Gothic novel written by English author Mary Shelley. It tells the story of Victor Frankenstein, a young scientist who creates a sapient creature from different body parts in an unorthodox s"
+   },
+   {
+    "title": "Victor Frankenstein",
+    "url": "https://en.wikipedia.org/wiki/Victor_Frankenstein",
+    "score": 1.0,
+    "section": "lead",
+    "text": "Victor Frankenstein, whose character name has sometimes evolved in popular culture to Dr. Frankenstein, is a fictional character who first appeared as the titular main protagonist of Mary Shelley's 1818 novel Frankenstein; or, The Modern Pr"
+   },
+   {
+    "title": "Frankenstein",
+    "url": "https://en.wikipedia.org/wiki/Frankenstein",
+    "score": 1.0,
+    "section": "lead",
+    "text": "She then journeyed to the region of Geneva, Switzerland, where much of the story takes place. Galvanism and occult ideas were topics of conversation for her companions, particularly for her lover and future husband, Percy Bysshe Shelley. In"
+   },
+   {
+    "title": "Victor Frankenstein",
+    "url": "https://en.wikipedia.org/wiki/Victor_Frankenstein",
+    "score": 1.0,
+    "section": "body",
+    "text": "He is first introduced in the novel when he is seeking to catch the monster near the North Pole and is saved from potential fatality by Robert Walton and his crew. Some aspects of the character are believed to have been inspired by 17th-cen"
+   },
+   {
+    "title": "Victor Frankenstein",
+    "url": "https://en.wikipedia.org/wiki/Victor_Frankenstein",
+    "score": 1.0,
+    "section": "body",
+    "text": "The latter myth was known to Mary Shelley, who had read it first and foremost in the Nouveaux contes moraux et nouvelles historiques, published by Madame de Genlis in 1802, then in John Dryden's translation, again published in 1810, and whi"
+   }
+  ],
+  "draft": "Mary Shelley wrote Frankenstein; or, The Modern Prometheus. The novel was first published anonymously in London on 1 January 1818. Mary Shelley's name first appeared in a French translation published in Paris in 1821. Mary Shelley travelled through Europe in 1815, moving along the river Rhine in Germany, and stopping in Gernsheim, 17 kilometres (11 mi) away from Frankenstein.",
+  "outcome": "answered",
+  "claims_kept": [
+   "Mary Shelley wrote Frankenstein.",
+   "The novel was first published anonymously in London on 1 January 1818.",
+   "Mary Shelley's name first appeared in a French translation published in Paris in 1821."
+  ],
+  "claims_off_topic": [
+   "or, The Modern Prometheus.",
+   "Mary Shelley travelled through Europe in 1815, moving along the river Rhine in Germany, and stopping in Gernsheim, 17 kilometres (11 mi) away from Frankenstein."
+  ],
+  "seconds": 7.9
+ },
+ {
+  "question": "What caused the fall of the Western Roman Empire?",
+  "source": "wikipedia",
+  "analysis": {
+   "entity_phrases": [
+    "Western Roman Empire"
+   ],
+   "entity_tokens": [
+    "western",
+    "roman",
+    "empire"
+   ],
+   "intent_tokens": [
+    "caus",
+    "fall"
+   ],
+   "queries": [
+    "Western Roman Empire",
+    "caused fall Western Roman Empire"
+   ]
+  },
+  "trace": {
+   "query": "What caused the fall of the Western Roman Empire?",
+   "queries": [
+    "Western Roman Empire",
+    "caused fall Western Roman Empire"
+   ],
+   "hits": {
+    "Western Roman Empire": [
+     "Western Roman Empire",
+     "Fall of the Western Roman Empire",
+     "Historiography of the fall of the Western Roman Empire",
+     "Roman emperor",
+     "Legacy of the Roman Empire",
+     "History of the Roman Empire",
+     "Roman Empire",
+     "The History of the Decline and Fall of the Roman Empire"
+    ],
+    "caused fall Western Roman Empire": [
+     "Historiography of the fall of the Western Roman Empire",
+     "The History of the Decline and Fall of the Roman Empire",
+     "Fall of the Western Roman Empire",
+     "Byzantine Empire",
+     "Roman Empire",
+     "Holy Roman Empire",
+     "Western Roman Empire",
+     "Roman lead poisoning theory"
+    ]
+   },
+   "pages_considered": [
+    "Western Roman Empire",
+    "Historiography of the fall of the Western Roman Empire",
+    "Fall of the Western Roman Empire",
+    "The History of the Decline and Fall of the Roman Empire",
+    "Roman emperor",
+    "Roman Empire",
+    "Legacy of the Roman Empire",
+    "History of the Roman Empire",
+    "Byzantine Empire",
+    "Holy Roman Empire"
+   ],
+   "dropped_pages": [],
+   "kept_pages": [
+    "Western Roman Empire",
+    "Historiography of the fall of the Western Roman Empire",
+    "Fall of the Western Roman Empire",
+    "The History of the Decline and Fall of the Roman Empire",
+    "Roman Empire",
+    "Legacy of the Roman Empire",
+    "History of the Roman Empire",
+    "Holy Roman Empire",
+    "Roman emperor",
+    "Byzantine Empire"
+   ],
+   "full_text_pages": [
+    "Western Roman Empire",
+    "Historiography of the fall of the Western Roman Empire"
+   ],
+   "entity_phrases": [
+    "Western Roman Empire"
+   ],
+   "entity_tokens": [
+    "western",
+    "roman",
+    "empire"
+   ],
+   "page_scores": {
+    "Western Roman Empire": 1.0,
+    "Historiography of the fall of the Western Roman Empire": 0.867,
+    "Fall of the Western Roman Empire": 0.773,
+    "The History of the Decline and Fall of the Roman Empire": 0.477,
+    "Roman Empire": 0.403,
+    "Legacy of the Roman Empire": 0.379,
+    "History of the Roman Empire": 0.36,
+    "Holy Roman Empire": 0.313,
+    "Roman emperor": 0.273,
+    "Byzantine Empire": 0.203
+   },
+   "n_passages": 5
+  },
+  "passages": [
+   {
+    "title": "Western Roman Empire",
+    "url": "https://en.wikipedia.org/wiki/Western_Roman_Empire",
+    "score": 1.0,
+    "section": "body",
+    "text": "While this process was simple in peacetime, it could be considerably more complicated in wartime. In a full-blown military campaign, the legions were far more numerous – as, for example, those led by Vespasian in the First Jewish–Roman War."
+   },
+   {
+    "title": "Western Roman Empire",
+    "url": "https://en.wikipedia.org/wiki/Western_Roman_Empire",
+    "score": 1.0,
+    "section": "body",
+    "text": "Aetius attempted to defend himself from the charges, but Valentinian drew his sword and struck the weaponless Aetius on the head, killing him on the spot. On 16 March the following year, Valentinian himself was killed by supporters of the d"
+   },
+   {
+    "title": "Western Roman Empire",
+    "url": "https://en.wikipedia.org/wiki/Western_Roman_Empire",
+    "score": 1.0,
+    "section": "body",
+    "text": "Despite also suffering from barbarian incursions, the Eastern Empire had survived the fifth century mostly intact. The Western Roman Empire, less urbanized than the Eastern and more thinly populated, may have experienced an economic decline"
+   },
+   {
+    "title": "Historiography of the fall of the Western Roman Empire",
+    "url": "https://en.wikipedia.org/wiki/Historiography_of_the_fall_of_the_Western_Roman_Empire",
+    "score": 0.96,
+    "section": "lead",
+    "text": "The causes and mechanisms of the fall of the Western Roman Empire are a historical theme that was introduced by historian Edward Gibbon in his 1776 book The History of the Decline and Fall of the Roman Empire. Though Gibbon was not the firs"
+   },
+   {
+    "title": "Historiography of the fall of the Western Roman Empire",
+    "url": "https://en.wikipedia.org/wiki/Historiography_of_the_fall_of_the_Western_Roman_Empire",
+    "score": 0.96,
+    "section": "lead",
+    "text": "Gibbon himself explored ideas of internal decline (civil wars, the disintegration of political, economic, military, and other social institutions) and of attacks from outside the empire. Many historians have postulated reasons for the colla"
+   }
+  ],
+  "draft": "The fall of the Western Roman Empire was caused by a combination of internal and external factors. The Western Roman Empire's decline was marked by a series of civil wars, economic instability, and military threats from outside the empire. The empire's weakened military and economic capabilities, combined with the constant threat of barbarian invasions, made it increasingly difficult to maintain control and defend against external threats. The decline of civic virtue and the breakdown of social institutions also contributed to the empire's downfall, as the people's values and norms began to deteriorate.",
+  "outcome": "answered",
+  "claims_kept": [
+   "The fall of the Western Roman Empire was caused by a combination of internal and external factors.",
+   "The Western Roman Empire's decline was marked by a series of civil wars, economic instability, and military threats from outside the empire.",
+   "The decline of civic virtue and the breakdown of social institutions also contributed to the empire's downfall, as the people's values and norms began to deteriorate."
+  ],
+  "claims_off_topic": [
+   "The empire's weakened military and economic capabilities, combined with the constant threat of barbarian invasions, made it increasingly difficult to maintain control and defend against external threats."
+  ],
+  "seconds": 9.4
+ },
+ {
+  "question": "Who created VIT University and when?",
+  "source": "wikipedia",
+  "analysis": {
+   "entity_phrases": [
+    "VIT University"
+   ],
+   "entity_tokens": [
+    "vit",
+    "university"
+   ],
+   "intent_tokens": [
+    "creat"
+   ],
+   "queries": [
+    "VIT University",
+    "created VIT University"
+   ]
+  },
+  "trace": {
+   "query": "Who created VIT University and when?",
+   "queries": [
+    "VIT University",
+    "created VIT University"
+   ],
+   "hits": {
+    "VIT University": [
+     "Vellore Institute of Technology",
+     "VIT-AP University",
+     "VIT Bhopal University",
+     "VIT",
+     "VIT University (disambiguation)",
+     "Anna University",
+     "Riviera (festival)",
+     "D. P. Kothari"
+    ],
+    "created VIT University": [
+     "Balut (food)",
+     "Anna University",
+     "Riviera (festival)",
+     "Vidyalankar Institute of Technology",
+     "University of Hradec Králové",
+     "Vitamin",
+     "Christer Fredriksen",
+     "Vitamin D"
+    ]
+   },
+   "pages_considered": [
+    "Vellore Institute of Technology",
+    "VIT-AP University",
+    "Balut (food)",
+    "Anna University",
+    "VIT Bhopal University",
+    "Riviera (festival)",
+    "VIT",
+    "VIT University (disambiguation)",
+    "D. P. Kothari",
+    "Vidyalankar Institute of Technology"
+   ],
+   "dropped_pages": [
+    {
+     "title": "VIT-AP University",
+     "reason": "does not mention VIT University"
+    },
+    {
+     "title": "Balut (food)",
+     "reason": "does not mention VIT University"
+    },
+    {
+     "title": "Anna University",
+     "reason": "does not mention VIT University"
+    },
+    {
+     "title": "Riviera (festival)",
+     "reason": "does not mention VIT University"
+    },
+    {
+     "title": "VIT",
+     "reason": "disambiguation page"
+    },
+    {
+     "title": "VIT University (disambiguation)",
+     "reason": "disambiguation page"
+    }
+   ],
+   "kept_pages": [
+    "Vellore Institute of Technology",
+    "VIT Bhopal University",
+    "Vidyalankar Institute of Technology",
+    "D. P. Kothari"
+   ],
+   "full_text_pages": [
+    "Vellore Institute of Technology",
+    "VIT Bhopal University"
+   ],
+   "entity_phrases": [
+    "VIT University"
+   ],
+   "entity_tokens": [
+    "vit",
+    "university"
+   ],
+   "page_scores": {
+    "Vellore Institute of Technology": 0.8,
+    "VIT Bhopal University": 0.6,
+    "Vidyalankar Institute of Technology": 0.275,
+    "D. P. Kothari": 0.075
+   },
+   "n_passages": 5
+  },
+  "passages": [
+   {
+    "title": "Vellore Institute of Technology",
+    "url": "https://en.wikipedia.org/wiki/Vellore_Institute_of_Technology",
+    "score": 1.0,
+    "section": "body",
+    "text": "Vellore Institute of Technology (VIT) is a private deemed university in Vellore, Tamil Nadu, India. The institution offers undergraduate and postgraduate programmes. It has campuses in Vellore and Chennai and three sister universities as di"
+   },
+   {
+    "title": "Vellore Institute of Technology",
+    "url": "https://en.wikipedia.org/wiki/Vellore_Institute_of_Technology",
+    "score": 1.0,
+    "section": "body",
+    "text": "Commenting on the issue, VIT vice president Sekar Viswanathan said: \"The students started a campaign based on the misplaced notion that the university discriminates against women, which is false. They were taken home by their parents.\" An A"
+   },
+   {
+    "title": "VIT Bhopal University",
+    "url": "https://en.wikipedia.org/wiki/VIT_Bhopal_University",
+    "score": 0.98,
+    "section": "body",
+    "text": "VIT Bhopal University (VIT B), is a state private university in Madhya Pradesh situated in Kothri Kalan in Sehore district, Madhya Pradesh, India. It was established by the Vellore Institute of Technology. Plans to establish VIT Bhopal Univ"
+   },
+   {
+    "title": "VIT Bhopal University",
+    "url": "https://en.wikipedia.org/wiki/VIT_Bhopal_University",
+    "score": 0.98,
+    "section": "body",
+    "text": "Teaching and learning are supported by centralized academic infrastructure including libraries, advanced laboratories, auditoriums, cafeterias, and campus-wide Wi-Fi facilities. Academic activities are conducted through multiple streams cov"
+   },
+   {
+    "title": "VIT Bhopal University",
+    "url": "https://en.wikipedia.org/wiki/VIT_Bhopal_University",
+    "score": 0.98,
+    "section": "body",
+    "text": "“Anger had been building among students against the fear-based imposed discipline, which the management completely failed to understand,” explaining why the tensions escalated. \"Instead of calming the agitation, wardens and guards misbehave"
+   }
+  ],
+  "draft": "Vellore Institute of Technology was founded in 1984 by G. Viswanathan as a self-financing institution called Vellore Engineering College. VIT was later established under Section 3 of the University Grants Commission Act, 1956. In September 2006, it was renamed Vellore Institute of Technology. In March 2024, VIT organized an athletic event intended to promote gender equality.",
+  "outcome": "answered",
+  "claims_kept": [
+   "Vellore Institute of Technology was founded in 1984 by G. Viswanathan as a self-financing institution called Vellore Engineering College.",
+   "VIT was later established under Section 3 of the University Grants Commission Act, 1956."
+  ],
+  "claims_off_topic": [
+   "In September 2006, it was renamed Vellore Institute of Technology.",
+   "In March 2024, VIT organized an athletic event intended to promote gender equality."
+  ],
+  "seconds": 28.5
+ }
+]

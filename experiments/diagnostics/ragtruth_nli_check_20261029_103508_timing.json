@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "run_id": "ragtruth_nli_check_20261029_103508_timing",
+    "command": "scripts/run_nli_verifier_check.py --claims pilot50 --limit 6 --conditions A_original --tag timing",
+    "model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "assessor": "nli_assessor_DeBERTa-v3-base-mnli-fever-anli",
+    "thresholds": {
+      "entail": 0.5,
+      "contradict": 0.5
+    },
+    "claims": "pilot50",
+    "n_pos": 6,
+    "n_neg": 0,
+    "seed": 0,
+    "n_responses": 50,
+    "label_validation": {
+      "positives_without_overlapping_span": [],
+      "negatives_with_overlapping_span": [],
+      "positive_label_type_counts": {
+        "Evident Baseless Info": 5,
+        "Evident Conflict": 2
+      }
+    }
+  },
+  "summary": {
+    "A_original": {
+      "overall": {
+        "strict": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 5,
+          "tn": 0,
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "f1": 0.2857142857142857,
+          "tpr_ci95": [
+            0.03005258587173032,
+            0.563509436563646
+          ],
+          "fpr": null,
+          "fpr_ci95": null
+        },
+        "broad": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 1,
+          "tn": 0,
+          "precision": 1.0,
+          "recall": 0.8333333333333334,
+          "f1": 0.9090909090909091,
+          "tpr_ci95": [
+            0.43649056343635395,
+            0.9699474141282697
+          ],
+          "fpr": null,
+          "fpr_ci95": null
+        }
+      },
+      "by_task": {
+        "strict": {
+          "Data2txt": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 5,
+            "tn": 0,
+            "precision": 1.0,
+            "recall": 0.16666666666666666,
+            "f1": 0.2857142857142857,
+            "tpr_ci95": [
+              0.03005258587173032,
+              0.563509436563646
+            ],
+            "fpr": null,
+            "fpr_ci95": null
+          }
+        },
+        "broad": {
+          "Data2txt": {
+            "tp": 5,
+            "fp": 0,
+            "fn": 1,
+            "tn": 0,
+            "precision": 1.0,
+            "recall": 0.8333333333333334,
+            "f1": 0.9090909090909091,
+            "tpr_ci95": [
+              0.43649056343635395,
+              0.9699474141282697
+            ],
+            "fpr": null,
+            "fpr_ci95": null
+          }
+        }
+      },
+      "label_counts": {
+        "HALLUCINATED": {
+          "INSUFFICIENT": 4,
+          "SUPPORTED": 1,
+          "CONTRADICTED": 1
+        },
+        "UNFLAGGED": {}
+      },
+      "latency": {
+        "mean_recorded_s": 54.30317516666643,
+        "n": 6,
+        "mean_evidence_chars": 2005.6666666666667
+      }
+    }
+  }
+}

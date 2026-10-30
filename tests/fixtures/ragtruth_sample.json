@@ -1,0 +1,195 @@
+{
+  "records": [
+    {
+      "source": {
+        "source_id": "ragtruth_fixture_001",
+        "task_type": "QA",
+        "source": "HotpotQA",
+        "source_info": {
+          "question": "Where was Arthur's Magazine published and who was its editor?",
+          "passages": "passage 1: Arthur's Magazine (1844-1846) was an American literary magazine published in Philadelphia. It was edited by T.S. Arthur."
+        },
+        "prompt": "Answer the question based on the passages."
+      },
+      "response": {
+        "id": "resp_001_clean",
+        "source_id": "ragtruth_fixture_001",
+        "model": "gpt-4",
+        "temperature": 0.0,
+        "split": "test",
+        "quality": "good",
+        "response": "Arthur's Magazine was published in Philadelphia and was edited by T.S. Arthur.",
+        "labels": []
+      }
+    },
+    {
+      "source": {
+        "source_id": "ragtruth_fixture_002",
+        "task_type": "QA",
+        "source": "HotpotQA",
+        "source_info": {
+          "question": "Where was Arthur's Magazine published and who was its editor?",
+          "passages": "passage 1: Arthur's Magazine (1844-1846) was an American literary magazine published in Philadelphia. It was edited by T.S. Arthur."
+        },
+        "prompt": "Answer the question based on the passages."
+      },
+      "response": {
+        "id": "resp_002_hallucinated_contained",
+        "source_id": "ragtruth_fixture_002",
+        "model": "mistral-7B-instruct",
+        "temperature": 0.7,
+        "split": "test",
+        "quality": "good",
+        "response": "Arthur's Magazine was published in Boston. It was edited by T.S. Arthur.",
+        "labels": [
+          {
+            "start": 35,
+            "end": 41,
+            "text": "Boston",
+            "label_type": "Evident Conflict",
+            "due_to_null": false,
+            "implicit_true": false,
+            "meta": "Published in Philadelphia, not Boston."
+          }
+        ]
+      }
+    },
+    {
+      "source": {
+        "source_id": "ragtruth_fixture_003",
+        "task_type": "QA",
+        "source": "HotpotQA",
+        "source_info": {
+          "question": "What is Aulani?",
+          "passages": "passage 1: Aulani is a Disney resort in Ko Olina, Hawaii."
+        },
+        "prompt": "Answer the question based on the passages."
+      },
+      "response": {
+        "id": "resp_003_multi_overlap",
+        "source_id": "ragtruth_fixture_003",
+        "model": "llama-2-7b-chat",
+        "temperature": 0.5,
+        "split": "train",
+        "quality": "good",
+        "response": "Aulani is located in Honolulu. Djuan Rivers managed the luxury property there.",
+        "labels": [
+          {
+            "start": 21,
+            "end": 43,
+            "text": "Honolulu. Djuan Rivers",
+            "label_type": "Evident Conflict",
+            "due_to_null": false,
+            "implicit_true": false,
+            "meta": "Span crosses across sentence and claim boundaries."
+          }
+        ]
+      }
+    },
+    {
+      "source": {
+        "source_id": "ragtruth_fixture_004",
+        "task_type": "QA",
+        "source": "HotpotQA",
+        "source_info": {
+          "question": "When was the journal established?",
+          "passages": "passage 1: The journal was established in 1844."
+        },
+        "prompt": "Answer the question based on the passages."
+      },
+      "response": {
+        "id": "resp_004_unicode_punct",
+        "source_id": "ragtruth_fixture_004",
+        "model": "gpt-3.5-turbo",
+        "temperature": 0.0,
+        "split": "test",
+        "quality": "good",
+        "response": "The café’s journal was established in 1999—an exciting year.",
+        "labels": [
+          {
+            "start": 38,
+            "end": 42,
+            "text": "1999",
+            "label_type": "Evident Conflict",
+            "due_to_null": false,
+            "implicit_true": false,
+            "meta": "Incorrect establishment year."
+          }
+        ]
+      }
+    },
+    {
+      "source": {
+        "source_id": "ragtruth_fixture_005",
+        "task_type": "QA",
+        "source": "HotpotQA",
+        "source_info": {
+          "question": "Who founded the company?",
+          "passages": "passage 1: John Smith founded the firm in 1920."
+        },
+        "prompt": "Answer the question based on the passages."
+      },
+      "response": {
+        "id": "resp_005_malformed",
+        "source_id": "ragtruth_fixture_005",
+        "model": "gpt-4",
+        "temperature": 0.0,
+        "split": "train",
+        "quality": "good",
+        "response": "John Smith founded the company in 1920.",
+        "labels": [
+          {
+            "start": 999,
+            "end": 1050,
+            "text": "Out of bounds text",
+            "label_type": "Evident Conflict",
+            "due_to_null": false,
+            "implicit_true": false,
+            "meta": "Start and end out of range"
+          },
+          {
+            "start": 0,
+            "end": 10,
+            "text": "Mismatched",
+            "label_type": "Evident Conflict",
+            "due_to_null": false,
+            "implicit_true": false,
+            "meta": "Text does not match response[0:10]"
+          }
+        ]
+      }
+    },
+    {
+      "source": {
+        "source_id": "ragtruth_fixture_006",
+        "task_type": "QA",
+        "source": "HotpotQA",
+        "source_info": {
+          "question": "What is the capital of France?",
+          "passages": "passage 1: France is a country in Western Europe."
+        },
+        "prompt": "Answer the question based on the passages."
+      },
+      "response": {
+        "id": "resp_006_implicit_true",
+        "source_id": "ragtruth_fixture_006",
+        "model": "gpt-4",
+        "temperature": 0.0,
+        "split": "test",
+        "quality": "good",
+        "response": "The capital of France is Paris.",
+        "labels": [
+          {
+            "start": 25,
+            "end": 30,
+            "text": "Paris",
+            "label_type": "Evident Baseless Info",
+            "due_to_null": false,
+            "implicit_true": true,
+            "meta": "True in reality, but not stated in the provided passage."
+          }
+        ]
+      }
+    }
+  ]
+}

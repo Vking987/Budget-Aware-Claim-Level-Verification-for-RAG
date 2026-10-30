@@ -1,0 +1,191 @@
+{
+  "meta": {
+    "run_id": "ragtruth_nli_check_20261029_105215_small32",
+    "command": "scripts/run_nli_verifier_check.py --claims pilot50 --neg-per-task 5 --conditions A_original --tag small32",
+    "model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "assessor": "nli_assessor_DeBERTa-v3-base-mnli-fever-anli",
+    "thresholds": {
+      "entail": 0.5,
+      "contradict": 0.5
+    },
+    "claims": "pilot50",
+    "n_pos": 17,
+    "n_neg": 15,
+    "seed": 0,
+    "n_responses": 50,
+    "label_validation": {
+      "positives_without_overlapping_span": [],
+      "negatives_with_overlapping_span": [],
+      "positive_label_type_counts": {
+        "Evident Baseless Info": 13,
+        "Evident Conflict": 6
+      }
+    }
+  },
+  "summary": {
+    "A_original": {
+      "overall": {
+        "strict": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 15,
+          "tn": 15,
+          "precision": 1.0,
+          "recall": 0.11764705882352941,
+          "f1": 0.21052631578947367,
+          "tpr_ci95": [
+            0.03287908001292092,
+            0.3433684249770991
+          ],
+          "fpr": 0.0,
+          "fpr_ci95": [
+            0.0,
+            0.20388926630434784
+          ]
+        },
+        "broad": {
+          "tp": 9,
+          "fp": 2,
+          "fn": 8,
+          "tn": 13,
+          "precision": 0.8181818181818182,
+          "recall": 0.5294117647058824,
+          "f1": 0.6428571428571428,
+          "tpr_ci95": [
+            0.30962897311549487,
+            0.738351988039119
+          ],
+          "fpr": 0.13333333333333333,
+          "fpr_ci95": [
+            0.0373604698913593,
+            0.3788249920651624
+          ]
+        }
+      },
+      "by_task": {
+        "strict": {
+          "Data2txt": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 14,
+            "tn": 5,
+            "precision": 1.0,
+            "recall": 0.125,
+            "f1": 0.2222222222222222,
+            "tpr_ci95": [
+              0.034976749337057134,
+              0.3602333143674828
+            ],
+            "fpr": 0.0,
+            "fpr_ci95": [
+              0.0,
+              0.43449149475208104
+            ]
+          },
+          "QA": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 5,
+            "precision": null,
+            "recall": null,
+            "f1": null,
+            "tpr_ci95": null,
+            "fpr": 0.0,
+            "fpr_ci95": [
+              0.0,
+              0.43449149475208104
+            ]
+          },
+          "Summary": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "tn": 5,
+            "precision": null,
+            "recall": 0.0,
+            "f1": null,
+            "tpr_ci95": [
+              0.0,
+              0.7934567085261071
+            ],
+            "fpr": 0.0,
+            "fpr_ci95": [
+              0.0,
+              0.43449149475208104
+            ]
+          }
+        },
+        "broad": {
+          "Data2txt": {
+            "tp": 9,
+            "fp": 1,
+            "fn": 7,
+            "tn": 4,
+            "precision": 0.9,
+            "recall": 0.5625,
+            "f1": 0.6923076923076923,
+            "tpr_ci95": [
+              0.33178195606776517,
+              0.7690163666481448
+            ],
+            "fpr": 0.2,
+            "fpr_ci95": [
+              0.03622316096978745,
+              0.6244717358814613
+            ]
+          },
+          "QA": {
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "tn": 4,
+            "precision": 0.0,
+            "recall": null,
+            "f1": null,
+            "tpr_ci95": null,
+            "fpr": 0.2,
+            "fpr_ci95": [
+              0.03622316096978745,
+              0.6244717358814613
+            ]
+          },
+          "Summary": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "tn": 5,
+            "precision": null,
+            "recall": 0.0,
+            "f1": null,
+            "tpr_ci95": [
+              0.0,
+              0.7934567085261071
+            ],
+            "fpr": 0.0,
+            "fpr_ci95": [
+              0.0,
+              0.43449149475208104
+            ]
+          }
+        }
+      },
+      "label_counts": {
+        "HALLUCINATED": {
+          "INSUFFICIENT": 7,
+          "SUPPORTED": 8,
+          "CONTRADICTED": 2
+        },
+        "UNFLAGGED": {
+          "SUPPORTED": 13,
+          "INSUFFICIENT": 2
+        }
+      },
+      "latency": {
+        "mean_recorded_s": 46.96366294687505,
+        "n": 32,
+        "mean_evidence_chars": 1949.15625
+      }
+    }
+  }
+}

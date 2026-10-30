@@ -1,0 +1,5 @@
+claim set: 17 positives + 60 negatives; mapping validation: 0 positives lack a span, 0 negatives overlap a span; types={'Evident Baseless Info': 13, 'Evident Conflict': 6}
+[A_original] 77 claims, cache hits so far 76, misses 1, 25s wall
+[B_readable] 77 claims, cache hits so far 76, misses 78, 1023s wall
+condition A served from the benchmark verdict cache for 76/77 claims
+wrote C:\Users\vrajs\rag-research\experiments\diagnostics\ragtruth_verifier_diag_20261028_182809_full.json

@@ -1,0 +1,9 @@
+claim set (pilot50): 17 gold-hallucinated + 15 unflagged
+C:\Users\vrajs\AppData\Roaming\Python\Python314\site-packages\torch\jit\_script.py:1485: FutureWarning: `torch.jit.script` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+Loading weights:   0%|          | 0/202 [00:00<?, ?it/s]Loading weights:   9%|9         | 19/202 [00:00<00:01, 180.45it/s]Loading weights:  28%|##8       | 57/202 [00:00<00:00, 288.35it/s]Loading weights:  43%|####2     | 86/202 [00:00<00:00, 279.15it/s]Loading weights: 100%|##########| 202/202 [00:00<00:00, 600.39it/s]
+[A_original] 32 claims in 1503s wall, 0 errors
+  A_original strict: TPR 0.118 (2/17) FPR 0.000 (0/15) F1 0.211
+  A_original broad: TPR 0.529 (9/17) FPR 0.133 (2/15) F1 0.643
+  A_original labels: {"HALLUCINATED": {"INSUFFICIENT": 7, "SUPPORTED": 8, "CONTRADICTED": 2}, "UNFLAGGED": {"SUPPORTED": 13, "INSUFFICIENT": 2}}
+wrote C:\Users\vrajs\rag-research\experiments\diagnostics\ragtruth_nli_check_20261029_105215_small32.json

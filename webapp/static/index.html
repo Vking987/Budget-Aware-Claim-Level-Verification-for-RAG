@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adaptive RAG Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500;600&display=swap">
+<style>
+/* Design plan.
+   Layout: one calm reading column. The question comes first, the answer second; the timeline, the research trace and the comparison sit below and open on demand.
+   Color: cool paper white, slate ink, one deep-blue accent; status colors are reserved for claim status and always come with a text label.
+   Type: IBM Plex Serif for the question and the answer, Plex Sans for the interface, Plex Mono for numbers and identifiers. */
+:root{
+  --bg:#f7f8fa; --surface:#ffffff; --ink:#151a24; --ink-2:#394152; --muted:#5f6b7d; --line:#e2e6ec; --line-2:#cdd3dc;
+  --accent:#164a8a; --accent-ink:#ffffff; --accent-soft:#e9eff8;
+  --ok:#17794a; --warn:#9a5b00; --bad:#b3261e; --rep:#0b6a86; --idle:#6b7686;
+  --serif:"IBM Plex Serif",Georgia,"Times New Roman",serif; --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Consolas,Menlo,monospace;
+}
+:root[data-theme="dark"]{
+  --bg:#0e1219; --surface:#141a24; --ink:#e8ecf3; --ink-2:#c4ccd9; --muted:#97a3b6; --line:#252d3b; --line-2:#364054;
+  --accent:#7fa6e8; --accent-ink:#0b1220; --accent-soft:#16233a;
+  --ok:#4cc58a; --warn:#e0ab4a; --bad:#ff8f86; --rep:#59c3dc; --idle:#8d98aa; color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--sans)}
+.wrap{max-width:900px;margin:0 auto;padding-inline:max(20px,env(safe-area-inset-left,0px)) max(20px,env(safe-area-inset-right,0px))}
+header.top{padding-block:36px 8px}
+.brand{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+h1{font:600 28px/1.15 var(--serif);margin:0;letter-spacing:-.01em}
+.lede{color:var(--muted);margin:6px 0 0;max-width:62ch}
+.tools{display:flex;gap:14px;align-items:center;font-size:13px;color:var(--muted)}
+.linkbtn{background:none;border:0;color:var(--muted);font:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px;padding:0}
+.linkbtn:hover{color:var(--ink)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+main{padding-block:12px 64px}
+h2{font:600 19px/1.3 var(--serif);margin:0 0 12px}
+h3{font:600 13px/1.3 var(--sans);margin:22px 0 8px;color:var(--ink-2);text-transform:uppercase;letter-spacing:.06em}
+section{margin-top:44px}
+
+/* ask */
+form.ask{margin-top:18px}
+.qwrap{border-bottom:2px solid var(--line-2);display:flex;gap:14px;align-items:flex-end;padding-bottom:10px}
+.qwrap:focus-within{border-color:var(--accent)}
+textarea#q{flex:1;border:0;background:transparent;color:var(--ink);font:500 22px/1.4 var(--serif);resize:none;min-height:34px;max-height:140px;padding:6px 0;outline:none}
+textarea#q::placeholder{color:var(--muted);font-weight:400}
+button.ask-btn{background:var(--accent);color:var(--accent-ink);border:0;border-radius:6px;padding:11px 22px;font:600 15px var(--sans);cursor:pointer;white-space:nowrap}
+button.ask-btn:disabled{opacity:.5;cursor:not-allowed}
+.examples{margin:10px 0 0;font-size:13px;color:var(--muted)}
+.examples button{background:none;border:0;color:var(--accent);font:inherit;cursor:pointer;padding:0 8px 0 0;text-decoration:underline;text-underline-offset:3px}
+.controls{display:flex;flex-wrap:wrap;gap:22px 36px;align-items:flex-end;margin-top:18px}
+.field label,.lab{display:block;font-size:12px;color:var(--muted);margin-bottom:5px;letter-spacing:.02em}
+select,input[type=number]{font:inherit;font-size:14px;color:var(--ink);background:var(--surface);border:1px solid var(--line-2);border-radius:6px;padding:7px 9px;min-width:0}
+.seg{display:inline-flex;border:1px solid var(--line-2);border-radius:6px;overflow:hidden;background:var(--surface)}
+.seg button{border:0;border-right:1px solid var(--line-2);background:transparent;color:var(--ink-2);font:500 14px var(--sans);padding:7px 14px;cursor:pointer}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed=true]{background:var(--accent);color:var(--accent-ink)}
+details.adv{margin-top:16px;font-size:14px}
+details.adv>summary{cursor:pointer;color:var(--muted);width:max-content}
+details.adv .advgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px 28px;margin-top:14px}
+.advnote{grid-column:1/-1;color:var(--muted);font-size:13px;max-width:70ch}
+.svc{font-size:13px;color:var(--muted);margin-top:14px}
+.svc b{font-weight:500;color:var(--ink-2)} .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;background:var(--idle)} .dot.ok{background:var(--ok)} .dot.bad{background:var(--bad)}
+
+/* status bar */
+#statusbar{margin-top:26px;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:14px}
+#statusbar .txt{display:flex;gap:10px;align-items:center;min-width:0}
+.spin{width:13px;height:13px;border:2px solid var(--line-2);border-top-color:var(--accent);border-radius:50%;animation:s 1s linear infinite;flex:none}@keyframes s{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.spin{animation:none;border-top-color:var(--line-2)}}
+.mono{font-family:var(--mono);font-size:.92em}
+
+/* answer */
+.outcome{margin-top:34px}
+.kicker{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.answer{font:400 20px/1.65 var(--serif);max-width:68ch;margin:0}
+.answer a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px;font:500 .72em var(--sans);white-space:nowrap}
+.draftbox{font:400 17px/1.6 var(--serif);color:var(--ink-2);max-width:68ch;border-left:3px solid var(--line-2);padding-left:16px;margin:0}
+.summary{display:flex;flex-wrap:wrap;gap:6px 22px;margin:18px 0 0;padding:0;list-style:none;color:var(--muted);font-size:14px}
+.summary b{color:var(--ink);font-weight:600;font-family:var(--mono);font-weight:500}
+.notice{margin:16px 0 0;padding:12px 14px;border-left:3px solid var(--warn);background:var(--surface);font-size:14px;max-width:68ch}
+.notice.bad{border-color:var(--bad)} .notice.info{border-color:var(--accent)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:22px 24px;max-width:72ch}
+.panel h2{margin-bottom:6px}
+ul.plain{margin:8px 0;padding-left:20px} ul.plain li{margin:3px 0}
+ol.sources{margin:8px 0 0;padding-left:20px;font-size:14px} ol.sources li{margin:3px 0} ol.sources a{color:var(--accent);text-underline-offset:3px}
+
+/* claims */
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--muted);margin:0 0 10px}
+.st{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;white-space:nowrap}
+.st::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--idle);flex:none}
+.st.supported{color:var(--ok)} .st.supported::before{background:var(--ok)}
+.st.repaired{color:var(--rep)} .st.repaired::before{background:var(--rep)}
+.st.insufficient{color:var(--warn)} .st.insufficient::before{background:transparent;border:2px solid var(--warn)}
+.st.contradicted,.st.repair_failed{color:var(--bad)} .st.contradicted::before,.st.repair_failed::before{border-radius:2px;background:var(--bad)}
+.st.unverified{color:var(--idle)} .st.unverified::before{background:transparent;border:2px dashed var(--idle)}
+ul.claims{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+ul.claims>li{border-bottom:1px solid var(--line)}
+ul.claims details>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(150px,190px) 1fr;gap:6px 18px;padding:12px 4px;align-items:baseline}
+ul.claims details>summary::-webkit-details-marker{display:none}
+ul.claims details>summary:hover{background:var(--accent-soft)}
+.claimtxt{min-width:0;overflow-wrap:anywhere}
+.cbody{padding:2px 4px 16px 4px;margin-left:208px;font-size:14px;color:var(--ink-2);max-width:60ch}
+.cbody p{margin:6px 0}
+.excluded{font-size:12px;color:var(--muted)}
+@media (max-width:640px){ul.claims details>summary{grid-template-columns:1fr}.cbody{margin-left:4px}}
+
+/* timeline */
+ol.timeline{list-style:none;margin:0;padding:0;position:relative}
+ol.timeline::before{content:"";position:absolute;left:6px;top:14px;bottom:14px;width:1px;background:var(--line-2)}
+ol.timeline>li{position:relative;padding-left:30px}
+ol.timeline .mk{position:absolute;left:0;top:14px;width:13px;height:13px;border-radius:50%;background:var(--bg);border:2px solid var(--line-2)}
+li[data-status=done] .mk{background:var(--accent);border-color:var(--accent)}
+li[data-status=running] .mk{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+li[data-status=error] .mk{background:var(--bad);border-color:var(--bad)}
+li[data-status=skipped] .mk{border-style:dashed}
+ol.timeline details>summary{list-style:none;cursor:pointer;display:flex;gap:14px;align-items:baseline;padding:9px 0}
+ol.timeline details>summary::-webkit-details-marker{display:none}
+.sname{font-weight:600;font-size:15px;min-width:150px}
+.ssum{color:var(--muted);font-size:14px;flex:1;min-width:0;overflow-wrap:anywhere}
+.sdur{color:var(--muted);font-family:var(--mono);font-size:12.5px}
+li[data-status=pending] .sname{color:var(--muted);font-weight:500}
+.sbody{padding:2px 0 18px;font-size:14px;color:var(--ink-2)}
+.passage{border-left:2px solid var(--line-2);padding:1px 0 1px 12px;margin:10px 0}
+.passage .t{font-weight:600;color:var(--ink)} .passage a{color:var(--accent)} .passage .meta{font-size:12.5px;color:var(--muted)}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:9px 12px;margin:8px 0}
+.hint{font-size:12.5px;color:var(--muted)}
+@media (max-width:640px){ol.timeline details>summary{flex-wrap:wrap}.sname{min-width:0}}
+
+/* tables */
+.tscroll{overflow-x:auto;margin:6px 0}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:7px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:500;color:var(--muted);font-size:12px;white-space:nowrap}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+tr.chosen td{background:var(--accent-soft)}
+details.trace>summary,details.about>summary{cursor:pointer;font:600 19px/1.3 var(--serif);list-style:none}
+details.trace>summary::-webkit-details-marker,details.about>summary::-webkit-details-marker{display:none}
+details.trace>summary::after,details.about>summary::after{content:" +";color:var(--muted);font-family:var(--sans);font-weight:400}
+details.trace[open]>summary::after,details.about[open]>summary::after{content:" \2212"}
+.tracebody{margin-top:14px}
+.meter{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin:8px 0}
+.meter>i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}.meter.over>i{background:var(--bad)}
+details.rd{border-top:1px solid var(--line)}
+details.rd>summary{cursor:pointer;padding:9px 0;font-weight:500;font-size:14px}
+details.rd .rb{padding:0 0 14px}
+
+/* compare */
+.cmpbtns{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 4px}
+button.btn{background:var(--surface);color:var(--ink);border:1px solid var(--line-2);border-radius:6px;padding:8px 14px;font:500 14px var(--sans);cursor:pointer}
+button.btn:disabled{opacity:.5;cursor:not-allowed}
+.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px 32px;margin-top:18px}
+.chart h4{font:600 13px var(--sans);margin:0 0 2px;color:var(--ink)} .chart .sub{font-size:12px;color:var(--muted);margin:0 0 8px}
+.brow{display:grid;grid-template-columns:minmax(90px,38%) 1fr;gap:8px;align-items:center;margin:6px 0;font-size:12.5px}
+.brow .bl{color:var(--ink-2);overflow-wrap:anywhere}
+.btrack{position:relative;height:9px;border-left:1px solid var(--line-2);background:repeating-linear-gradient(90deg,transparent 0 24.5%,var(--line) 24.5% 25%);display:flex;align-items:center}
+.btrack i{display:block;height:9px;background:var(--accent);border-radius:0 3px 3px 0;min-width:2px}
+.btrack span{font-family:var(--mono);font-size:12px;margin-left:7px;white-space:nowrap;color:var(--ink)}
+.empty{color:var(--muted);font-size:14px}
+footer{margin-top:60px;font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="brand"><h1>Adaptive RAG Lab</h1>
+    <div class="tools"><button class="linkbtn" id="themeBtn" type="button" aria-label="Switch between light and dark theme">Dark theme</button></div></div>
+  <p class="lede">Ask a question. The system retrieves sources, drafts an answer, splits it into claims, spends a limited number of verification calls on the claims a policy chooses, and rebuilds the answer from what the evidence supports.</p>
+</div></header>
+
+<main class="wrap">
+  <form class="ask" id="ask" autocomplete="off">
+    <div class="qwrap">
+      <textarea id="q" rows="1" placeholder="Ask a question…" aria-label="Question">Who created VIT University and when?</textarea>
+      <button class="ask-btn" id="run" type="submit">Ask</button>
+    </div>
+    <p class="examples">Try: <button type="button" data-q="Who wrote Frankenstein and when was it first published?">Frankenstein</button><button type="button" data-q="What caused the fall of the Western Roman Empire?">Western Roman Empire</button><button type="button" data-q="Who founded VIT and when was it established?">VIT founding</button></p>
+    <div class="controls">
+      <div class="field"><label for="source">Source</label><select id="source"></select></div>
+      <div class="field"><span class="lab">Verification budget <span class="mono">(model calls)</span></span>
+        <div class="seg" id="budgetSeg" role="group" aria-label="Verification budget"><button type="button" data-b="2" aria-pressed="false">Low · 2</button><button type="button" data-b="4" aria-pressed="true">Medium · 4</button><button type="button" data-b="8" aria-pressed="false">High · 8</button></div></div>
+    </div>
+    <details class="adv"><summary>Advanced settings</summary>
+      <div class="advgrid">
+        <div class="field"><label for="policy">Selection policy</label><select id="policy"></select></div>
+        <div class="field"><label for="verifier">Verifier</label><select id="verifier"></select></div>
+        <div class="field"><label for="rule">Final-answer rule</label><select id="rule"></select></div>
+        <div class="field"><label for="customBudget">Custom budget (1 to 16 calls)</label><input type="number" id="customBudget" min="1" max="16" placeholder="use the preset"></div>
+        <p class="advnote" id="policyNote"></p>
+      </div>
+    </details>
+    <p class="svc" id="svc"></p>
+  </form>
+
+  <div id="statusbar" hidden role="status" aria-live="polite"><div class="txt"><span class="spin" aria-hidden="true"></span><span id="statustxt"></span></div><button type="button" class="linkbtn" id="stop">Stop</button></div>
+  <div id="notices"></div>
+  <section class="outcome" id="outcome" hidden aria-label="Answer"></section>
+
+  <section id="tlsec" hidden aria-label="Execution timeline"><h2>How the answer was produced</h2><ol class="timeline" id="timeline"></ol></section>
+
+  <section id="tracesec" hidden>
+    <details class="trace" id="trace"><summary>Research trace</summary>
+      <div class="tracebody" id="tracebody"></div></details>
+  </section>
+
+  <section id="compare" aria-label="Comparison"><h2>Compare budgets and policies</h2>
+    <p class="hint" style="max-width:68ch">Each comparison runs the real pipeline several times on the same retrieval and draft, so differences come from the budget or the policy. <b>Claim retention</b> is claims in the final answer divided by claims in the draft: a coverage proxy, not factuality. Whether an answer is supported or correct needs human annotation, which has not been done.</p>
+    <div class="cmpbtns"><button type="button" class="btn" id="cmpBudget">Compare budgets (2, 4, 8)</button><button type="button" class="btn" id="cmpPolicy">Compare policies</button><button type="button" class="linkbtn" id="clearCmp">Clear</button></div>
+    <div id="cmpout"><p class="empty">Run a question first, then compare.</p></div>
+  </section>
+
+  <footer><details class="about"><summary style="font:500 14px var(--sans)">What is real in this demo, and what is not</summary>
+    <ul class="plain" style="margin-top:10px;max-width:72ch">
+      <li><b>Real:</b> retrieval (live Wikipedia or local Qdrant), the draft (Llama-3.2-1B), the rule-based decomposition and CTS, the policy's scores, the verifier's verdicts, the 1B repairer, re-verification and the controller's budget accounting. Events are streamed as they happen.</li>
+      <li><b>LinUCB is frozen.</b> It was trained offline and does not learn during a run. The reward shown is computed from the verifier's verdict and is not used to update anything. CTS ranking is contextual scoring without learning; LinUCB is the contextual bandit.</li>
+      <li><b>Verdicts are not ground truth.</b> In our checks the 1B assessor was near chance and the NLI verifier caught about half of known-hallucinated claims. “Insufficient” means the retrieved passages neither support nor contradict the claim.</li>
+      <li><b>Not implemented here:</b> Thompson Sampling, oracle or simulated feedback (offline experiments only), the D2R-RAG baseline, and any factuality or support metric that needs human annotation.</li>
+    </ul></details></footer>
+</main>
+
+<script>
+"use strict";
+const $ = (s, r=document) => r.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fx = (v, n=3) => v === null || v === undefined ? "–" : (typeof v === "number" ? v.toFixed(n) : esc(v));
+const dur = s => { if(s == null) return ""; if(s < 1) return s.toFixed(2)+" s"; if(s < 59.95) return s.toFixed(1)+" s"; const t = Math.round(s); return Math.floor(t/60)+" min "+(t%60)+" s"; };
+const STATUS = {supported:"Verified", repaired:"Repaired and re-verified", insufficient:"Insufficient evidence", contradicted:"Contradicted", repair_failed:"Contradicted, repair failed", unverified:"Not checked"};
+let CFG = null, budget = 4, abortCtl = null, running = false, runs = [], S = null, timer = null, raf = 0;
+const openSteps = new Set();
+
+function newState(){ S = {cfg:null, stages:{}, claims:{}, order:[], scores:{}, selected:{}, verdict:{}, rounds:[], cur:null, verifies:[], feedbacks:[], repairs:[], calls:0,
+  policyInfo:null, result:null, insufficient:null, error:null, started:Date.now(), activity:"Starting…"}; }
+
+// ---------- theme (per-viewer convenience; storage may be unavailable)
+function setTheme(t){ if(t==="dark") document.documentElement.dataset.theme="dark"; else delete document.documentElement.dataset.theme; $("#themeBtn").textContent = t==="dark" ? "Light theme" : "Dark theme"; try{ localStorage.setItem("arl-theme", t); }catch(e){} }
+$("#themeBtn").addEventListener("click", ()=> setTheme(document.documentElement.dataset.theme==="dark" ? "light" : "dark"));
+try{ if(localStorage.getItem("arl-theme")==="dark") setTheme("dark"); }catch(e){}
+
+// ---------- setup
+async function init(){
+  try {
+    const [h, c] = await Promise.all([fetch("/api/health").then(r=>r.json()), fetch("/api/config").then(r=>r.json())]);
+    CFG = c;
+    const names = {llama_server:"language model", qdrant:"Qdrant", wikipedia_api:"Wikipedia", nli_model:"NLI model", linucb_checkpoint:"LinUCB checkpoint"};
+    $("#svc").innerHTML = Object.entries(h).map(([k,v])=>`<span title="${esc(v.needed_for)}"><span class="dot ${v.ok?"ok":"bad"}"></span><b>${esc(names[k]||k)}</b>${v.ok?"":" unavailable"}</span>`).join(" &nbsp; ");
+    fill("#source", c.sources.map(s=>[s.id, s.label + (s.available?"":" (unavailable)"), s.available]));
+    fill("#policy", c.policies.map(p=>[p.id, p.label, p.available]));
+    fill("#verifier", c.verifiers.map(v=>[v.id, v.label + (v.available?"":" (unavailable)"), v.available]));
+    fill("#rule", Object.entries(c.answer_rules).map(([k,v])=>[k, v, true]));
+    $("#rule").value = "S0"; policyNote();
+  } catch(e){ $("#notices").innerHTML = `<div class="notice bad">Cannot reach the backend: ${esc(e)}</div>`; }
+}
+function fill(sel, items){ const el=$(sel); el.innerHTML = items.map(([v,l,ok])=>`<option value="${esc(v)}" ${ok?"":"disabled"}>${esc(l)}</option>`).join(""); const first = items.find(i=>i[2]); if(first) el.value = first[0]; }
+function policyNote(){ const p = CFG && CFG.policies.find(x=>x.id===$("#policy").value); $("#policyNote").textContent = p ? p.note : ""; }
+$("#policy").addEventListener("change", policyNote);
+document.querySelectorAll(".examples button").forEach(b=>b.addEventListener("click", ()=>{ $("#q").value = b.dataset.q; autosize(); $("#q").focus(); }));
+$("#budgetSeg").addEventListener("click", e=>{ const b = e.target.closest("button"); if(!b) return; document.querySelectorAll("#budgetSeg button").forEach(x=>x.setAttribute("aria-pressed","false")); b.setAttribute("aria-pressed","true"); budget = parseInt(b.dataset.b); $("#customBudget").value = ""; });
+$("#customBudget").addEventListener("input", ()=>{ const v = parseInt($("#customBudget").value); if(v>=1 && v<=16){ budget = v; document.querySelectorAll("#budgetSeg button").forEach(x=>x.setAttribute("aria-pressed","false")); } });
+function autosize(){ const q=$("#q"); q.style.height="auto"; q.style.height=Math.min(140, q.scrollHeight)+"px"; }
+$("#q").addEventListener("input", autosize); $("#q").addEventListener("keydown", e=>{ if(e.key==="Enter" && !e.shiftKey){ e.preventDefault(); $("#ask").requestSubmit(); } });
+
+// ---------- helpers for rendering
+function schedule(){ if(!raf) raf = requestAnimationFrame(()=>{ raf = 0; renderAll(); }); }
+function passageHtml(p,i){ const url = p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener noreferrer">${esc(p.title)}</a>` : esc(p.title);
+  return `<div class="passage"><div class="t">[${i+1}] ${url}</div><div class="meta">score ${fx(p.score)} · ${esc(p.score_kind||"n/a")} · link: ${esc(p.url_provenance)}</div><div>${esc(p.text)}</div></div>`; }
+function repairHtml(r){ return `<div class="box"><span class="mono">${esc(r.claim_id)}</span> ${r.cached?"(cached)":""}<div><b>Original:</b> ${esc(r.original)}</div><div><b>Revision (${esc(r.repairer)}):</b> ${esc(r.revision)}</div><div class="hint">${esc(r.reason)}</div></div>`; }
+function table(rows, cols){ return `<div class="tscroll"><table><thead><tr>${cols.map(c=>`<th class="${c[2]||""}">${c[0]}</th>`).join("")}</tr></thead><tbody>${rows.map(r=>`<tr>${cols.map(c=>`<td class="${c[2]||""}">${c[1](r)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`; }
+function citeAnswer(text, items){ let h = esc(text); const seen = {}; (items||[]).forEach(it=>{ if(it.title && it.url && !seen[it.title]){ seen[it.title]=1; const tag = esc("["+it.title+"]"); h = h.split(tag).join(`<a href="${esc(it.url)}" target="_blank" rel="noopener noreferrer" title="${esc(it.url_provenance)}">${tag}</a>`); } }); return h; }
+
+// ---------- timeline
+const STEPS = [["retrieval","Retrieval"],["draft","Draft"],["decomposition","Decomposition"],["scoring","Claim priority (CTS)"],["selection","Policy selection"],["verification","Verification"],["repair","Repair"],["answer","Final answer"]];
+function stepSummary(id, st){
+  const d = st.data || {};
+  if(st.status==="pending") return "";
+  if(st.status==="error") return d.error || "failed";
+  switch(id){
+    case "retrieval": { const t = new Set((d.passages||[]).map(p=>p.title)).size; return `${d.n||0} passages from ${t} page${t===1?"":"s"}${d.dropped_by_relevance_gate?`, ${d.dropped_by_relevance_gate} dropped as irrelevant`:""}`; }
+    case "draft": return d.draft_source && !/model/.test(d.draft_source) ? "extractive draft (the model gave fragments)" : `${(d.draft||"").split(/(?<=[.!?])\s+/).filter(Boolean).length} sentences`;
+    case "decomposition": return `${(d.claims||[]).length} claims${(d.off_topic||[]).length?`, ${d.off_topic.length} set aside as off-topic`:""}`;
+    case "scoring": { const c=(d.claims||[]).map(x=>x.cts).filter(x=>x!=null); return c.length?`CTS ${Math.min(...c).toFixed(2)} to ${Math.max(...c).toFixed(2)}`:""; }
+    case "selection": return S.rounds.length ? `${S.rounds.filter(r=>r.round.chosen.action!=="STOP").length} decisions by ${S.cfg?S.cfg.policy:"the policy"}` : "";
+    case "verification": return `${S.verifies.filter(v=>!v.reverification).length} claims checked, ${S.calls} of ${S.cfg?S.cfg.budget:"?"} calls`;
+    case "repair": return st.status==="skipped" ? "not needed" : `${d.repairs||0} attempted, ${d.re_verified_pass||0} re-verified`;
+    case "answer": return S.result ? `${S.result.metrics.claims_retained} claims kept` : "";
+  }
+  return "";
+}
+function stepBody(id, st){
+  const d = st.data || {};
+  if(st.status==="pending") return `<span class="hint">Not reached yet.</span>`;
+  if(st.status==="error") return `<div class="notice bad">${esc(d.error||"failed")}</div>`;
+  switch(id){
+    case "retrieval": { const tr=d.trace; let h = d.reused?`<div class="notice info">Reused from an earlier run of this question and source.</div>`:"";
+      if(d.analysis) h += `<p class="hint">Entity: <b>${esc((d.analysis.entity_phrases||[]).join(", ")||"none found")}</b> · searches: ${(d.analysis.queries||[]).map(q=>`<span class="mono">${esc(q)}</span>`).join(", ")}</p>`;
+      h += (d.passages||[]).map((p,i)=>passageHtml(p,i)).join("");
+      if(tr && tr.dropped_pages && tr.dropped_pages.length) h += `<details style="margin-top:8px"><summary class="hint" style="cursor:pointer">${tr.dropped_pages.length} pages considered and dropped</summary><ul class="plain">${tr.dropped_pages.map(x=>`<li>${esc(x.title)} <span class="hint">· ${esc(x.reason)}</span></li>`).join("")}</ul></details>`;
+      return h; }
+    case "draft": return `${d.reused?`<div class="notice info">Reused draft: identical across compared runs.</div>`:""}<div class="box">${esc(d.draft)}</div><div class="hint">${esc(d.draft_source||"")} · model ${esc(d.model||"?")} · tokens ${d.tokens??"–"}${d.model_calls>1?" · one retry after a fragment":""}</div>`;
+    case "decomposition": return table(d.claims||[], [["Claim",r=>esc(r.claim_id),"mono"],["Atomic claim",r=>esc(r.text)],["Type",r=>esc(r.claim_type)]]) + ((d.off_topic||[]).length?`<h3>Set aside as off-topic (not verified, not cited)</h3><ul class="plain">${d.off_topic.map(o=>`<li>${esc(o.text)} <span class="hint">· ${esc(o.reason)}</span></li>`).join("")}</ul>`:"");
+    case "scoring": return `<p class="hint">CTS is a rule-based priority score (no learning) built from the four components shown.</p>` + table(d.claims||[], [["Claim",r=>esc(r.claim_id),"mono"],["CTS",r=>fx(r.cts),"num"],["Type weight",r=>fx(r.cts_components.type_weight),"num"],["Specificity",r=>fx(r.cts_components.specificity),"num"],["Novelty",r=>fx(r.cts_components.novelty),"num"],["Complexity",r=>fx(r.cts_components.complexity),"num"]]);
+    case "selection": return S.rounds.length ? `<p>${S.rounds.length} policy decisions. Candidate tables, feature vectors and scores for every round are in the Research trace below.</p>` : "Waiting for the first decision…";
+    case "verification": return (S.verifies.length ? S.verifies.map(v=>`<div class="box"><span class="mono">${esc(v.claim_id)}</span> ${v.reverification?"(re-verification) ":""}<b>${esc(v.label)}</b>, confidence ${fx(v.confidence)} · ${v.cached?"cached verdict":"computed"} · ${dur(v.wall_s)}<div class="hint">${esc(v.rationale)}</div></div>`).join("") : "No claim verified yet.")
+      + (S.feedbacks.length ? `<h3>Feedback and reward</h3>` + S.feedbacks.map(f=>`<div class="box"><span class="mono">${esc(f.claim_id)}</span> ${esc(f.action)} · reward ${fx(f.reward)} · policy updated: <b>${f.policy_updated?"yes":"no"}</b><div class="hint">${esc(f.note)}</div></div>`).join("") : "");
+    case "repair": return d.reason ? `<span class="hint">Skipped: ${esc(d.reason)}</span>` : (S.repairs.length ? S.repairs.map(repairHtml).join("") : "No repair yet.");
+    case "answer": return `<div class="hint">${esc(d.rule||"")}</div>`;
+  }
+  return "";
+}
+function renderTimeline(){
+  $("#timeline").innerHTML = STEPS.map(([id,name])=>{ const st = S.stages[id] || {status:"pending"};
+    return `<li data-status="${st.status}"><span class="mk"></span><details data-id="${id}" ${openSteps.has(id)?"open":""}><summary><span class="sname">${name}</span><span class="ssum">${stepSummary(id,st)}</span><span class="sdur">${dur(st.duration_s)}</span></summary><div class="sbody">${stepBody(id,st)}</div></details></li>`; }).join("");
+}
+$("#timeline").addEventListener("toggle", e=>{ const d = e.target; if(d.dataset && d.dataset.id){ d.open ? openSteps.add(d.dataset.id) : openSteps.delete(d.dataset.id); } }, true);
+
+// ---------- outcome
+function claimEvidence(cid){ const v = [...S.verifies].reverse().find(x=>x.claim_id===cid && !x.reverification); return v; }
+function renderOutcome(){
+  const box = $("#outcome");
+  if(S.insufficient){ const e = S.insufficient, tr = e.trace||{}, an = e.analysis||{};
+    box.hidden = false;
+    box.innerHTML = `<div class="panel"><p class="kicker">No answer</p><h2>The sources do not contain enough evidence to answer this.</h2><p>${esc(e.message)}</p>
+      <p class="hint">Entity looked for: <b>${esc((an.entity_phrases||[]).join(", ")||"none recognised")}</b>${(tr.queries||[]).length?` · searches tried: ${tr.queries.map(q=>`<span class="mono">${esc(q)}</span>`).join(", ")}`:""}</p>
+      ${(tr.dropped_pages||[]).length?`<details><summary class="hint" style="cursor:pointer">${tr.dropped_pages.length} pages were considered and rejected</summary><ul class="plain">${tr.dropped_pages.map(x=>`<li>${esc(x.title)} <span class="hint">· ${esc(x.reason)}</span></li>`).join("")}</ul></details>`:""}
+      <p class="hint" style="margin-bottom:0">Nothing was drafted from unrelated text. Try rephrasing, naming the entity in full, or choosing another source.</p></div>`; return; }
+  if(S.error){ box.hidden = false; box.innerHTML = `<div class="panel"><p class="kicker">Run failed</p><h2>The run could not finish.</h2><p>${esc(S.error.message)}</p></div>`; return; }
+  const res = S.result;
+  if(!res){
+    const draft = S.stages.draft && S.stages.draft.status==="done" ? S.stages.draft.data.draft : null;
+    if(!draft){ box.hidden = !running; box.innerHTML = running ? `<p class="kicker">Answer</p><p class="empty">The answer appears here when the run finishes.</p>` : ""; return; }
+    box.hidden = false; box.innerHTML = `<p class="kicker">Draft, not yet verified</p><p class="draftbox">${esc(draft)}</p><p class="hint" style="margin-top:10px">This is the model's first draft. The final answer is rebuilt from the claims that survive verification.</p>`; return; }
+  const m = res.metrics, srcs = (res.sources && res.sources.length) ? res.sources : (()=>{ const seen={}; ((S.stages.retrieval||{}).data||{passages:[]}).passages.forEach(p=>{ seen[p.title]=p.url; }); return Object.entries(seen).map(([title,url])=>({title,url})); })();
+  const nSrc = m.sources_retrieved != null ? m.sources_retrieved : srcs.length;
+  const keptInsuf = m.retained_insufficient || 0;
+  box.hidden = false;
+  box.innerHTML = `<p class="kicker">Answer</p>
+    ${res.answer ? `<p class="answer">${citeAnswer(res.answer, res.answer_items)}</p>` : `<p class="empty">No claim passed the selected rule within this budget, so the answer is empty.</p>`}
+    ${keptInsuf ? `<div class="notice">This answer keeps ${keptInsuf} claim${keptInsuf===1?"":"s"} the evidence could not confirm (marked “Insufficient evidence” below).</div>` : ""}
+    <ul class="summary"><li><b>${nSrc}</b> source${nSrc===1?"":"s"}</li><li><b>${m.claims_checked}</b> of <b>${m.claims_available}</b> claims checked</li><li><b>${m.model_calls_used}</b> of <b>${m.budget_configured}</b> calls used</li><li><b>${dur(m.total_wall_s)}</b></li></ul>
+    ${srcs.length ? `<h3>Sources</h3><ol class="sources">${srcs.map(s=>`<li>${s.url?`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a>`:esc(s.title)}</li>`).join("")}</ol>` : ""}
+    <h3>How each claim was handled</h3>
+    <div class="legend"><span class="st supported">Verified</span><span class="st insufficient">Insufficient evidence</span><span class="st contradicted">Contradicted</span><span class="st repaired">Repaired</span><span class="st unverified">Not checked</span></div>
+    <p class="hint" style="margin:0 0 8px;max-width:68ch">Verified means the verifier judged the retrieved evidence to support the claim. It is a verdict about the sources, not a check of real-world truth.</p>
+    <ul class="claims">${res.ledger.map(l=>{ const ev = claimEvidence(l.claim_id); return `<li><details><summary><span class="st ${l.status}">${STATUS[l.status]||l.status}</span><span class="claimtxt">${esc(l.text)}${l.in_final_answer?"":` <span class="excluded">· not in the answer</span>`}</span></summary>
+      <div class="cbody"><p>${esc(l.explanation)}</p>${ev?`<p>Verifier: <b>${esc(ev.label)}</b>, confidence ${fx(ev.confidence)} (${esc(ev.assessor)}). <span class="hint">${esc(ev.rationale)}</span></p>`:""}${ev&&(ev.supporting_spans||[]).length?ev.supporting_spans.map(s=>`<p class="hint"><b>Evidence span (${esc(s.title||s.evidence_id)}):</b> ${esc(s.text)}</p>`).join(""):""}${l.repair?`<p><b>Repair:</b> ${esc(l.repair.revision)} <span class="hint">(re-verification: ${esc((l.repair.reverification||{}).label||"not attempted")})</span></p>`:""}<p class="hint">CTS ${fx(l.cts)} · ${esc(l.claim_type)}</p></div></details></li>`; }).join("")}</ul>
+    ${(res.off_topic_claims||[]).length ? `<details style="margin-top:12px"><summary class="hint" style="cursor:pointer">${res.off_topic_claims.length} claim${res.off_topic_claims.length===1?"":"s"} set aside as off-topic (not verified, not cited)</summary><ul class="plain">${res.off_topic_claims.map(o=>`<li>${esc(o.text)}</li>`).join("")}</ul></details>` : ""}
+    <p class="hint" style="margin-top:14px;max-width:68ch">Not measured: ${esc((res.not_measured||[]).join("; "))}. Claim retention (${Math.round(100*m.claim_retention)}%) is a coverage proxy, not factuality.</p>`;
+}
+
+// ---------- research trace
+function renderTrace(){
+  const sec = $("#tracesec"); sec.hidden = !S.rounds.length && !S.result; if(sec.hidden) return;
+  const pi = S.policyInfo || {};
+  const rows = S.order.map(id=>{ const c=S.claims[id], sel=S.selected[id]||[], v=S.verdict[id];
+    return `<tr><td class="mono">${esc(id)}</td><td>${esc(c.text)}</td><td class="num">${fx(c.cts)}</td><td class="num">${S.scores[id]!=null?fx(S.scores[id]):"–"}</td><td>${sel.length?sel.map(s=>`R${s.round} ${esc(s.action)}`).join(", "):"not selected"}</td><td>${v?esc(v):"unchecked"}</td></tr>`; }).join("");
+  const scoreHead = S.cfg && S.cfg.policy==="LinUCB" ? "UCB, latest" : S.cfg && S.cfg.policy==="StaticCTSRanked" ? "CTS rank key" : S.cfg && S.cfg.policy==="StaticFIFO" ? "Arrival order" : "Score";
+  const used = S.calls, tot = S.cfg ? S.cfg.budget : 0;
+  const rounds = S.rounds.map((r,ri)=>{ const e = r.round, lin = e.policy==="LinUCB", feats = lin && e.candidates[0] ? Object.keys(e.candidates[0].features) : [];
+    const head = e.chosen.action==="STOP" ? "Stop" : `${esc(e.chosen.action)} ${esc(e.chosen.claim_id)}`;
+    const tbl = e.candidates.length ? `<div class="tscroll"><table><thead><tr><th>Claim</th>${lin?"<th>Action</th>":""}<th class="num">${lin?"UCB":"Score"}</th>${lin?'<th class="num">mean</th><th class="num">bonus</th>':""}<th class="num">CTS</th>${feats.map(f=>`<th class="num">${esc(f.replace(/_/g," "))}</th>`).join("")}</tr></thead><tbody>${e.candidates.map(c=>`<tr class="${c.claim_id===e.chosen.claim_id&&(!c.action||c.action===e.chosen.action)?"chosen":""}"><td class="mono">${esc(c.claim_id)}</td>${lin?`<td>${esc(c.action)}</td>`:""}<td class="num">${c.score!=null?fx(c.score):esc(c.score_kind)}</td>${lin?`<td class="num">${fx(c.mean)}</td><td class="num">${fx(c.bonus)}</td>`:""}<td class="num">${fx(c.cts)}</td>${feats.map(f=>`<td class="num">${fx(c.features[f])}</td>`).join("")}</tr>`).join("")}</tbody></table></div>` : `<p class="hint">No candidate was scored in this round.</p>`;
+    const meta = e.chosen.action==="STOP" ? "" : lin ? `<p class="hint">alpha ${fx(e.alpha,2)} · frozen: ${e.frozen} · tie-break: ${esc(e.tie_break)}</p>` : `<p class="hint">${esc(e.score_kind||"")}${e.tie_break?" · tie-break: "+esc(e.tie_break):""}</p>`;
+    return `<details class="rd" data-r="${ri}" ${openSteps.has("r"+ri)?"open":""}><summary>Round ${e.round} · ${head} <span class="hint">· calls used ${e.model_calls_used}/${tot}</span></summary><div class="rb">${tbl}${meta}<p class="hint">${esc(e.rationale)}</p>${r.after.join("")}</div></details>`; }).join("");
+  $("#tracebody").innerHTML = `<p class="hint" style="max-width:70ch">${esc(pi.note||"")}</p>
+    <h3>Budget</h3><div class="meter ${used>tot?"over":""}"><i style="width:${tot?Math.min(100,100*used/tot):0}%"></i></div><p class="mono" style="margin:0">${used} of ${tot} model calls used. <span class="hint" style="font-family:var(--sans)">Enforced by the controller's budget tracker.</span></p>
+    <h3>Claim selection</h3>${S.order.length ? `<div class="tscroll"><table><thead><tr><th>Claim</th><th>Text</th><th class="num">CTS</th><th class="num">${scoreHead}</th><th>Selected</th><th>Verdict</th></tr></thead><tbody>${rows}</tbody></table></div>` : `<p class="hint">Claims appear once the draft is decomposed.</p>`}
+    <h3>Rounds, in order</h3>${rounds || `<p class="hint">No decision yet.</p>`}`;
+}
+$("#tracebody").addEventListener("toggle", e=>{ const d=e.target; if(d.dataset && d.dataset.r!==undefined){ d.open ? openSteps.add("r"+d.dataset.r) : openSteps.delete("r"+d.dataset.r); } }, true);
+
+// ---------- comparison
+function barChart(title, sub, rows, fmt, maxv){
+  const mx = maxv || Math.max(...rows.map(r=>r.v), 1e-9);
+  return `<div class="chart"><h4>${esc(title)}</h4><p class="sub">${esc(sub)}</p>${rows.map(r=>`<div class="brow" title="${esc(r.label)}: ${esc(fmt(r.v))}"><div class="bl">${esc(r.label)}</div><div class="btrack"><i style="width:${Math.max(0.5,100*r.v/mx)}%"></i><span>${esc(fmt(r.v))}</span></div></div>`).join("")}</div>`;
+}
+function renderCompare(){
+  const out = $("#cmpout");
+  if(!runs.length){ out.innerHTML = `<p class="empty">Run a question first, then compare.</p>`; return; }
+  const lab = (r,i)=>`${r.res.config.policy}, budget ${r.res.config.budget}`;
+  const same = new Set(runs.map(r=>r.h)).size === 1;
+  const rows = runs.map(r=>({label:lab(r), m:r.res.metrics, r}));
+  const hasLat = rows.some(x=>x.m.verification_recorded_latency_s>0);
+  out.innerHTML = `${same?"":`<div class="notice">These runs did not share one draft (different question, source or a fresh retrieval), so differences may come from the draft.</div>`}
+    <div class="charts">
+      ${barChart("Model calls used","of the configured budget", rows.map(x=>({label:x.label,v:x.m.model_calls_used})), v=>String(v), Math.max(8,...rows.map(x=>x.m.budget_configured)))}
+      ${barChart("Verification latency","recorded per call, seconds", rows.map(x=>({label:x.label,v:x.m.verification_recorded_latency_s||0})), v=>v.toFixed(1)+" s")}
+      ${barChart("Claim retention","claims in the answer ÷ claims in the draft; a coverage proxy, not factuality", rows.map(x=>({label:x.label,v:100*x.m.claim_retention})), v=>Math.round(v)+"%", 100)}
+    </div>
+    <details style="margin-top:18px"><summary class="hint" style="cursor:pointer">Table view</summary>${table(rows, [["Run",x=>esc(x.label)],["Calls used / budget",x=>`${x.m.model_calls_used} / ${x.m.budget_configured}`,"num"],["Claims checked / available",x=>`${x.m.claims_checked} / ${x.m.claims_available}`,"num"],["Retained",x=>x.m.claims_retained,"num"],["Retention",x=>Math.round(100*x.m.claim_retention)+"%","num"],["Unverified",x=>x.m.unverified_claims,"num"],["Repairs (re-verified)",x=>`${x.m.repairs_attempted} (${x.m.repairs_reverified_pass})`,"num"],["Insufficient kept",x=>x.m.retained_insufficient,"num"],["Lexically unsupported kept (proxy)",x=>x.m.retained_lexically_unsupported,"num"],["Tokens",x=>x.m.verification_tokens,"num"],["Recorded latency s",x=>fx(x.m.verification_recorded_latency_s,1),"num"],["Wall s",x=>fx(x.m.total_wall_s,1),"num"]])}</details>`;
+}
+
+// ---------- events
+function renderAll(){
+  const bar = $("#statusbar"); bar.hidden = !running;
+  if(running){ const t = Math.round((Date.now()-S.started)/1000); $("#statustxt").textContent = `${S.activity} · ${Math.floor(t/60)}:${String(t%60).padStart(2,"0")}`; }
+  renderOutcome(); $("#tlsec").hidden = !Object.keys(S.stages).length; renderTimeline(); renderTrace();
+}
+function attach(html){ if(S.cur){ S.cur.after.push(html); } }
+function onEvent(ev){
+  switch(ev.type){
+    case "start": S.cfg = ev.config; S.policyInfo = ev.policy_info; break;
+    case "stage": S.stages[ev.stage] = {status:ev.status, duration_s:ev.duration_s, data:ev.data};
+      if(ev.status==="running") S.activity = (STEPS.find(s=>s[0]===ev.stage)||[0,"Working"])[1] + "…";
+      if(ev.stage==="decomposition" && ev.status==="done"){ (ev.data.claims||[]).forEach(c=>{ S.claims[c.claim_id]={text:c.text, cts:null}; if(!S.order.includes(c.claim_id)) S.order.push(c.claim_id); }); }
+      if(ev.stage==="scoring" && ev.status==="done"){ (ev.data.claims||[]).forEach(c=>{ if(S.claims[c.claim_id]) S.claims[c.claim_id].cts=c.cts; }); }
+      break;
+    case "budget": S.calls = ev.model_calls_used; break;
+    case "round": { const r = {round:ev, after:[]}; S.rounds.push(r); S.cur = r; const seen = {}; ev.candidates.forEach(c=>{ if(c.score!=null && (seen[c.claim_id]===undefined || c.score>seen[c.claim_id])) seen[c.claim_id]=c.score; }); Object.assign(S.scores, seen);
+      if(ev.chosen.claim_id) (S.selected[ev.chosen.claim_id] ||= []).push({round:ev.round, action:ev.chosen.action});
+      S.activity = ev.chosen.action==="STOP" ? "Finishing selection…" : `Policy chose ${ev.chosen.action.toLowerCase()} for ${ev.chosen.claim_id}`; break; }
+    case "verify": if(ev.phase==="done"){ S.verifies.push(ev); if(!ev.is_error) S.verdict[ev.claim_id]=ev.label;
+        attach(`<div class="box">${ev.reverification?"Re-verification":"Verification"} of <span class="mono">${esc(ev.claim_id)}</span>: <b>${esc(ev.label)}</b>, confidence ${fx(ev.confidence)} · ${esc(ev.assessor)} · ${ev.cached?"cached verdict":"computed"} · ${dur(ev.wall_s)} · calls ${ev.model_calls??"–"} · ${ev.tokens??"–"} ${esc(ev.token_kind)}<div class="hint">${esc(ev.rationale)}</div>${(ev.supporting_spans||[]).map(s=>`<div class="hint"><b>Evidence span (${esc(s.title||s.evidence_id)}):</b> ${esc(s.text)}</div>`).join("")}</div>`); }
+      else S.activity = `Verifying ${ev.claim_id} against the evidence…`; break;
+    case "repair": if(ev.phase==="done"){ S.repairs.push(ev); attach(repairHtml(ev)); } else S.activity = `Repairing ${ev.claim_id}…`; break;
+    case "retrieve": attach(`<div class="box">Retrieval for <span class="mono">${esc(ev.claim_id)}</span>: ${ev.n} passages in ${dur(ev.wall_s)}</div>`); break;
+    case "feedback": S.feedbacks.push(ev); attach(`<div class="box">Feedback: reward ${fx(ev.reward)} · policy updated: <b>${ev.policy_updated?"yes":"no"}</b><div class="hint">${esc(ev.note)}</div></div>`); break;
+    case "budget_check": S.calls = ev.model_calls_used; break;
+    case "result": S.result = ev.result; { const h = hash(ev.result.draft); runs.push({res:ev.result, h}); renderCompare(); } break;
+    case "insufficient_evidence": S.insufficient = ev; break;
+    case "error": S.error = ev; break;
+    case "cancelled": S.activity = "Stopped."; break;
+  }
+  schedule();
+}
+function hash(s){ let h=0; for(let i=0;i<s.length;i++) h=(h*31+s.charCodeAt(i))|0; return (h>>>0).toString(16); }
+
+// ---------- running
+function setRunning(on){ running = on; ["run","cmpBudget","cmpPolicy"].forEach(id=>$("#"+id).disabled = on); clearInterval(timer); if(on) timer = setInterval(schedule, 1000); schedule(); }
+async function runOnce(cfg){
+  newState(); openSteps.clear(); $("#notices").innerHTML = ""; schedule();
+  abortCtl = new AbortController();
+  const resp = await fetch("/api/run", {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(cfg), signal:abortCtl.signal});
+  if(!resp.ok){ const j = await resp.json().catch(()=>({error:resp.statusText})); throw new Error(j.error||resp.statusText); }
+  const reader = resp.body.getReader(), dec = new TextDecoder(); let buf = "", ok = false;
+  while(true){ const {value, done} = await reader.read(); if(done) break; buf += dec.decode(value, {stream:true}); let i; while((i = buf.indexOf("\n\n")) >= 0){ const chunk = buf.slice(0,i); buf = buf.slice(i+2); const line = chunk.split("\n").find(l=>l.startsWith("data: ")); if(line){ const ev = JSON.parse(line.slice(6)); if(ev.type==="result") ok = true; onEvent(ev); } } }
+  return ok;
+}
+function baseCfg(){ return {question:$("#q").value, source:$("#source").value, budget, policy:$("#policy").value, verifier:$("#verifier").value, answer_rule:$("#rule").value, seed:0, reuse_prep:true}; }
+async function go(list){ setRunning(true); try{ for(let i=0;i<list.length;i++){ const ok = await runOnce(list[i]); if(!ok) break; } } catch(e){ if(e.name!=="AbortError") $("#notices").innerHTML = `<div class="notice bad">${esc(e.message||e)}</div>`; else if(S) S.activity="Stopped."; } finally { setRunning(false); abortCtl=null; } }
+$("#ask").addEventListener("submit", e=>{ e.preventDefault(); if(!running && $("#q").value.trim()) go([baseCfg()]); });
+$("#cmpBudget").addEventListener("click", ()=>{ if($("#q").value.trim()) go([2,4,8].map(b=>({...baseCfg(), budget:b}))); });
+$("#cmpPolicy").addEventListener("click", ()=>{ if($("#q").value.trim()) go(CFG.policies.filter(p=>p.available).map(p=>({...baseCfg(), policy:p.id}))); });
+$("#stop").addEventListener("click", ()=>{ if(abortCtl) abortCtl.abort(); });
+$("#clearCmp").addEventListener("click", ()=>{ runs=[]; renderCompare(); });
+
+// ---------- replay of a saved transcript (real recorded events)
+async function replay(name){
+  newState(); renderAll();
+  const text = await fetch("/api/transcript?name="+encodeURIComponent(name)).then(r=>{ if(!r.ok) throw new Error("transcript not found"); return r.text(); });
+  $("#notices").innerHTML = `<div class="notice info">Replaying a saved transcript of a real run (<span class="mono">${esc(name)}</span>). Every event was recorded from the backend; nothing is re-executed.</div>`;
+  text.split(/\r?\n/).filter(Boolean).forEach(l=>{ const ev = JSON.parse(l); if(ev.type==="start" && ev.config){ $("#q").value = ev.config.question; autosize(); } onEvent(ev); });
+}
+newState(); autosize(); renderCompare();
+init().then(()=>{ const rp = new URLSearchParams(location.search).get("replay"); if(rp) replay(rp).catch(e=>{ $("#notices").innerHTML = `<div class="notice bad">${esc(e.message)}</div>`; }); });
+</script>
+</body>
+</html>

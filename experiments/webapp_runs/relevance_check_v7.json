@@ -1,0 +1,591 @@
+[
+ {
+  "question": "Who founded VIT and when was it established?",
+  "source": "wikipedia",
+  "analysis": {
+   "entity_phrases": [
+    "VIT"
+   ],
+   "entity_tokens": [
+    "vit"
+   ],
+   "intent_tokens": [
+    "establish",
+    "found"
+   ],
+   "queries": [
+    "VIT",
+    "founded VIT established"
+   ]
+  },
+  "trace": {
+   "query": "Who founded VIT and when was it established?",
+   "queries": [
+    "VIT",
+    "founded VIT established"
+   ],
+   "hits": {
+    "VIT": [
+     "Vit",
+     "VIT",
+     "Vision transformer",
+     "Vít",
+     "Vellore Institute of Technology",
+     "Balut (food)",
+     "Vít Krejčí",
+     "De Vit"
+    ],
+    "founded VIT established": [
+     "Vellore Institute of Technology",
+     "Forza Italia (1994)",
+     "VIT Bhopal University",
+     "Riviera (festival)",
+     "Vitamin",
+     "Pythagoras",
+     "VIT High School",
+     "VIT, C.A."
+    ]
+   },
+   "pages_considered": [
+    "Vit",
+    "Vellore Institute of Technology",
+    "VIT",
+    "Vision transformer",
+    "Vít",
+    "Forza Italia (1994)",
+    "Balut (food)",
+    "VIT Bhopal University",
+    "Vít Krejčí",
+    "De Vit"
+   ],
+   "dropped_pages": [
+    {
+     "title": "Vit",
+     "reason": "disambiguation page"
+    },
+    {
+     "title": "VIT",
+     "reason": "disambiguation page"
+    },
+    {
+     "title": "Forza Italia (1994)",
+     "reason": "does not mention VIT"
+    },
+    {
+     "title": "Balut (food)",
+     "reason": "does not mention VIT"
+    },
+    {
+     "title": "Vít Krejčí",
+     "reason": "does not mention VIT"
+    },
+    {
+     "title": "Vision transformer",
+     "reason": "title names a different entity than the question (title match 0.00)"
+    },
+    {
+     "title": "Vít",
+     "reason": "title names a different entity than the question (title match 0.00)"
+    },
+    {
+     "title": "VIT Bhopal University",
+     "reason": "title names a different entity than the question (title match 0.33)"
+    },
+    {
+     "title": "De Vit",
+     "reason": "title names a different entity than the question (title match 0.50)"
+    }
+   ],
+   "kept_pages": [
+    "Vellore Institute of Technology"
+   ],
+   "full_text_pages": [
+    "Vellore Institute of Technology"
+   ],
+   "entity_phrases": [
+    "VIT"
+   ],
+   "entity_tokens": [
+    "vit"
+   ],
+   "page_scores": {
+    "Vellore Institute of Technology": 0.82
+   },
+   "n_passages": 1
+  },
+  "passages": [
+   {
+    "title": "Vellore Institute of Technology",
+    "url": "https://en.wikipedia.org/wiki/Vellore_Institute_of_Technology",
+    "score": 1.0,
+    "section": "body",
+    "text": "Vellore Institute of Technology (VIT) is a private deemed university in Vellore, Tamil Nadu, India. The institution offers undergraduate and postgraduate programmes. It has campuses in Vellore and Chennai and three sister universities as di"
+   }
+  ],
+  "draft": "G. Viswanathan 1984",
+  "outcome": "answered",
+  "claims_kept": [
+   "G. Viswanathan 1984"
+  ],
+  "claims_off_topic": [],
+  "seconds": 22.8
+ },
+ {
+  "question": "Who wrote Frankenstein and when was it first published?",
+  "source": "wikipedia",
+  "analysis": {
+   "entity_phrases": [
+    "Frankenstein"
+   ],
+   "entity_tokens": [
+    "frankenstein"
+   ],
+   "intent_tokens": [
+    "first",
+    "publish",
+    "wrote"
+   ],
+   "queries": [
+    "Frankenstein",
+    "wrote Frankenstein first published"
+   ]
+  },
+  "trace": {
+   "query": "Who wrote Frankenstein and when was it first published?",
+   "queries": [
+    "Frankenstein",
+    "wrote Frankenstein first published"
+   ],
+   "hits": {
+    "Frankenstein": [
+     "Frankenstein",
+     "Frankenstein (2025 film)",
+     "Frankenstein's monster",
+     "Young Frankenstein",
+     "Frankenstein (1931 film)",
+     "Victor Frankenstein",
+     "Bride of Frankenstein",
+     "Frankenstein (disambiguation)"
+    ],
+    "wrote Frankenstein first published": [
+     "Frankenstein (1931 film)",
+     "Frankenstein (1910 film)",
+     "The Man Who Wrote Frankenstein",
+     "Victor Frankenstein",
+     "Frankenstein's monster",
+     "Young Frankenstein",
+     "Frankenstein",
+     "Mary Shelley"
+    ]
+   },
+   "pages_considered": [
+    "Frankenstein",
+    "Frankenstein (1931 film)",
+    "Frankenstein (2025 film)",
+    "Frankenstein's monster",
+    "Young Frankenstein",
+    "Victor Frankenstein",
+    "Frankenstein (1910 film)",
+    "The Man Who Wrote Frankenstein",
+    "Bride of Frankenstein",
+    "Frankenstein (disambiguation)"
+   ],
+   "dropped_pages": [
+    {
+     "title": "Frankenstein (disambiguation)",
+     "reason": "disambiguation page"
+    },
+    {
+     "title": "Frankenstein (1931 film)",
+     "reason": "title names a different entity than the question (title match 0.33)"
+    },
+    {
+     "title": "Frankenstein (2025 film)",
+     "reason": "title names a different entity than the question (title match 0.33)"
+    },
+    {
+     "title": "Frankenstein's monster",
+     "reason": "title names a different entity than the question (title match 0.00)"
+    },
+    {
+     "title": "Young Frankenstein",
+     "reason": "title names a different entity than the question (title match 0.50)"
+    },
+    {
+     "title": "Victor Frankenstein",
+     "reason": "title names a different entity than the question (title match 0.50)"
+    },
+    {
+     "title": "Frankenstein (1910 film)",
+     "reason": "title names a different entity than the question (title match 0.33)"
+    },
+    {
+     "title": "The Man Who Wrote Frankenstein",
+     "reason": "title names a different entity than the question (title match 0.67)"
+    },
+    {
+     "title": "Bride of Frankenstein",
+     "reason": "title names a different entity than the question (title match 0.50)"
+    }
+   ],
+   "kept_pages": [
+    "Frankenstein"
+   ],
+   "full_text_pages": [
+    "Frankenstein"
+   ],
+   "entity_phrases": [
+    "Frankenstein"
+   ],
+   "entity_tokens": [
+    "frankenstein"
+   ],
+   "page_scores": {
+    "Frankenstein": 1.0
+   },
+   "n_passages": 4
+  },
+  "passages": [
+   {
+    "title": "Frankenstein",
+    "url": "https://en.wikipedia.org/wiki/Frankenstein",
+    "score": 1.0,
+    "section": "lead",
+    "text": "Frankenstein; or, The Modern Prometheus is an 1818 Gothic novel written by English author Mary Shelley. It tells the story of Victor Frankenstein, a young scientist who creates a sapient creature from different body parts in an unorthodox s"
+   },
+   {
+    "title": "Frankenstein",
+    "url": "https://en.wikipedia.org/wiki/Frankenstein",
+    "score": 1.0,
+    "section": "lead",
+    "text": "She then journeyed to the region of Geneva, Switzerland, where much of the story takes place. Galvanism and occult ideas were topics of conversation for her companions, particularly for her lover and future husband, Percy Bysshe Shelley. In"
+   },
+   {
+    "title": "Frankenstein",
+    "url": "https://en.wikipedia.org/wiki/Frankenstein",
+    "score": 1.0,
+    "section": "body",
+    "text": "Mary Shelley began writing what she assumed would be a short story, but with Percy Shelley's encouragement, she expanded the tale into a fully-fledged novel. She later described that summer in Switzerland as the moment \"when I first stepped"
+   },
+   {
+    "title": "Frankenstein",
+    "url": "https://en.wikipedia.org/wiki/Frankenstein",
+    "score": 1.0,
+    "section": "body",
+    "text": "The group talked about Enlightenment and Counter-Enlightenment ideas as well. Mary Shelley believed the Enlightenment idea that society could progress and grow if political leaders used their powers responsibly; however, she also believed t"
+   }
+  ],
+  "draft": "Mary Shelley wrote Frankenstein. The novel was first published anonymously in London on January 1, 1818.",
+  "outcome": "answered",
+  "claims_kept": [
+   "Mary Shelley wrote Frankenstein.",
+   "The novel was first published anonymously in London on January 1, 1818."
+  ],
+  "claims_off_topic": [],
+  "seconds": 4.5
+ },
+ {
+  "question": "What caused the fall of the Western Roman Empire?",
+  "source": "wikipedia",
+  "analysis": {
+   "entity_phrases": [
+    "Western Roman Empire"
+   ],
+   "entity_tokens": [
+    "western",
+    "roman",
+    "empire"
+   ],
+   "intent_tokens": [
+    "caus",
+    "fall"
+   ],
+   "queries": [
+    "Western Roman Empire",
+    "caused fall Western Roman Empire"
+   ]
+  },
+  "trace": {
+   "query": "What caused the fall of the Western Roman Empire?",
+   "queries": [
+    "Western Roman Empire",
+    "caused fall Western Roman Empire"
+   ],
+   "hits": {
+    "Western Roman Empire": [
+     "Western Roman Empire",
+     "Fall of the Western Roman Empire",
+     "Historiography of the fall of the Western Roman Empire",
+     "Roman emperor",
+     "Legacy of the Roman Empire",
+     "History of the Roman Empire",
+     "Roman Empire",
+     "The History of the Decline and Fall of the Roman Empire"
+    ],
+    "caused fall Western Roman Empire": [
+     "Historiography of the fall of the Western Roman Empire",
+     "Fall of the Western Roman Empire",
+     "The History of the Decline and Fall of the Roman Empire",
+     "Byzantine Empire",
+     "Roman Empire",
+     "Holy Roman Empire",
+     "Western Roman Empire",
+     "Roman lead poisoning theory"
+    ]
+   },
+   "pages_considered": [
+    "Western Roman Empire",
+    "Historiography of the fall of the Western Roman Empire",
+    "Fall of the Western Roman Empire",
+    "The History of the Decline and Fall of the Roman Empire",
+    "Roman emperor",
+    "Roman Empire",
+    "Legacy of the Roman Empire",
+    "History of the Roman Empire",
+    "Byzantine Empire",
+    "Holy Roman Empire"
+   ],
+   "dropped_pages": [
+    {
+     "title": "Roman emperor",
+     "reason": "title names a different entity than the question (title match 0.50)"
+    },
+    {
+     "title": "Legacy of the Roman Empire",
+     "reason": "title names a different entity than the question (title match 0.67)"
+    },
+    {
+     "title": "History of the Roman Empire",
+     "reason": "title names a different entity than the question (title match 0.67)"
+    },
+    {
+     "title": "Byzantine Empire",
+     "reason": "title names a different entity than the question (title match 0.50)"
+    },
+    {
+     "title": "Holy Roman Empire",
+     "reason": "title names a different entity than the question (title match 0.67)"
+    }
+   ],
+   "kept_pages": [
+    "Western Roman Empire",
+    "Fall of the Western Roman Empire",
+    "Historiography of the fall of the Western Roman Empire",
+    "Roman Empire",
+    "The History of the Decline and Fall of the Roman Empire"
+   ],
+   "full_text_pages": [
+    "Western Roman Empire",
+    "Fall of the Western Roman Empire"
+   ],
+   "entity_phrases": [
+    "Western Roman Empire"
+   ],
+   "entity_tokens": [
+    "western",
+    "roman",
+    "empire"
+   ],
+   "page_scores": {
+    "Western Roman Empire": 1.0,
+    "Fall of the Western Roman Empire": 0.82,
+    "Historiography of the fall of the Western Roman Empire": 0.787,
+    "Roman Empire": 0.536,
+    "The History of the Decline and Fall of the Roman Empire": 0.483
+   },
+   "n_passages": 5
+  },
+  "passages": [
+   {
+    "title": "Fall of the Western Roman Empire",
+    "url": "https://en.wikipedia.org/wiki/Fall_of_the_Western_Roman_Empire",
+    "score": 0.946,
+    "section": "lead",
+    "text": "The fall of the Western Roman Empire, also called the fall of the Roman Empire or the fall of Rome, was the loss of central political control in the Western Roman Empire, a process in which the Empire failed to enforce its rule, and its vas"
+   },
+   {
+    "title": "Fall of the Western Roman Empire",
+    "url": "https://en.wikipedia.org/wiki/Fall_of_the_Western_Roman_Empire",
+    "score": 0.946,
+    "section": "lead",
+    "text": "Increasing pressure from invading peoples outside Roman culture also contributed greatly to the collapse. Climatic changes and both endemic and epidemic diseases drove many of these immediate factors. The reasons for the collapse are major "
+   },
+   {
+    "title": "Fall of the Western Roman Empire",
+    "url": "https://en.wikipedia.org/wiki/Fall_of_the_Western_Roman_Empire",
+    "score": 0.946,
+    "section": "body",
+    "text": "Peter Brown has written that \"Gibbon's work formed the peak of a century of scholarship which had been conducted in the belief that the study of the declining Roman Empire was also the study of the origins of modern Europe\". Gibbon was the "
+   },
+   {
+    "title": "Fall of the Western Roman Empire",
+    "url": "https://en.wikipedia.org/wiki/Fall_of_the_Western_Roman_Empire",
+    "score": 0.946,
+    "section": "body",
+    "text": "He began an ongoing controversy about the role of Christianity, but he gave great weight to other causes of internal decline and to attacks from outside the Empire. The story of its ruin is simple and obvious; and, instead of inquiring why "
+   },
+   {
+    "title": "Historiography of the fall of the Western Roman Empire",
+    "url": "https://en.wikipedia.org/wiki/Historiography_of_the_fall_of_the_Western_Roman_Empire",
+    "score": 0.936,
+    "section": "lead",
+    "text": "The causes and mechanisms of the fall of the Western Roman Empire are a historical theme that was introduced by historian Edward Gibbon in his 1776 book The History of the Decline and Fall of the Roman Empire. Though Gibbon was not the firs"
+   }
+  ],
+  "draft": "The fall of the Western Roman Empire was caused by the effectiveness and numbers of the army, the health and numbers of the Roman population, the strength of the economy, the competence of the emperors, the internal struggles for power, and increasing pressure from invading peoples outside Roman culture. The Roman Empire lost the strengths that had allowed it to exercise effective control over its Western provinces; modern historians posit factors including the health and numbers of the Roman population, the strength of the economy, the competence of the emperors, the internal struggles for power, and increasing pressure from invading peoples outside Roman culture. The reasons for the collapse are major subjects of the historiography of the ancient world and they inform much modern discourse on state failure. In 376, a large migration of Goths and other non-Roman people, fleeing from the Huns, entered the Empire. Roman forces were unable to exterminate, expel or subjugate them (as was their normal practice).",
+  "outcome": "answered",
+  "claims_kept": [
+   "The fall of the Western Roman Empire was caused by the effectiveness and numbers of the army, the health and numbers of the Roman population, the strength of the economy, the competence of the emperors, the internal struggles for power, and increasing pressure from invading peoples outside Roman culture.",
+   "modern historians posit factors including the health and numbers of the Roman population, the strength of the economy, the competence of the emperors, the internal struggles for power, and increasing pressure from invading peoples outside Roman culture.",
+   "The reasons for the collapse are major subjects of the historiography of the ancient world and they inform much modern discourse on state failure."
+  ],
+  "claims_off_topic": [
+   "The Roman Empire lost the strengths that had allowed it to exercise effective control over its Western provinces.",
+   "In 376 fleeing from the Huns, entered the Empire.",
+   "In 376 was a large migration of Goths and other non-Roman people.",
+   "Roman forces were unable to exterminate, expel or subjugate them (as was their normal practice)."
+  ],
+  "seconds": 14.5
+ },
+ {
+  "question": "Who created VIT University and when?",
+  "source": "wikipedia",
+  "analysis": {
+   "entity_phrases": [
+    "VIT University"
+   ],
+   "entity_tokens": [
+    "vit",
+    "university"
+   ],
+   "intent_tokens": [
+    "creat"
+   ],
+   "queries": [
+    "VIT University",
+    "created VIT University"
+   ]
+  },
+  "trace": {
+   "query": "Who created VIT University and when?",
+   "queries": [
+    "VIT University",
+    "created VIT University"
+   ],
+   "hits": {
+    "VIT University": [
+     "Vellore Institute of Technology",
+     "VIT-AP University",
+     "VIT Bhopal University",
+     "VIT University (disambiguation)",
+     "VIT",
+     "Anna University",
+     "Riviera (festival)",
+     "D. P. Kothari"
+    ],
+    "created VIT University": [
+     "Balut (food)",
+     "Anna University",
+     "Riviera (festival)",
+     "Vidyalankar Institute of Technology",
+     "Christer Fredriksen",
+     "University of Hradec Králové",
+     "Vitamin",
+     "Vitamin D"
+    ]
+   },
+   "pages_considered": [
+    "Vellore Institute of Technology",
+    "VIT-AP University",
+    "Balut (food)",
+    "Anna University",
+    "VIT Bhopal University",
+    "Riviera (festival)",
+    "VIT University (disambiguation)",
+    "VIT",
+    "D. P. Kothari",
+    "Vidyalankar Institute of Technology"
+   ],
+   "dropped_pages": [
+    {
+     "title": "VIT-AP University",
+     "reason": "does not mention VIT University"
+    },
+    {
+     "title": "Balut (food)",
+     "reason": "does not mention VIT University"
+    },
+    {
+     "title": "Anna University",
+     "reason": "does not mention VIT University"
+    },
+    {
+     "title": "Riviera (festival)",
+     "reason": "does not mention VIT University"
+    },
+    {
+     "title": "VIT University (disambiguation)",
+     "reason": "disambiguation page"
+    },
+    {
+     "title": "VIT",
+     "reason": "disambiguation page"
+    },
+    {
+     "title": "VIT Bhopal University",
+     "reason": "title names a different entity than the question (title match 0.67)"
+    },
+    {
+     "title": "D. P. Kothari",
+     "reason": "title names a different entity than the question (title match 0.00)"
+    }
+   ],
+   "kept_pages": [
+    "Vellore Institute of Technology",
+    "Vidyalankar Institute of Technology"
+   ],
+   "full_text_pages": [
+    "Vellore Institute of Technology",
+    "Vidyalankar Institute of Technology"
+   ],
+   "entity_phrases": [
+    "VIT University"
+   ],
+   "entity_tokens": [
+    "vit",
+    "university"
+   ],
+   "page_scores": {
+    "Vellore Institute of Technology": 1.0,
+    "Vidyalankar Institute of Technology": 0.475
+   },
+   "n_passages": 3
+  },
+  "passages": [
+   {
+    "title": "Vellore Institute of Technology",
+    "url": "https://en.wikipedia.org/wiki/Vellore_Institute_of_Technology",
+    "score": 1.0,
+    "section": "body",
+    "text": "Vellore Institute of Technology (VIT) is a private deemed university in Vellore, Tamil Nadu, India. The institution offers undergraduate and postgraduate programmes. It has campuses in Vellore and Chennai and three sister universities as di"
+   },
+   {
+    "title": "Vidyalankar Institute of Technology",
+    "url": "https://en.wikipedia.org/wiki/Vidyalankar_Institute_of_Technology",
+    "score": 0.9425,
+    "section": "body",
+    "text": "Established in the year 1999, Vidyalankar Institute of Technology is an autonomous (from A.Y. 2022-23 for period of 10 years) engineering degree and management college. VIT is managed by Vidyalankar Dnayapeeth Trust. VIT provides multidisci"
+   }
+  ],
+  "draft": "G. Viswanathan founded Vellore Institute of Technology in 1984. Vellore Institute of Technology was later established under Section 3 of the University Grants Commission Act, 1956. In 2001, VIT was granted deemed university status.",
+  "outcome": "answered",
+  "claims_kept": [
+   "G. Viswanathan founded Vellore Institute of Technology in 1984.",
+   "Vellore Institute of Technology was later established under Section 3 of the University Grants Commission Act, 1956."
+  ],
+  "claims_off_topic": [
+   "In 2001, VIT was granted deemed university status."
+  ],
+  "seconds": 5.7
+ }
+]

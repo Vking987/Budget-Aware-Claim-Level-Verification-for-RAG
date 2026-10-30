@@ -1,0 +1,606 @@
+[
+ {
+  "question": "Who founded VIT and when was it established?",
+  "source": "wikipedia",
+  "analysis": {
+   "entity_phrases": [
+    "VIT"
+   ],
+   "entity_tokens": [
+    "vit"
+   ],
+   "intent_tokens": [
+    "establish",
+    "found"
+   ],
+   "queries": [
+    "VIT",
+    "founded VIT established"
+   ]
+  },
+  "trace": {
+   "query": "Who founded VIT and when was it established?",
+   "queries": [
+    "VIT",
+    "founded VIT established"
+   ],
+   "hits": {
+    "VIT": [
+     "Vit",
+     "VIT",
+     "Vision transformer",
+     "Vellore Institute of Technology",
+     "Vít",
+     "Vít Krejčí",
+     "Balut (food)",
+     "De Vit"
+    ],
+    "founded VIT established": [
+     "Vellore Institute of Technology",
+     "VIT Bhopal University",
+     "Forza Italia (1994)",
+     "Riviera (festival)",
+     "Vitamin",
+     "Pythagoras",
+     "VIT, C.A.",
+     "VIT High School"
+    ]
+   },
+   "pages_considered": [
+    "Vit",
+    "Vellore Institute of Technology",
+    "VIT",
+    "Vision transformer",
+    "VIT Bhopal University",
+    "Vít",
+    "Vít Krejčí",
+    "Forza Italia (1994)",
+    "Balut (food)",
+    "De Vit"
+   ],
+   "dropped_pages": [
+    {
+     "title": "Vit",
+     "reason": "disambiguation page"
+    },
+    {
+     "title": "VIT",
+     "reason": "disambiguation page"
+    },
+    {
+     "title": "Vít Krejčí",
+     "reason": "does not mention VIT"
+    },
+    {
+     "title": "Forza Italia (1994)",
+     "reason": "does not mention VIT"
+    },
+    {
+     "title": "Balut (food)",
+     "reason": "does not mention VIT"
+    }
+   ],
+   "kept_pages": [
+    "Vellore Institute of Technology",
+    "VIT Bhopal University",
+    "De Vit",
+    "Vision transformer",
+    "Vít"
+   ],
+   "full_text_pages": [
+    "Vellore Institute of Technology",
+    "VIT Bhopal University"
+   ],
+   "entity_phrases": [
+    "VIT"
+   ],
+   "entity_tokens": [
+    "vit"
+   ],
+   "page_scores": {
+    "Vellore Institute of Technology": 0.85,
+    "VIT Bhopal University": 0.55,
+    "De Vit": 0.475,
+    "Vision transformer": 0.2,
+    "Vít": 0.12
+   },
+   "n_passages": 5
+  },
+  "passages": [
+   {
+    "title": "Vellore Institute of Technology",
+    "url": "https://en.wikipedia.org/wiki/Vellore_Institute_of_Technology",
+    "score": 1.0,
+    "section": "body",
+    "text": "Vellore Institute of Technology (VIT) is a private deemed university in Vellore, Tamil Nadu, India. The institution offers undergraduate and postgraduate programmes. It has campuses in Vellore and Chennai and three sister universities as di"
+   },
+   {
+    "title": "VIT Bhopal University",
+    "url": "https://en.wikipedia.org/wiki/VIT_Bhopal_University",
+    "score": 0.965,
+    "section": "body",
+    "text": "VIT Bhopal University (VIT B), is a state private university in Madhya Pradesh situated in Kothri Kalan in Sehore district, Madhya Pradesh, India. It was established by the Vellore Institute of Technology. Plans to establish VIT Bhopal Univ"
+   },
+   {
+    "title": "VIT Bhopal University",
+    "url": "https://en.wikipedia.org/wiki/VIT_Bhopal_University",
+    "score": 0.965,
+    "section": "body",
+    "text": "Teaching and learning are supported by centralized academic infrastructure including libraries, advanced laboratories, auditoriums, cafeterias, and campus-wide Wi-Fi facilities. Academic activities are conducted through multiple streams cov"
+   },
+   {
+    "title": "VIT Bhopal University",
+    "url": "https://en.wikipedia.org/wiki/VIT_Bhopal_University",
+    "score": 0.865,
+    "section": "body",
+    "text": "On 28th November, food and water samples were sent to Public Health Engineering (PHE) Department after Madhya Pradesh chief minister Mohan Yadav ordered the formation of a committee to probe into the allegations of poor basic amenities prov"
+   }
+  ],
+  "draft": "Vellore Institute of Technology was founded by G. Viswanathan as a self-financing institution called Vellore Engineering College. VIT Bhopal University was established by the Vellore Institute of Technology. The foundation stone for the campus of VIT Bhopal University was laid later that year in Sehore district.",
+  "outcome": "answered",
+  "claims_kept": [
+   "Vellore Institute of Technology was founded by G. Viswanathan as a self-financing institution called Vellore Engineering College.",
+   "VIT Bhopal University was established by the Vellore Institute of Technology."
+  ],
+  "claims_off_topic": [
+   "The foundation stone for the campus of VIT Bhopal University was laid later that year in Sehore district."
+  ],
+  "seconds": 22.5
+ },
+ {
+  "question": "Who wrote Frankenstein and when was it first published?",
+  "source": "wikipedia",
+  "analysis": {
+   "entity_phrases": [
+    "Frankenstein"
+   ],
+   "entity_tokens": [
+    "frankenstein"
+   ],
+   "intent_tokens": [
+    "first",
+    "publish",
+    "wrote"
+   ],
+   "queries": [
+    "Frankenstein",
+    "wrote Frankenstein first published"
+   ]
+  },
+  "trace": {
+   "query": "Who wrote Frankenstein and when was it first published?",
+   "queries": [
+    "Frankenstein",
+    "wrote Frankenstein first published"
+   ],
+   "hits": {
+    "Frankenstein": [
+     "Frankenstein",
+     "Frankenstein (1931 film)",
+     "Frankenstein (2025 film)",
+     "Frankenstein's monster",
+     "Young Frankenstein",
+     "Victor Frankenstein",
+     "Bride of Frankenstein",
+     "Frankenstein (disambiguation)"
+    ],
+    "wrote Frankenstein first published": [
+     "Victor Frankenstein",
+     "Frankenstein (1931 film)",
+     "Frankenstein (1910 film)",
+     "The Man Who Wrote Frankenstein",
+     "Frankenstein's monster",
+     "Young Frankenstein",
+     "Frankenstein",
+     "Mary Shelley"
+    ]
+   },
+   "pages_considered": [
+    "Frankenstein",
+    "Frankenstein (1931 film)",
+    "Victor Frankenstein",
+    "Frankenstein's monster",
+    "Frankenstein (2025 film)",
+    "Young Frankenstein",
+    "Frankenstein (1910 film)",
+    "Bride of Frankenstein",
+    "Frankenstein (disambiguation)",
+    "The Man Who Wrote Frankenstein"
+   ],
+   "dropped_pages": [
+    {
+     "title": "Frankenstein (disambiguation)",
+     "reason": "disambiguation page"
+    }
+   ],
+   "kept_pages": [
+    "Frankenstein",
+    "Frankenstein (1931 film)",
+    "Victor Frankenstein",
+    "Frankenstein (2025 film)",
+    "Young Frankenstein",
+    "Frankenstein (1910 film)",
+    "Bride of Frankenstein",
+    "The Man Who Wrote Frankenstein",
+    "Frankenstein's monster"
+   ],
+   "full_text_pages": [
+    "Frankenstein",
+    "Frankenstein (1931 film)"
+   ],
+   "entity_phrases": [
+    "Frankenstein"
+   ],
+   "entity_tokens": [
+    "frankenstein"
+   ],
+   "page_scores": {
+    "Frankenstein": 1.0,
+    "Frankenstein (1931 film)": 0.82,
+    "Victor Frankenstein": 0.773,
+    "Frankenstein (2025 film)": 0.587,
+    "Young Frankenstein": 0.559,
+    "Frankenstein (1910 film)": 0.493,
+    "Bride of Frankenstein": 0.48,
+    "The Man Who Wrote Frankenstein": 0.47,
+    "Frankenstein's monster": 0.196
+   },
+   "n_passages": 5
+  },
+  "passages": [
+   {
+    "title": "Frankenstein",
+    "url": "https://en.wikipedia.org/wiki/Frankenstein",
+    "score": 1.0,
+    "section": "lead",
+    "text": "Frankenstein; or, The Modern Prometheus is an 1818 Gothic novel written by English author Mary Shelley. It tells the story of Victor Frankenstein, a young scientist who creates a sapient creature from different body parts in an unorthodox s"
+   },
+   {
+    "title": "Frankenstein",
+    "url": "https://en.wikipedia.org/wiki/Frankenstein",
+    "score": 1.0,
+    "section": "lead",
+    "text": "She then journeyed to the region of Geneva, Switzerland, where much of the story takes place. Galvanism and occult ideas were topics of conversation for her companions, particularly for her lover and future husband, Percy Bysshe Shelley. In"
+   },
+   {
+    "title": "Frankenstein",
+    "url": "https://en.wikipedia.org/wiki/Frankenstein",
+    "score": 1.0,
+    "section": "body",
+    "text": "Mary Shelley began writing what she assumed would be a short story, but with Percy Shelley's encouragement, she expanded the tale into a fully-fledged novel. She later described that summer in Switzerland as the moment \"when I first stepped"
+   },
+   {
+    "title": "Frankenstein",
+    "url": "https://en.wikipedia.org/wiki/Frankenstein",
+    "score": 1.0,
+    "section": "body",
+    "text": "The group talked about Enlightenment and Counter-Enlightenment ideas as well. Mary Shelley believed the Enlightenment idea that society could progress and grow if political leaders used their powers responsibly; however, she also believed t"
+   },
+   {
+    "title": "Frankenstein (1910 film)",
+    "url": "https://en.wikipedia.org/wiki/Frankenstein_(1910_film)",
+    "score": 0.948,
+    "section": "lead",
+    "text": "Frankenstein is a 1910 American short silent horror film produced by Edison Studios. It was directed by J. Searle Dawley, who also wrote the one-reeler's screenplay, broadly basing his \"scenario\" on Mary Shelley's 1818 novel Frankenstein; o"
+   }
+  ],
+  "draft": "Mary Shelley wrote Frankenstein. The novel was first published anonymously in London on January 1, 1818.",
+  "outcome": "answered",
+  "claims_kept": [
+   "Mary Shelley wrote Frankenstein.",
+   "The novel was first published anonymously in London on January 1, 1818."
+  ],
+  "claims_off_topic": [],
+  "seconds": 6.7
+ },
+ {
+  "question": "What caused the fall of the Western Roman Empire?",
+  "source": "wikipedia",
+  "analysis": {
+   "entity_phrases": [
+    "Western Roman Empire"
+   ],
+   "entity_tokens": [
+    "western",
+    "roman",
+    "empire"
+   ],
+   "intent_tokens": [
+    "caus",
+    "fall"
+   ],
+   "queries": [
+    "Western Roman Empire",
+    "caused fall Western Roman Empire"
+   ]
+  },
+  "trace": {
+   "query": "What caused the fall of the Western Roman Empire?",
+   "queries": [
+    "Western Roman Empire",
+    "caused fall Western Roman Empire"
+   ],
+   "hits": {
+    "Western Roman Empire": [
+     "Western Roman Empire",
+     "Fall of the Western Roman Empire",
+     "Historiography of the fall of the Western Roman Empire",
+     "Roman emperor",
+     "Legacy of the Roman Empire",
+     "History of the Roman Empire",
+     "Roman Empire",
+     "The History of the Decline and Fall of the Roman Empire"
+    ],
+    "caused fall Western Roman Empire": [
+     "Historiography of the fall of the Western Roman Empire",
+     "Fall of the Western Roman Empire",
+     "The History of the Decline and Fall of the Roman Empire",
+     "Byzantine Empire",
+     "Roman Empire",
+     "Western Roman Empire",
+     "Holy Roman Empire",
+     "Roman lead poisoning theory"
+    ]
+   },
+   "pages_considered": [
+    "Western Roman Empire",
+    "Historiography of the fall of the Western Roman Empire",
+    "Fall of the Western Roman Empire",
+    "The History of the Decline and Fall of the Roman Empire",
+    "Roman emperor",
+    "Roman Empire",
+    "Legacy of the Roman Empire",
+    "History of the Roman Empire",
+    "Byzantine Empire",
+    "Holy Roman Empire"
+   ],
+   "dropped_pages": [],
+   "kept_pages": [
+    "Western Roman Empire",
+    "Historiography of the fall of the Western Roman Empire",
+    "Fall of the Western Roman Empire",
+    "The History of the Decline and Fall of the Roman Empire",
+    "Roman Empire",
+    "Legacy of the Roman Empire",
+    "History of the Roman Empire",
+    "Holy Roman Empire",
+    "Roman emperor",
+    "Byzantine Empire"
+   ],
+   "full_text_pages": [
+    "Western Roman Empire",
+    "Historiography of the fall of the Western Roman Empire"
+   ],
+   "entity_phrases": [
+    "Western Roman Empire"
+   ],
+   "entity_tokens": [
+    "western",
+    "roman",
+    "empire"
+   ],
+   "page_scores": {
+    "Western Roman Empire": 1.0,
+    "Historiography of the fall of the Western Roman Empire": 0.862,
+    "Fall of the Western Roman Empire": 0.815,
+    "The History of the Decline and Fall of the Roman Empire": 0.428,
+    "Roman Empire": 0.401,
+    "Legacy of the Roman Empire": 0.377,
+    "History of the Roman Empire": 0.359,
+    "Holy Roman Empire": 0.306,
+    "Roman emperor": 0.272,
+    "Byzantine Empire": 0.203
+   },
+   "n_passages": 5
+  },
+  "passages": [
+   {
+    "title": "Historiography of the fall of the Western Roman Empire",
+    "url": "https://en.wikipedia.org/wiki/Historiography_of_the_fall_of_the_Western_Roman_Empire",
+    "score": 0.9585,
+    "section": "lead",
+    "text": "The causes and mechanisms of the fall of the Western Roman Empire are a historical theme that was introduced by historian Edward Gibbon in his 1776 book The History of the Decline and Fall of the Roman Empire. Though Gibbon was not the firs"
+   },
+   {
+    "title": "Historiography of the fall of the Western Roman Empire",
+    "url": "https://en.wikipedia.org/wiki/Historiography_of_the_fall_of_the_Western_Roman_Empire",
+    "score": 0.9585,
+    "section": "lead",
+    "text": "Gibbon himself explored ideas of internal decline (civil wars, the disintegration of political, economic, military, and other social institutions) and of attacks from outside the empire. Many historians have postulated reasons for the colla"
+   },
+   {
+    "title": "Historiography of the fall of the Western Roman Empire",
+    "url": "https://en.wikipedia.org/wiki/Historiography_of_the_fall_of_the_Western_Roman_Empire",
+    "score": 0.9585,
+    "section": "lead",
+    "text": "Modern scholarship has introduced additional factors such as climate change, epidemic diseases, and environmental degradation as important reasons for the decline. Some historians have postulated that the Roman Empire did not fall at all, b"
+   },
+   {
+    "title": "Historiography of the fall of the Western Roman Empire",
+    "url": "https://en.wikipedia.org/wiki/Historiography_of_the_fall_of_the_Western_Roman_Empire",
+    "score": 0.9585,
+    "section": "body",
+    "text": "Theories will sometimes reflect the particular concerns that historians might have on cultural, political, or economic trends in their own times. Gibbon's criticism of Christianity reflects the values of the Enlightenment; his ideas on the "
+   },
+   {
+    "title": "Fall of the Western Roman Empire",
+    "url": "https://en.wikipedia.org/wiki/Fall_of_the_Western_Roman_Empire",
+    "score": 0.9446,
+    "section": "lead",
+    "text": "The fall of the Western Roman Empire, also called the fall of the Roman Empire or the fall of Rome, was the loss of central political control in the Western Roman Empire, a process in which the Empire failed to enforce its rule, and its vas"
+   }
+  ],
+  "draft": "Edward Gibbon, a historian, introduced the topic of the fall of the Western Roman Empire in his 1776 book The History of the Decline and Fall of the Roman Empire. Gibbon himself explored ideas of internal decline and of attacks from outside the empire. Many historians have postulated reasons for the collapse of the Western Roman Empire, including a decline in \"civic virtue\" and military and economic capability. Modern scholarship has introduced additional factors such as climate change, epidemic diseases, and environmental degradation as important reasons for the decline. Some historians have postulated that the Roman Empire did not fall at all, but that the \"decline\" was instead a gradual, albeit often violent, transformation into the societies of the Middle Ages.",
+  "outcome": "answered",
+  "claims_kept": [
+   "Edward Gibbon introduced the topic of the fall of the Western Roman Empire in his 1776 book The History of the Decline and Fall of the Roman Empire.",
+   "Gibbon himself explored ideas of internal decline and of attacks from outside the empire.",
+   "Many historians have postulated reasons for the collapse of the Western Roman Empire, including a decline in \"civic virtue\" and military and economic capability.",
+   "Modern scholarship has introduced additional factors such as climate change, epidemic diseases, and environmental degradation as important reasons for the decline.",
+   "Some historians have postulated that the Roman Empire did not fall at all, but that the \"decline\" was instead a gradual, albeit often violent, transformation into the societies of the Middle Ages."
+  ],
+  "claims_off_topic": [
+   "Edward Gibbon was a historian."
+  ],
+  "seconds": 27.9
+ },
+ {
+  "question": "Who created VIT University and when?",
+  "source": "wikipedia",
+  "analysis": {
+   "entity_phrases": [
+    "VIT University"
+   ],
+   "entity_tokens": [
+    "vit",
+    "university"
+   ],
+   "intent_tokens": [
+    "creat"
+   ],
+   "queries": [
+    "VIT University",
+    "created VIT University"
+   ]
+  },
+  "trace": {
+   "query": "Who created VIT University and when?",
+   "queries": [
+    "VIT University",
+    "created VIT University"
+   ],
+   "hits": {
+    "VIT University": [
+     "Vellore Institute of Technology",
+     "VIT-AP University",
+     "VIT Bhopal University",
+     "VIT University (disambiguation)",
+     "Anna University",
+     "VIT",
+     "Riviera (festival)",
+     "D. P. Kothari"
+    ],
+    "created VIT University": [
+     "Balut (food)",
+     "Anna University",
+     "Riviera (festival)",
+     "University of Hradec Králové",
+     "Vidyalankar Institute of Technology",
+     "Vitamin",
+     "Christer Fredriksen",
+     "Vitamin D"
+    ]
+   },
+   "pages_considered": [
+    "Vellore Institute of Technology",
+    "VIT-AP University",
+    "Balut (food)",
+    "Anna University",
+    "VIT Bhopal University",
+    "Riviera (festival)",
+    "VIT University (disambiguation)",
+    "VIT",
+    "D. P. Kothari",
+    "University of Hradec Králové"
+   ],
+   "dropped_pages": [
+    {
+     "title": "VIT-AP University",
+     "reason": "does not mention VIT University"
+    },
+    {
+     "title": "Balut (food)",
+     "reason": "does not mention VIT University"
+    },
+    {
+     "title": "Anna University",
+     "reason": "does not mention VIT University"
+    },
+    {
+     "title": "Riviera (festival)",
+     "reason": "does not mention VIT University"
+    },
+    {
+     "title": "VIT University (disambiguation)",
+     "reason": "disambiguation page"
+    },
+    {
+     "title": "VIT",
+     "reason": "disambiguation page"
+    },
+    {
+     "title": "University of Hradec Králové",
+     "reason": "does not mention VIT University"
+    }
+   ],
+   "kept_pages": [
+    "Vellore Institute of Technology",
+    "VIT Bhopal University",
+    "D. P. Kothari"
+   ],
+   "full_text_pages": [
+    "Vellore Institute of Technology",
+    "VIT Bhopal University"
+   ],
+   "entity_phrases": [
+    "VIT University"
+   ],
+   "entity_tokens": [
+    "vit",
+    "university"
+   ],
+   "page_scores": {
+    "Vellore Institute of Technology": 0.8,
+    "VIT Bhopal University": 0.6,
+    "D. P. Kothari": 0.075
+   },
+   "n_passages": 5
+  },
+  "passages": [
+   {
+    "title": "Vellore Institute of Technology",
+    "url": "https://en.wikipedia.org/wiki/Vellore_Institute_of_Technology",
+    "score": 1.0,
+    "section": "body",
+    "text": "Vellore Institute of Technology (VIT) is a private deemed university in Vellore, Tamil Nadu, India. The institution offers undergraduate and postgraduate programmes. It has campuses in Vellore and Chennai and three sister universities as di"
+   },
+   {
+    "title": "VIT Bhopal University",
+    "url": "https://en.wikipedia.org/wiki/VIT_Bhopal_University",
+    "score": 0.98,
+    "section": "body",
+    "text": "VIT Bhopal University (VIT B), is a state private university in Madhya Pradesh situated in Kothri Kalan in Sehore district, Madhya Pradesh, India. It was established by the Vellore Institute of Technology. Plans to establish VIT Bhopal Univ"
+   },
+   {
+    "title": "VIT Bhopal University",
+    "url": "https://en.wikipedia.org/wiki/VIT_Bhopal_University",
+    "score": 0.98,
+    "section": "body",
+    "text": "Teaching and learning are supported by centralized academic infrastructure including libraries, advanced laboratories, auditoriums, cafeterias, and campus-wide Wi-Fi facilities. Academic activities are conducted through multiple streams cov"
+   },
+   {
+    "title": "VIT Bhopal University",
+    "url": "https://en.wikipedia.org/wiki/VIT_Bhopal_University",
+    "score": 0.88,
+    "section": "body",
+    "text": "On 28th November, food and water samples were sent to Public Health Engineering (PHE) Department after Madhya Pradesh chief minister Mohan Yadav ordered the formation of a committee to probe into the allegations of poor basic amenities prov"
+   },
+   {
+    "title": "D. P. Kothari",
+    "url": "https://en.wikipedia.org/wiki/D._P._Kothari",
+    "score": 0.8225,
+    "section": "lead",
+    "text": "Dwarkadas Prahladadas Kothari (born 7 October 1944) is an educationist and professor who has held leadership positions at engineering institutions in India including IIT Delhi, Visvesvaraya National Institute of Technology, Nagpur and VIT U"
+   }
+  ],
+  "draft": "Vellore Institute of Technology was founded in 1984 by G. Viswanathan as a self-financing institution called Vellore Engineering College. VIT Bhopal University was established by the Vellore Institute of Technology. VIT Bhopal University was founded in 2017 by the Vellore Institute of Technology.",
+  "outcome": "answered",
+  "claims_kept": [
+   "Vellore Institute of Technology was founded in 1984 by G. Viswanathan as a self-financing institution called Vellore Engineering College.",
+   "VIT Bhopal University was established by the Vellore Institute of Technology.",
+   "VIT Bhopal University was founded in 2017 by the Vellore Institute of Technology."
+  ],
+  "claims_off_topic": [],
+  "seconds": 5.9
+ }
+]

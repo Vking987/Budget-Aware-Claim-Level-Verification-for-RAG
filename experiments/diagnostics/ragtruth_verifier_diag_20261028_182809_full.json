@@ -1,0 +1,3398 @@
+{
+  "meta": {
+    "run_id": "ragtruth_verifier_diag_20261028_182809_full",
+    "command": "scripts/run_ragtruth_verifier_diagnostic.py --tag full",
+    "dry_run": false,
+    "source_run": "C:\\Users\\vrajs\\rag-research\\experiments\\runs\\ragtruth_comparison_20261028_162847_pilot50.json",
+    "seed": 0,
+    "n_pos": 17,
+    "n_neg": 60,
+    "neg_per_task": 20,
+    "label_validation": {
+      "positives_without_overlapping_span": [],
+      "negatives_with_overlapping_span": [],
+      "positive_label_type_counts": {
+        "Evident Baseless Info": 13,
+        "Evident Conflict": 6
+      }
+    },
+    "model": "LlamaAssessor default (unchanged)",
+    "conditions": [
+      "A_original",
+      "B_readable"
+    ],
+    "evidence_B": {
+      "chunk_chars": 880,
+      "max_passages": 4
+    },
+    "cache": {
+      "hits": 76,
+      "misses": 78,
+      "diag_cache_copy": "C:\\Users\\vrajs\\rag-research\\experiments\\diagnostics\\ragtruth_verifier_diag_20261028_182809_full_cache.pkl"
+    }
+  },
+  "summary": {
+    "A_original": {
+      "overall": {
+        "strict": {
+          "tp": 0,
+          "fp": 4,
+          "fn": 17,
+          "tn": 56,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tpr_ci95": [
+            0.0,
+            0.18432366037156456
+          ],
+          "fpr": 0.06666666666666667,
+          "fpr_ci95": [
+            0.02622827414319792,
+            0.15925579893767722
+          ]
+        },
+        "broad": {
+          "tp": 0,
+          "fp": 6,
+          "fn": 17,
+          "tn": 54,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tpr_ci95": [
+            0.0,
+            0.18432366037156456
+          ],
+          "fpr": 0.1,
+          "fpr_ci95": [
+            0.04664219945723587,
+            0.20149694492511044
+          ]
+        }
+      },
+      "by_task": {
+        "strict": {
+          "Data2txt": {
+            "tp": 0,
+            "fp": 2,
+            "fn": 16,
+            "tn": 18,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tpr_ci95": [
+              0.0,
+              0.19361341827271994
+            ],
+            "fpr": 0.1,
+            "fpr_ci95": [
+              0.027865893984153206,
+              0.30103820641179335
+            ]
+          },
+          "QA": {
+            "tp": 0,
+            "fp": 2,
+            "fn": 0,
+            "tn": 18,
+            "precision": 0.0,
+            "recall": null,
+            "f1": null,
+            "tpr_ci95": null,
+            "fpr": 0.1,
+            "fpr_ci95": [
+              0.027865893984153206,
+              0.30103820641179335
+            ]
+          },
+          "Summary": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "tn": 20,
+            "precision": null,
+            "recall": 0.0,
+            "f1": null,
+            "tpr_ci95": [
+              0.0,
+              0.7934567085261071
+            ],
+            "fpr": 0.0,
+            "fpr_ci95": [
+              0.0,
+              0.16113012549493322
+            ]
+          }
+        },
+        "broad": {
+          "Data2txt": {
+            "tp": 0,
+            "fp": 3,
+            "fn": 16,
+            "tn": 17,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tpr_ci95": [
+              0.0,
+              0.19361341827271994
+            ],
+            "fpr": 0.15,
+            "fpr_ci95": [
+              0.05236779195949584,
+              0.36042329588695743
+            ]
+          },
+          "QA": {
+            "tp": 0,
+            "fp": 3,
+            "fn": 0,
+            "tn": 17,
+            "precision": 0.0,
+            "recall": null,
+            "f1": null,
+            "tpr_ci95": null,
+            "fpr": 0.15,
+            "fpr_ci95": [
+              0.05236779195949584,
+              0.36042329588695743
+            ]
+          },
+          "Summary": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "tn": 20,
+            "precision": null,
+            "recall": 0.0,
+            "f1": null,
+            "tpr_ci95": [
+              0.0,
+              0.7934567085261071
+            ],
+            "fpr": 0.0,
+            "fpr_ci95": [
+              0.0,
+              0.16113012549493322
+            ]
+          }
+        }
+      },
+      "label_counts": {
+        "HALLUCINATED": {
+          "SUPPORTED": 17
+        },
+        "UNFLAGGED": {
+          "SUPPORTED": 54,
+          "INSUFFICIENT": 2,
+          "CONFLICTED": 4
+        }
+      },
+      "latency": {
+        "mean_recorded_s": 15.363058198700347,
+        "n": 77,
+        "mean_evidence_chars": 1930.155844155844
+      }
+    },
+    "B_readable": {
+      "overall": {
+        "strict": {
+          "tp": 2,
+          "fp": 7,
+          "fn": 15,
+          "tn": 53,
+          "precision": 0.2222222222222222,
+          "recall": 0.11764705882352941,
+          "f1": 0.15384615384615383,
+          "tpr_ci95": [
+            0.03287908001292092,
+            0.3433684249770991
+          ],
+          "fpr": 0.11666666666666667,
+          "fpr_ci95": [
+            0.05767647403450049,
+            0.2217902059985814
+          ]
+        },
+        "broad": {
+          "tp": 2,
+          "fp": 8,
+          "fn": 15,
+          "tn": 52,
+          "precision": 0.2,
+          "recall": 0.11764705882352941,
+          "f1": 0.14814814814814817,
+          "tpr_ci95": [
+            0.03287908001292092,
+            0.3433684249770991
+          ],
+          "fpr": 0.13333333333333333,
+          "fpr_ci95": [
+            0.06914026978309641,
+            0.24165394590072103
+          ]
+        }
+      },
+      "by_task": {
+        "strict": {
+          "Data2txt": {
+            "tp": 2,
+            "fp": 1,
+            "fn": 14,
+            "tn": 19,
+            "precision": 0.6666666666666666,
+            "recall": 0.125,
+            "f1": 0.21052631578947367,
+            "tpr_ci95": [
+              0.034976749337057134,
+              0.3602333143674828
+            ],
+            "fpr": 0.05,
+            "fpr_ci95": [
+              0.008881219432873136,
+              0.23613589351256675
+            ]
+          },
+          "QA": {
+            "tp": 0,
+            "fp": 5,
+            "fn": 0,
+            "tn": 15,
+            "precision": 0.0,
+            "recall": null,
+            "f1": null,
+            "tpr_ci95": null,
+            "fpr": 0.25,
+            "fpr_ci95": [
+              0.11186005278940309,
+              0.4687050099580636
+            ]
+          },
+          "Summary": {
+            "tp": 0,
+            "fp": 1,
+            "fn": 1,
+            "tn": 19,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tpr_ci95": [
+              0.0,
+              0.7934567085261071
+            ],
+            "fpr": 0.05,
+            "fpr_ci95": [
+              0.008881219432873136,
+              0.23613589351256675
+            ]
+          }
+        },
+        "broad": {
+          "Data2txt": {
+            "tp": 2,
+            "fp": 1,
+            "fn": 14,
+            "tn": 19,
+            "precision": 0.6666666666666666,
+            "recall": 0.125,
+            "f1": 0.21052631578947367,
+            "tpr_ci95": [
+              0.034976749337057134,
+              0.3602333143674828
+            ],
+            "fpr": 0.05,
+            "fpr_ci95": [
+              0.008881219432873136,
+              0.23613589351256675
+            ]
+          },
+          "QA": {
+            "tp": 0,
+            "fp": 6,
+            "fn": 0,
+            "tn": 14,
+            "precision": 0.0,
+            "recall": null,
+            "f1": null,
+            "tpr_ci95": null,
+            "fpr": 0.3,
+            "fpr_ci95": [
+              0.14547527396899385,
+              0.5189767762289793
+            ]
+          },
+          "Summary": {
+            "tp": 0,
+            "fp": 1,
+            "fn": 1,
+            "tn": 19,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tpr_ci95": [
+              0.0,
+              0.7934567085261071
+            ],
+            "fpr": 0.05,
+            "fpr_ci95": [
+              0.008881219432873136,
+              0.23613589351256675
+            ]
+          }
+        }
+      },
+      "label_counts": {
+        "HALLUCINATED": {
+          "SUPPORTED": 15,
+          "CONFLICTED": 2
+        },
+        "UNFLAGGED": {
+          "SUPPORTED": 52,
+          "CONFLICTED": 7,
+          "INSUFFICIENT": 1
+        }
+      },
+      "latency": {
+        "mean_recorded_s": 13.276407244156399,
+        "n": 77,
+        "mean_evidence_chars": 1936.012987012987
+      },
+      "full_source_visible_True": {
+        "strict": {
+          "tp": 2,
+          "fp": 6,
+          "fn": 13,
+          "tn": 43,
+          "precision": 0.25,
+          "recall": 0.13333333333333333,
+          "f1": 0.1739130434782609,
+          "tpr_ci95": [
+            0.0373604698913593,
+            0.3788249920651624
+          ],
+          "fpr": 0.12244897959183673,
+          "fpr_ci95": [
+            0.057347477598098245,
+            0.2424466240188096
+          ]
+        },
+        "broad": {
+          "tp": 2,
+          "fp": 7,
+          "fn": 13,
+          "tn": 42,
+          "precision": 0.2222222222222222,
+          "recall": 0.13333333333333333,
+          "f1": 0.16666666666666669,
+          "tpr_ci95": [
+            0.0373604698913593,
+            0.3788249920651624
+          ],
+          "fpr": 0.14285714285714285,
+          "fpr_ci95": [
+            0.07096333720544586,
+            0.2666797318916292
+          ]
+        },
+        "n_claims": 64
+      },
+      "full_source_visible_False": {
+        "strict": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 2,
+          "tn": 10,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tpr_ci95": [
+            0.0,
+            0.6576280471103807
+          ],
+          "fpr": 0.09090909090909091,
+          "fpr_ci95": [
+            0.01623175226282597,
+            0.3773646254862038
+          ]
+        },
+        "broad": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 2,
+          "tn": 10,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tpr_ci95": [
+            0.0,
+            0.6576280471103807
+          ],
+          "fpr": 0.09090909090909091,
+          "fpr_ci95": [
+            0.01623175226282597,
+            0.3773646254862038
+          ]
+        },
+        "n_claims": 13
+      }
+    },
+    "paired_positives_broad": {
+      "flagged_A_only": 0,
+      "flagged_B_only": 2,
+      "flagged_both": 0,
+      "flagged_neither": 15
+    }
+  },
+  "claims": [
+    {
+      "response_id": "10355",
+      "claim_id": "s_1_c0",
+      "task": "Data2txt",
+      "gold": "HALLUCINATED",
+      "label_types": [
+        "Evident Baseless Info"
+      ],
+      "claim": "The restaurant is open for breakfast, lunch, and dinner, and offers a variety of menu options including sandwiches, salads, and burgers.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 99.99835959999473,
+        "wall_s": 0.00033799998345784843,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2316,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that the restaurant is open for breakfast, lunch, and dinner, directly supporting the claim.",
+        "evidence_preview": [
+          "Waiting an hour for breakfast is pretty ridiculous.\"}, {\"review_stars\": 5.0, \"review_date\": \"2018-10-20 20:11:23\", \"review_text\": \"Cafe is open to public (you don't have to be golfing to eat here).\\nDelicious food! I always get the Ellwood sandwich, hubby always get the patty melt whenever we eat here.\\nNever had a bad experience!\\nBeautiful views of the golf course and ocean.\"}]}",
+          "ty\": false, \"trendy\": false, \"upscale\": false, \"casual\": false}}, \"business_stars\": 3.5, \"review_info\": [{\"review_stars\": 4.0, \"review_date\": \"2021-06-27 01:05:50\", \"review_text\": \"Great outdoor patio with truly amazing view. Sandwich and salads are fresh and tasty. Great bargin\"}, {\"review_stars\": 2.0, \"review_date\": \"2019-06-26 19:15:52\", \"review_text\": \"Unfortunately, I didn't have a great experience here. Both times, the service has been incredibly slow.\\n\\nThe last time my SO and I came here, it took nearly an hour for our food to come out, and when it did, they brought me a dish I hadn't ordered.",
+          "After almost an hour of waiting for food after we ordered, they had to make what I actually ordered. This took additional time. The carnitas quesadilla I ordered was actually good, but there were pieces of bone in the pork.\\n\\nThat morning, there was a golf event scheduled at the course, and there were more people than normal. However, the grill hadn't brought in more people to cook, so there was only one person taking orders and one person cooking. It seems really ridiculous today that the grill wouldn't have had the forethought to bring in additional cooks on a day which would most definitely see increased traffic.",
+          "{\"name\": \"Sandpiper Grill\", \"address\": \"7925 Hollister Ave\", \"city\": \"Goleta\", \"state\": \"CA\", \"categories\": \"Restaurants, American (Traditional)\", \"hours\": {\"Monday\": \"7:0-16:0\", \"Tuesday\": \"7:0-16:0\", \"Wednesday\": \"7:0-16:0\", \"Thursday\": \"7:0-16:0\", \"Friday\": \"7:0-16:0\", \"Saturday\": \"7:0-16:0\", \"Sunday\": \"7:0-16:0\"}, \"attributes\": {\"BusinessParking\": {\"garage\": false, \"street\": false, \"validated\": false, \"lot\": true, \"valet\": false}, \"RestaurantsReservations\": false, \"OutdoorSeating\": true, \"WiFi\": \"free\", \"RestaurantsTakeOut\": false, \"RestaurantsGoodForGroups\": true, \"Music\": null, \"Ambience\": {\"romantic\": false, \"intimate\": false, \"classy\": false, \"hipster\": false, \"divey\": false, \"touris"
+        ]
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 15.851915299979737,
+        "wall_s": 15.852180300018517,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1957,
+        "full_source_visible": true,
+        "source_chars_rendered": 1957,
+        "rationale": "Passage 1 establishes the restaurant's hours and parking information, Passage 2 provides a positive review with specific details about the outdoor patio, and Passage 3 mentions a beautiful view of the",
+        "evidence_preview": [
+          "Business name: Sandpiper Grill\nAddress: 7925 Hollister Ave, Goleta, CA\nCategories: Restaurants, American (Traditional)\nOverall rating: 3.5 stars\nOpening hours: Monday 7:0-16:0; Tuesday 7:0-16:0; Wednesday 7:0-16:0; Thursday 7:0-16:0; Friday 7:0-16:0; Saturday 7:0-16:0; Sunday 7:0-16:0\nBusinessParking: garage = no; street = no; validated = no; lot = yes; valet = no\nRestaurantsReservations: no\nOutdoorSeating: yes\nWiFi: free\nRestaurantsTakeOut: no\nRestaurantsGoodForGroups: yes\nMusic: not specified\nAmbience: romantic = no; intimate = no; classy = no; hipster = no; divey = no; touristy = no; trendy = no; upscale = no; casual = no",
+          "Review (4.0 stars): Great outdoor patio with truly amazing view. Sandwich and salads are fresh and tasty. Great bargin\nReview (2.0 stars): Unfortunately, I didn't have a great experience here. Both times, the service has been incredibly slow. The last time my SO and I came here, it took nearly an hour for our food to come out, and when it did, they brought me a dish I hadn't ordered. After almost an hour of waiting for food after we ordered, they had to make what I actually ordered. This took additional time. The carnitas quesadilla I ordered was actually good, but there were pieces of bone in the pork. That morning, there was a golf event scheduled at the course, and there were more people than normal. However, the grill hadn't brought in more people to cook, so there was only one person taking orders and one person cooking.",
+          "It seems really ridiculous today that the grill wouldn't have had the forethought to bring in additional cooks on a day which would most definitely see increased traffic. Waiting an hour for breakfast is pretty ridiculous.\nReview (5.0 stars): Cafe is open to public (you don't have to be golfing to eat here).\nDelicious food! I always get the Ellwood sandwich, hubby always get the patty melt whenever we eat here.\nNever had a bad experience!\nBeautiful views of the golf course and ocean."
+        ]
+      }
+    },
+    {
+      "response_id": "6766",
+      "claim_id": "s_5_c0",
+      "task": "Data2txt",
+      "gold": "HALLUCINATED",
+      "label_types": [
+        "Evident Baseless Info"
+      ],
+      "claim": "Reviewers praise the restaurant's authentic flavors, generous portions, and speedy service.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 8.890931299974909,
+        "wall_s": 0.00011100000119768083,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1657,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that the restaurant has 'authentic flavors', which directly supports the claim that the restaurant has 'authentic flavors'.",
+        "evidence_preview": [
+          "false, \"trendy\": false, \"upscale\": false, \"casual\": true}}, \"business_stars\": 4.0, \"review_info\": [{\"review_stars\": 5.0, \"review_date\": \"2015-12-31 04:01:57\", \"review_text\": \"Half and half beef ribs and pork FTW. Best I've *ever* had, and I've had a lot of good Korean food.\"}, {\"review_stars\": 5.0, \"review_date\": \"2015-08-31 01:14:22\", \"review_text\": \"So. Good. So good. A Kogilicious spicy chicken burrito is one of my favorite foods in the world. But all of the proteins are fantastic- beef, spicy pork, tofu; can't go wrong. Taco, burrito, both are great. And so reasonably priced! Pay cash; you'll get a giant burrito for less than $7, which is unheard of elsewhere in IV.",
+          "This town desperately needs a proper Korean restaurant, but in the meantime, Kogilicious hits the spot.\"}, {\"review_stars\": 4.0, \"review_date\": \"2015-07-22 23:44:51\", \"review_text\": \"Three words, Spicy Pork Burrito.\\n\\nBomb.\\n\\nBring cash, they charge more if you use a card.\"}]}",
+          "{\"name\": \"Kogilicious\", \"address\": \"956 Embarcadero Del Norte\", \"city\": \"Isla Vista\", \"state\": \"CA\", \"categories\": \"Korean, Restaurants\", \"hours\": {\"Monday\": \"10:0-23:0\", \"Tuesday\": \"10:0-23:0\", \"Wednesday\": \"10:0-23:0\", \"Thursday\": \"10:0-23:0\", \"Friday\": \"10:0-23:0\", \"Saturday\": \"10:0-23:0\", \"Sunday\": \"10:0-23:0\"}, \"attributes\": {\"BusinessParking\": {\"garage\": false, \"street\": true, \"validated\": false, \"lot\": false, \"valet\": false}, \"RestaurantsReservations\": false, \"OutdoorSeating\": true, \"WiFi\": \"no\", \"RestaurantsTakeOut\": true, \"RestaurantsGoodForGroups\": true, \"Music\": null, \"Ambience\": {\"romantic\": false, \"intimate\": false, \"touristy\": false, \"hipster\": false, \"divey\": false, \"classy\": "
+        ]
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 6.267861400003312,
+        "wall_s": 6.268269199994393,
+        "cache_hit": false,
+        "n_passages": 2,
+        "evidence_chars": 1308,
+        "full_source_visible": true,
+        "source_chars_rendered": 1308,
+        "rationale": "Passage 1 establishes that Kogilicious has 'authentic flavors, generous portions, and speedy service', which directly supports the claim that reviewers praise the restaurant.",
+        "evidence_preview": [
+          "Business name: Kogilicious\nAddress: 956 Embarcadero Del Norte, Isla Vista, CA\nCategories: Korean, Restaurants\nOverall rating: 4.0 stars\nOpening hours: Monday 10:0-23:0; Tuesday 10:0-23:0; Wednesday 10:0-23:0; Thursday 10:0-23:0; Friday 10:0-23:0; Saturday 10:0-23:0; Sunday 10:0-23:0\nBusinessParking: garage = no; street = yes; validated = no; lot = no; valet = no\nRestaurantsReservations: no\nOutdoorSeating: yes\nWiFi: no\nRestaurantsTakeOut: yes\nRestaurantsGoodForGroups: yes\nMusic: not specified\nAmbience: romantic = no; intimate = no; touristy = no; hipster = no; divey = no; classy = no; trendy = no; upscale = no; casual = yes",
+          "Review (5.0 stars): Half and half beef ribs and pork FTW.  Best I've *ever* had, and I've had a lot of good Korean food.\nReview (5.0 stars): So. Good. So good. A Kogilicious spicy chicken burrito is one of my favorite foods in the world. But all of the proteins are fantastic- beef, spicy pork, tofu; can't go wrong. Taco, burrito, both are great. And so reasonably priced! Pay cash; you'll get a giant burrito for less than $7, which is unheard of elsewhere in IV. This town desperately needs a proper Korean restaurant, but in the meantime, Kogilicious hits the spot.\nReview (4.0 stars): Three words, Spicy Pork Burrito.\n\nBomb.\n\nBring cash, they charge more if you use a card."
+        ]
+      }
+    },
+    {
+      "response_id": "7000",
+      "claim_id": "s_4_c0",
+      "task": "Data2txt",
+      "gold": "HALLUCINATED",
+      "label_types": [
+        "Evident Baseless Info"
+      ],
+      "claim": "According to the attributes section of the structured data, the business does not offer BusinessParking, RestaurantsReservations, OutdoorSeating, WiFi, or RestaurantsTakeOut.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.8903587000095285,
+        "wall_s": 9.210000280290842e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1889,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that Harbor of Santa Barbara Inc does not offer BusinessParking, RestaurantsReservations, OutdoorSeating, WiFi, or RestaurantsTakeOut, directly supporting the claim.",
+        "evidence_preview": [
+          "{\"name\": \"Harbor of Santa Barbara Inc\", \"address\": \"210 Stearns Wharf\", \"city\": \"Santa Barbara\", \"state\": \"CA\", \"categories\": \"Active Life, Restaurants, Boating\", \"hours\": null, \"attributes\": {\"BusinessParking\": null, \"RestaurantsReservations\": null, \"OutdoorSeating\": null, \"WiFi\": null, \"RestaurantsTakeOut\": null, \"RestaurantsGoodForGroups\": null, \"Music\": null, \"Ambience\": {\"romantic\": false, \"intimate\": false, \"touristy\": false, \"hipster\": false, \"divey\": false, \"classy\": false, \"trendy\": false, \"upscale\": false, \"casual\": false}}, \"business_stars\": 3.5, \"review_info\": [{\"review_stars\": 2.0, \"review_date\": \"2018-05-12 23:21:14\", \"review_text\": \"Please make your restaurants and drink shops",
+          "A few shops and restaurants are at the end of the pier and they have some parking with a cost. It's really not that awesome but if you come to CA to see the beaches you should walk atleast one beach pier.\"}, {\"review_stars\": 2.0, \"review_date\": \"2012-08-23 07:24:32\", \"review_text\": \"Ive spent too much time here.The dockage fees are insane.The staff is great but thier hands are tied with crazy policies.The place is crawling with snobs that wont give you the time of day unless you have lots of money.Great place for people watching I guess.\"}]}",
+          "go straw less!! So many straws and you are on the ocean! Help the sea animals! Zoos are straw less for the animals. Be straw less for the sea animals!! Please help save the Ocean life!! To all the people that come to these places, say no to straws ahead of time. Bring you're own reusable cups with reusable straws. Have the shops give a discount for those that bring their own reusable straws and cups/bottles. One step at a time and we can do it.\"}, {\"review_stars\": 4.0, \"review_date\": \"2014-06-20 14:45:52\", \"review_text\": \"People come to SB for the beach, here you go! \\n\\nDecent sized pier to walk on and watch the fishermen and rowers."
+        ]
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.649076500005322,
+        "wall_s": 7.6492963999917265,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1668,
+        "full_source_visible": true,
+        "source_chars_rendered": 1668,
+        "rationale": "Passage 1 establishes that Harbor of Santa Barbara Inc does not offer BusinessParking, RestaurantsReservations, OutdoorSeating, WiFi, or RestaurantsTakeOut, directly supporting the claim.",
+        "evidence_preview": [
+          "Business name: Harbor of Santa Barbara Inc\nAddress: 210 Stearns Wharf, Santa Barbara, CA\nCategories: Active Life, Restaurants, Boating\nOverall rating: 3.5 stars\nOpening hours: not specified\nBusinessParking: not specified\nRestaurantsReservations: not specified\nOutdoorSeating: not specified\nWiFi: not specified\nRestaurantsTakeOut: not specified\nRestaurantsGoodForGroups: not specified\nMusic: not specified\nAmbience: romantic = no; intimate = no; touristy = no; hipster = no; divey = no; classy = no; trendy = no; upscale = no; casual = no",
+          "Review (2.0 stars): Please make your restaurants and drink shops go straw less!! So many straws and you are on the ocean! Help the sea animals! Zoos are straw less for the animals. Be straw less for the sea animals!! Please help save the Ocean life!! To all the people that come to these places, say no to straws ahead of time. Bring you're own reusable cups with reusable straws. Have the shops give a discount for those that bring their own reusable straws and cups/bottles. One step at a time and we can do it.\nReview (4.0 stars): People come to SB for the beach, here you go! \n\nDecent sized pier to walk on and watch the fishermen and rowers.  A few shops and restaurants are at the end of the pier and they have some parking with a cost. It's really not that awesome but if you come to CA to see the beaches you should walk atleast one beach pier.",
+          "Review (2.0 stars): Ive spent too much time here.The dockage fees are insane.The staff is great but thier hands are tied with crazy policies.The place is crawling with snobs that wont give you the time of day unless you have lots of money.Great place for people watching I guess."
+        ]
+      }
+    },
+    {
+      "response_id": "7000",
+      "claim_id": "s_5_c0",
+      "task": "Data2txt",
+      "gold": "HALLUCINATED",
+      "label_types": [
+        "Evident Baseless Info",
+        "Evident Conflict"
+      ],
+      "claim": "However, it does offer Music and Ambience, with a romantic, intimate, touristy, hipster, divey, classy, trendy, upscale, and casual atmosphere.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 10.418315899994923,
+        "wall_s": 8.430000161752105e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1889,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes a romantic, intimate atmosphere, Passage 2 promotes eco-friendly reusable cups, and Passage 3 mentions a pier with parking, all of which contradict the claim that the atmosphere ",
+        "evidence_preview": [
+          "{\"name\": \"Harbor of Santa Barbara Inc\", \"address\": \"210 Stearns Wharf\", \"city\": \"Santa Barbara\", \"state\": \"CA\", \"categories\": \"Active Life, Restaurants, Boating\", \"hours\": null, \"attributes\": {\"BusinessParking\": null, \"RestaurantsReservations\": null, \"OutdoorSeating\": null, \"WiFi\": null, \"RestaurantsTakeOut\": null, \"RestaurantsGoodForGroups\": null, \"Music\": null, \"Ambience\": {\"romantic\": false, \"intimate\": false, \"touristy\": false, \"hipster\": false, \"divey\": false, \"classy\": false, \"trendy\": false, \"upscale\": false, \"casual\": false}}, \"business_stars\": 3.5, \"review_info\": [{\"review_stars\": 2.0, \"review_date\": \"2018-05-12 23:21:14\", \"review_text\": \"Please make your restaurants and drink shops",
+          "go straw less!! So many straws and you are on the ocean! Help the sea animals! Zoos are straw less for the animals. Be straw less for the sea animals!! Please help save the Ocean life!! To all the people that come to these places, say no to straws ahead of time. Bring you're own reusable cups with reusable straws. Have the shops give a discount for those that bring their own reusable straws and cups/bottles. One step at a time and we can do it.\"}, {\"review_stars\": 4.0, \"review_date\": \"2014-06-20 14:45:52\", \"review_text\": \"People come to SB for the beach, here you go! \\n\\nDecent sized pier to walk on and watch the fishermen and rowers.",
+          "A few shops and restaurants are at the end of the pier and they have some parking with a cost. It's really not that awesome but if you come to CA to see the beaches you should walk atleast one beach pier.\"}, {\"review_stars\": 2.0, \"review_date\": \"2012-08-23 07:24:32\", \"review_text\": \"Ive spent too much time here.The dockage fees are insane.The staff is great but thier hands are tied with crazy policies.The place is crawling with snobs that wont give you the time of day unless you have lots of money.Great place for people watching I guess.\"}]}"
+        ]
+      },
+      "B_readable": {
+        "label": "CONFLICTED",
+        "confidence": 0.5,
+        "error": false,
+        "recorded_latency_s": 8.072220800007926,
+        "wall_s": 8.072464900003979,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1668,
+        "full_source_visible": true,
+        "source_chars_rendered": 1668,
+        "rationale": "Passage 1 and Passage 3 both mention the business name and address, but Passage 1 does not mention the atmosphere, and Passage 3 mentions 'snobs' which is not present in Passage 1.",
+        "evidence_preview": [
+          "Business name: Harbor of Santa Barbara Inc\nAddress: 210 Stearns Wharf, Santa Barbara, CA\nCategories: Active Life, Restaurants, Boating\nOverall rating: 3.5 stars\nOpening hours: not specified\nBusinessParking: not specified\nRestaurantsReservations: not specified\nOutdoorSeating: not specified\nWiFi: not specified\nRestaurantsTakeOut: not specified\nRestaurantsGoodForGroups: not specified\nMusic: not specified\nAmbience: romantic = no; intimate = no; touristy = no; hipster = no; divey = no; classy = no; trendy = no; upscale = no; casual = no",
+          "Review (2.0 stars): Please make your restaurants and drink shops go straw less!! So many straws and you are on the ocean! Help the sea animals! Zoos are straw less for the animals. Be straw less for the sea animals!! Please help save the Ocean life!! To all the people that come to these places, say no to straws ahead of time. Bring you're own reusable cups with reusable straws. Have the shops give a discount for those that bring their own reusable straws and cups/bottles. One step at a time and we can do it.\nReview (4.0 stars): People come to SB for the beach, here you go! \n\nDecent sized pier to walk on and watch the fishermen and rowers.  A few shops and restaurants are at the end of the pier and they have some parking with a cost. It's really not that awesome but if you come to CA to see the beaches you should walk atleast one beach pier.",
+          "Review (2.0 stars): Ive spent too much time here.The dockage fees are insane.The staff is great but thier hands are tied with crazy policies.The place is crawling with snobs that wont give you the time of day unless you have lots of money.Great place for people watching I guess."
+        ]
+      }
+    },
+    {
+      "response_id": "7036",
+      "claim_id": "s_3_c0",
+      "task": "Data2txt",
+      "gold": "HALLUCINATED",
+      "label_types": [
+        "Evident Baseless Info"
+      ],
+      "claim": "The menu features traditional American cuisine, including burgers, sandwiches, salads, and entrees.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 6.66589329999988,
+        "wall_s": 7.380000897683203e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 1992,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that Denny's is a traditional American restaurant, supporting the claim that the menu features traditional American cuisine.",
+        "evidence_preview": [
+          "{\"name\": \"Denny's\", \"address\": \"5677 Calle Real\", \"city\": \"Goleta\", \"state\": \"CA\", \"categories\": \"Restaurants, Diners, Breakfast & Brunch, American (Traditional)\", \"hours\": null, \"attributes\": {\"BusinessParking\": {\"garage\": false, \"street\": false, \"validated\": false, \"lot\": true, \"valet\": false}, \"RestaurantsReservations\": false, \"OutdoorSeating\": false, \"WiFi\": \"free\", \"RestaurantsTakeOut\": true, \"RestaurantsGoodForGroups\": true, \"Music\": null, \"Ambience\": {\"romantic\": false, \"intimate\": false, \"touristy\": false, \"hipster\": false, \"divey\": false, \"classy\": false, \"trendy\": false, \"upscale\": false, \"casual\": true}}, \"business_stars\": 3.0, \"review_info\": [{\"review_stars\": 5.0, \"review_date\": ",
+          "\"2016-02-15 03:47:38\", \"review_text\": \"I was shocked by the level of exceptional service I received here. My waiter, Gabriel I believe it was, catered to my needs above and beyond from what I expected at Denny's and treated me like a long time friend.\"}, {\"review_stars\": 5.0, \"review_date\": \"2015-03-24 02:15:26\", \"review_text\": \"This was the ONLY 24 hour restaurant in the area. It was affordable and the seating was very comfortable. Evidently, the franchise owner sold it, and it is now closing.",
+          "This is a huge loss to this entire community, as this was a truly comfortable place for regular folks, families and students to go and eat...and it was almost always packed to the rafters.\\n\\nThe word is that the landlord jacked the rent up to over 20k per month, triple net, and that was unsustainable for the owner, so he sold up and left.\\n\\nHow many fussy, trendy, hispter places must there be?",
+          "I guess these are the only type of businesses welcome in southern Santa Barbara County.\\n\\nSo glad I left there when I did!\\n\\nRIP Denny's Goleta :-(\"}, {\"review_stars\": 1.0, \"review_date\": \"2015-01-30 09:14:55\", \"review_text\": \"Good luck trying to call them while they're open...which is 24 hours apparently. Called 4 times, and no one picked up even though it was clearly open. Good stuff.\"}]}"
+        ]
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 8.380874599999515,
+        "wall_s": 8.381096900004195,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 1681,
+        "full_source_visible": true,
+        "source_chars_rendered": 1681,
+        "rationale": "Passage 1 establishes that Denny's is a traditional American restaurant, Passage 2 confirms that Denny's is a 24-hour restaurant, and Passage 3 mentions that the restaurant was affordable and comforta",
+        "evidence_preview": [
+          "Business name: Denny's\nAddress: 5677 Calle Real, Goleta, CA\nCategories: Restaurants, Diners, Breakfast & Brunch, American (Traditional)\nOverall rating: 3.0 stars\nOpening hours: not specified\nBusinessParking: garage = no; street = no; validated = no; lot = yes; valet = no\nRestaurantsReservations: no\nOutdoorSeating: no\nWiFi: free\nRestaurantsTakeOut: yes\nRestaurantsGoodForGroups: yes\nMusic: not specified\nAmbience: romantic = no; intimate = no; touristy = no; hipster = no; divey = no; classy = no; trendy = no; upscale = no; casual = yes",
+          "Review (5.0 stars): I was shocked by the level of exceptional service I received here. My waiter, Gabriel I believe it was, catered to my needs above and beyond from what I expected at Denny's and treated me like a long time friend.",
+          "Review (5.0 stars): This was the ONLY 24 hour restaurant in the area. It was affordable and the seating was very comfortable. Evidently, the franchise owner sold it, and it is now closing. This is a huge loss to this entire community, as this was a truly comfortable place for regular folks, families and students to go and eat...and it was almost always packed to the rafters.\n\nThe word is that the landlord jacked the rent up to over 20k per month, triple net, and that was unsustainable for the owner, so he sold up and left.\n\nHow many fussy, trendy, hispter places must there be? I guess these are the only type of businesses welcome in southern Santa Barbara County.\n\nSo glad I left there when I did!\n\nRIP Denny's Goleta :-(",
+          "Review (1.0 stars): Good luck trying to call them while they're open...which is 24 hours apparently. Called 4 times, and no one picked up even though it was clearly open. Good stuff."
+        ]
+      }
+    },
+    {
+      "response_id": "7202",
+      "claim_id": "s_2_c0",
+      "task": "Data2txt",
+      "gold": "HALLUCINATED",
+      "label_types": [
+        "Evident Conflict"
+      ],
+      "claim": "Their hours of operation are Monday through Saturday from 11:00 am to 9:00 pm.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 17.820120000018505,
+        "wall_s": 6.329998723231256e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2291,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that the hours of operation are Monday through Saturday, which directly supports the claim.",
+        "evidence_preview": [
+          "te\": null, \"romantic\": false, \"classy\": false, \"upscale\": false}}, \"business_stars\": 4.5, \"review_info\": [{\"review_stars\": 5.0, \"review_date\": \"2022-01-11 23:03:52\", \"review_text\": \"I don't know what took me so long to find this place but I love it. First off, they don't just make pizzas to go, they make amazing sandwiches! The Italian sub is by far my favorite. The rolls taste fresh and the meats are perfect! The combination of everything in the sandwich is just amazing! I'm not even a fan of sandwiches but this is my first choice of food there! \\n\\nOkay so the pizzas. I used to question why anyone would want to make their own pizza.",
+          "{\"name\": \"Valentino's Take N Bake Pizza\", \"address\": \"4421 Hollister Ave\", \"city\": \"Santa Barbara\", \"state\": \"CA\", \"categories\": \"Salad, Sandwiches, Restaurants, Pizza\", \"hours\": {\"Monday\": \"0:0-0:0\", \"Tuesday\": \"11:0-19:0\", \"Wednesday\": \"11:0-19:0\", \"Thursday\": \"11:0-19:0\", \"Friday\": \"11:0-19:0\", \"Saturday\": \"11:0-19:0\"}, \"attributes\": {\"BusinessParking\": {\"garage\": false, \"street\": false, \"validated\": false, \"lot\": true, \"valet\": false}, \"RestaurantsReservations\": false, \"OutdoorSeating\": false, \"WiFi\": \"no\", \"RestaurantsTakeOut\": true, \"RestaurantsGoodForGroups\": true, \"Music\": null, \"Ambience\": {\"divey\": false, \"hipster\": false, \"casual\": true, \"touristy\": false, \"trendy\": false, \"intima",
+          "Isn't the point to pay for someone to do the work for you? I moved beyond my high maintenance thinking after eating a pizza at a friend's house. It's NOT that difficult to throw it in the oven and the instructions are right on the packaging. The pizza came out of the oven smelling amazing and it was perfectly cooked! I took a bite and my goodness! Fresh baked pizza with little work put in! No cold pizza getting delivered to your house...just a yummy pizza perfectly cooked. And you can pick it up any time, put it in the fridge, and baked when you're ready for dinner! Genius! I appreciate the fresh ingredients and warm pizza. I can't pick a favorite pizza because they've all been amazing.",
+          "She informed me that early bread deliveries recently have been tight bc of the pandemic, but the sandwiches were prepared and ready to go when I arrived! Shayre is such a sweet, hardworking individual and I highly recommend Valentino's for any event!\"}]}"
+        ]
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 18.455746299994644,
+        "wall_s": 18.456010199995944,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 2586,
+        "full_source_visible": true,
+        "source_chars_rendered": 2586,
+        "rationale": "Passage 1 establishes the hours of operation, Passage 2 confirms the quality of the food, and Passage 3 mentions consistent satisfaction over years.",
+        "evidence_preview": [
+          "Business name: Valentino's Take N Bake Pizza\nAddress: 4421 Hollister Ave, Santa Barbara, CA\nCategories: Salad, Sandwiches, Restaurants, Pizza\nOverall rating: 4.5 stars\nOpening hours: Monday 0:0-0:0; Tuesday 11:0-19:0; Wednesday 11:0-19:0; Thursday 11:0-19:0; Friday 11:0-19:0; Saturday 11:0-19:0\nBusinessParking: garage = no; street = no; validated = no; lot = yes; valet = no\nRestaurantsReservations: no\nOutdoorSeating: no\nWiFi: no\nRestaurantsTakeOut: yes\nRestaurantsGoodForGroups: yes\nMusic: not specified\nAmbience: divey = no; hipster = no; casual = yes; touristy = no; trendy = no; intimate = not specified; romantic = no; classy = no; upscale = no",
+          "Review (5.0 stars): I don't know what took me so long to find this place but I love it. First off, they don't just make pizzas to go, they make amazing sandwiches! The Italian sub is by far my favorite. The rolls taste fresh and the meats are perfect! The combination of everything in the sandwich is just amazing! I'm not even a fan of sandwiches but this is my first choice of food there! Okay so the pizzas. I used to question why anyone would want to make their own pizza. Isn't the point to pay for someone to do the work for you? I moved beyond my high maintenance thinking after eating a pizza at a friend's house. It's NOT that difficult to throw it in the oven and the instructions are right on the packaging. The pizza came out of the oven smelling amazing and it was perfectly cooked! I took a bite and my goodness! Fresh baked pizza with little work put in!",
+          "No cold pizza getting delivered to your house...just a yummy pizza perfectly cooked. And you can pick it up any time, put it in the fridge, and baked when you're ready for dinner! Genius! I appreciate the fresh ingredients and warm pizza. I can't pick a favorite pizza because they've all been amazing. Just go try one then try a second then a third...you won't regret it!\nReview (5.0 stars): Always can depend on Valentino's for delicious food! Have been coming here since I was a kid and the food has consistently been tasty over all these years! Great sandwiches, pizzas and salads!",
+          "Review (5.0 stars): Hands down Shayre is an angel! This was our second time ordering a bulk order from this establishment and she got it done! We ordered 120 half sandwiches (100 turkey and 20 veggie) for new student orientation. She informed me that early bread deliveries recently have been tight bc of the pandemic, but the sandwiches were prepared and ready to go when I arrived! Shayre is such a sweet, hardworking individual and I highly recommend Valentino's for any event!"
+        ]
+      }
+    },
+    {
+      "response_id": "7217",
+      "claim_id": "s_3_c0",
+      "task": "Data2txt",
+      "gold": "HALLUCINATED",
+      "label_types": [
+        "Evident Conflict"
+      ],
+      "claim": "The ambiance is described as casual and trendy, but not particularly romantic or upscale.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.099417799996445,
+        "wall_s": 5.910001345910132e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1545,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that the ambiance is described as casual and trendy, but not particularly romantic or upscale. Passage 2 supports the claim by stating that the food was great and the staff was w",
+        "evidence_preview": [
+          "\"trendy\": false, \"upscale\": false, \"casual\": false}}, \"business_stars\": 3.5, \"review_info\": [{\"review_stars\": 5.0, \"review_date\": \"2015-11-25 04:47:01\", \"review_text\": \"Now the new Kimchi!!!! The food is amazing and fresh! Everything is made from scratch, the best Korean bbq I have ever had!\"}, {\"review_stars\": 5.0, \"review_date\": \"2015-10-27 02:27:28\", \"review_text\": \"Now the new Kimchi!!!! The food is amazing and fresh! Everything is made from scratch, the best Korean bbq I have ever had!\"}, {\"review_stars\": 4.0, \"review_date\": \"2015-09-27 05:35:43\", \"review_text\": \"We went here tonight and I was a little cautious because of other reviews, yet this place was great.",
+          "The food was great and the staff was wonderful. We got the combo for 2 and it was SO MUCH FOOD! My only warning would be to come hungry!\\n\\nWe will certainly be back!\"}]}",
+          "{\"name\": \"iGrill Korean BBQ\", \"address\": \"3132 State St\", \"city\": \"Santa Barbara\", \"state\": \"CA\", \"categories\": \"Barbeque, Restaurants, Korean, Food\", \"hours\": {\"Tuesday\": \"17:0-22:0\", \"Wednesday\": \"17:0-22:0\", \"Thursday\": \"17:0-22:0\", \"Friday\": \"17:0-22:30\", \"Saturday\": \"17:0-22:30\", \"Sunday\": \"17:0-22:0\"}, \"attributes\": {\"BusinessParking\": {\"garage\": false, \"street\": true, \"validated\": false, \"lot\": false, \"valet\": false}, \"RestaurantsReservations\": true, \"OutdoorSeating\": false, \"WiFi\": \"free\", \"RestaurantsTakeOut\": true, \"RestaurantsGoodForGroups\": true, \"Music\": null, \"Ambience\": {\"romantic\": false, \"intimate\": false, \"classy\": false, \"hipster\": true, \"divey\": false, \"touristy\": false, "
+        ]
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 10.054025499994168,
+        "wall_s": 10.054324900003849,
+        "cache_hit": false,
+        "n_passages": 2,
+        "evidence_chars": 1202,
+        "full_source_visible": true,
+        "source_chars_rendered": 1202,
+        "rationale": "Passage 1 establishes that the ambiance is casual and trendy, while Passage 2 contradicts this by stating that the food is amazing and fresh, and that the staff was wonderful.",
+        "evidence_preview": [
+          "Business name: iGrill Korean BBQ\nAddress: 3132 State St, Santa Barbara, CA\nCategories: Barbeque, Restaurants, Korean, Food\nOverall rating: 3.5 stars\nOpening hours: Tuesday 17:0-22:0; Wednesday 17:0-22:0; Thursday 17:0-22:0; Friday 17:0-22:30; Saturday 17:0-22:30; Sunday 17:0-22:0\nBusinessParking: garage = no; street = yes; validated = no; lot = no; valet = no\nRestaurantsReservations: yes\nOutdoorSeating: no\nWiFi: free\nRestaurantsTakeOut: yes\nRestaurantsGoodForGroups: yes\nMusic: not specified\nAmbience: romantic = no; intimate = no; classy = no; hipster = yes; divey = no; touristy = no; trendy = no; upscale = no; casual = no",
+          "Review (5.0 stars): Now the new Kimchi!!!! The food is amazing and fresh! Everything is made from scratch, the best Korean bbq I have ever had!\nReview (5.0 stars): Now the new Kimchi!!!! The food is amazing and fresh! Everything is made from scratch, the best Korean bbq I have ever had!\nReview (4.0 stars): We went here tonight and I was a little cautious because of other reviews, yet this place was great. The food was great and the staff was wonderful. We got the combo for 2 and it was SO MUCH FOOD! My only warning would be to come hungry!\n\nWe will certainly be back!"
+        ]
+      }
+    },
+    {
+      "response_id": "7217",
+      "claim_id": "s_7_c0",
+      "task": "Data2txt",
+      "gold": "HALLUCINATED",
+      "label_types": [
+        "Evident Conflict"
+      ],
+      "claim": "Its casual atmosphere and generous portions make it a great option for groups or those looking for a satisfying meal.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 14.173421600018628,
+        "wall_s": 5.70000265724957e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1545,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that the food is 'amazing and fresh', which directly supports the claim that its casual atmosphere and generous portions make it a great option for groups or those looking for a ",
+        "evidence_preview": [
+          "\"trendy\": false, \"upscale\": false, \"casual\": false}}, \"business_stars\": 3.5, \"review_info\": [{\"review_stars\": 5.0, \"review_date\": \"2015-11-25 04:47:01\", \"review_text\": \"Now the new Kimchi!!!! The food is amazing and fresh! Everything is made from scratch, the best Korean bbq I have ever had!\"}, {\"review_stars\": 5.0, \"review_date\": \"2015-10-27 02:27:28\", \"review_text\": \"Now the new Kimchi!!!! The food is amazing and fresh! Everything is made from scratch, the best Korean bbq I have ever had!\"}, {\"review_stars\": 4.0, \"review_date\": \"2015-09-27 05:35:43\", \"review_text\": \"We went here tonight and I was a little cautious because of other reviews, yet this place was great.",
+          "The food was great and the staff was wonderful. We got the combo for 2 and it was SO MUCH FOOD! My only warning would be to come hungry!\\n\\nWe will certainly be back!\"}]}",
+          "{\"name\": \"iGrill Korean BBQ\", \"address\": \"3132 State St\", \"city\": \"Santa Barbara\", \"state\": \"CA\", \"categories\": \"Barbeque, Restaurants, Korean, Food\", \"hours\": {\"Tuesday\": \"17:0-22:0\", \"Wednesday\": \"17:0-22:0\", \"Thursday\": \"17:0-22:0\", \"Friday\": \"17:0-22:30\", \"Saturday\": \"17:0-22:30\", \"Sunday\": \"17:0-22:0\"}, \"attributes\": {\"BusinessParking\": {\"garage\": false, \"street\": true, \"validated\": false, \"lot\": false, \"valet\": false}, \"RestaurantsReservations\": true, \"OutdoorSeating\": false, \"WiFi\": \"free\", \"RestaurantsTakeOut\": true, \"RestaurantsGoodForGroups\": true, \"Music\": null, \"Ambience\": {\"romantic\": false, \"intimate\": false, \"classy\": false, \"hipster\": true, \"divey\": false, \"touristy\": false, "
+        ]
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 10.68246499999077,
+        "wall_s": 10.682738900010008,
+        "cache_hit": false,
+        "n_passages": 2,
+        "evidence_chars": 1202,
+        "full_source_visible": true,
+        "source_chars_rendered": 1202,
+        "rationale": "Both passages mention the casual atmosphere and generous portions of iGrill Korean BBQ, suggesting that the claim is true.",
+        "evidence_preview": [
+          "Business name: iGrill Korean BBQ\nAddress: 3132 State St, Santa Barbara, CA\nCategories: Barbeque, Restaurants, Korean, Food\nOverall rating: 3.5 stars\nOpening hours: Tuesday 17:0-22:0; Wednesday 17:0-22:0; Thursday 17:0-22:0; Friday 17:0-22:30; Saturday 17:0-22:30; Sunday 17:0-22:0\nBusinessParking: garage = no; street = yes; validated = no; lot = no; valet = no\nRestaurantsReservations: yes\nOutdoorSeating: no\nWiFi: free\nRestaurantsTakeOut: yes\nRestaurantsGoodForGroups: yes\nMusic: not specified\nAmbience: romantic = no; intimate = no; classy = no; hipster = yes; divey = no; touristy = no; trendy = no; upscale = no; casual = no",
+          "Review (5.0 stars): Now the new Kimchi!!!! The food is amazing and fresh! Everything is made from scratch, the best Korean bbq I have ever had!\nReview (5.0 stars): Now the new Kimchi!!!! The food is amazing and fresh! Everything is made from scratch, the best Korean bbq I have ever had!\nReview (4.0 stars): We went here tonight and I was a little cautious because of other reviews, yet this place was great. The food was great and the staff was wonderful. We got the combo for 2 and it was SO MUCH FOOD! My only warning would be to come hungry!\n\nWe will certainly be back!"
+        ]
+      }
+    },
+    {
+      "response_id": "7260",
+      "claim_id": "s_4_c0",
+      "task": "Data2txt",
+      "gold": "HALLUCINATED",
+      "label_types": [
+        "Evident Baseless Info"
+      ],
+      "claim": "The place doesn't provide WiFi and has no music.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.824589600000763,
+        "wall_s": 7.800001185387373e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2085,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that the place has gone downhill in the past years, suggesting that it does not provide WiFi and has no music.",
+        "evidence_preview": [
+          "(Even though they've always used frozen veggies and the chicken is terribly dry). This place has gone so far downhill in the past years. There is no flavor. It's about as Americanized as it can be, maybe dumbed down for SB's growing intolerance for spice. This is as close to Mexican food as the $2 tacos from Jack in the box.\"}, {\"review_stars\": 5.0, \"review_date\": \"2021-09-28 01:37:48\", \"review_text\": \"So so so good. Traveling from Austin, TX and naturally wanted some Mexican food with my family. Service was amazing, very kind employees. I did not catch her name but the employees was helpful & always made sure our chips were refilled. It was very good!",
+          "{\"name\": \"Little Alex's\", \"address\": \"1024 Coast Village Rd\", \"city\": \"Santa Barbara\", \"state\": \"CA\", \"categories\": \"Restaurants, Mexican\", \"hours\": {\"Monday\": \"10:0-20:0\", \"Tuesday\": \"10:0-20:0\", \"Wednesday\": \"10:0-20:0\", \"Thursday\": \"10:0-20:0\", \"Friday\": \"10:0-20:0\", \"Saturday\": \"10:0-20:0\"}, \"attributes\": {\"BusinessParking\": {\"garage\": false, \"street\": false, \"validated\": false, \"lot\": true, \"valet\": false}, \"RestaurantsReservations\": false, \"OutdoorSeating\": true, \"WiFi\": \"no\", \"RestaurantsTakeOut\": true, \"RestaurantsGoodForGroups\": true, \"Music\": null, \"Ambience\": {\"touristy\": false, \"hipster\": false, \"romantic\": false, \"divey\": null, \"intimate\": false, \"trendy\": false, \"upscale\": fals",
+          "e, \"classy\": false, \"casual\": true}}, \"business_stars\": 3.5, \"review_info\": [{\"review_stars\": 1.0, \"review_date\": \"2021-11-27 07:10:59\", \"review_text\": \"Drove there and it was under construction. Yelp said it was open & looked through the window and paint cans and cutting supplies glore.\"}, {\"review_stars\": 2.0, \"review_date\": \"2021-09-29 17:23:43\", \"review_text\": \"I've lived in Cito for 30+ years. When I was a kid we'd often come here for family dinners. We always had a great time and the food was tasty. We call their chicken soup \\\"sick soup\\\" and request it every time we have a cold or flu. It used to be delicious.",
+          "Throughout the whole meal my family and I kept commenting on how good the food was. Thank you!!!\"}]}"
+        ]
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 9.12377999999444,
+        "wall_s": 9.124022400006652,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1754,
+        "full_source_visible": true,
+        "source_chars_rendered": 1754,
+        "rationale": "Passage 1 establishes that WiFi is not available, which directly supports the claim that the place doesn't provide WiFi.",
+        "evidence_preview": [
+          "Business name: Little Alex's\nAddress: 1024 Coast Village Rd, Santa Barbara, CA\nCategories: Restaurants, Mexican\nOverall rating: 3.5 stars\nOpening hours: Monday 10:0-20:0; Tuesday 10:0-20:0; Wednesday 10:0-20:0; Thursday 10:0-20:0; Friday 10:0-20:0; Saturday 10:0-20:0\nBusinessParking: garage = no; street = no; validated = no; lot = yes; valet = no\nRestaurantsReservations: no\nOutdoorSeating: yes\nWiFi: no\nRestaurantsTakeOut: yes\nRestaurantsGoodForGroups: yes\nMusic: not specified\nAmbience: touristy = no; hipster = no; romantic = no; divey = not specified; intimate = no; trendy = no; upscale = no; classy = no; casual = yes",
+          "Review (1.0 stars): Drove there and it was under construction. Yelp said it was open & looked through the window and paint cans and cutting supplies glore.\nReview (2.0 stars): I've lived in Cito for 30+ years. When I was a kid we'd often come here for family dinners. We always had a great time and the food was tasty. We call their chicken soup \"sick soup\" and request it every time we have a cold or flu. It used to be delicious. (Even though they've always used frozen veggies and the chicken is terribly dry). This place has gone so far downhill in the past years. There is no flavor. It's about as Americanized as it can be, maybe dumbed down for SB's growing intolerance for spice. This is as close to Mexican food as the $2 tacos from Jack in the box.",
+          "Review (5.0 stars): So so so good. Traveling from Austin, TX and naturally wanted some Mexican food with my family. Service was amazing, very kind employees. I did not catch her name but the employees was helpful & always made sure our chips were refilled. It was very good! Throughout the whole meal my family and I kept commenting on how good the food was. Thank you!!!"
+        ]
+      }
+    },
+    {
+      "response_id": "7953",
+      "claim_id": "s_4_c0",
+      "task": "Data2txt",
+      "gold": "HALLUCINATED",
+      "label_types": [
+        "Evident Baseless Info"
+      ],
+      "claim": "One reviewer highlighted the excellent customer service and recommended the pesto pizza, which is said to be addictive and of high quality.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 10.069874700013315,
+        "wall_s": 6.970000686123967e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1674,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that the reviewer ordered and paid online, indicating that the reviewer is likely to have visited the restaurant. Passage 3 mentions that the reviewer has ordered the pesto pizza",
+        "evidence_preview": [
+          "view_info\": [{\"review_stars\": 1.0, \"review_date\": \"2021-03-28 00:32:07\", \"review_text\": \"Ordered and paid online as we have done before. Went to get food and found store empty. Payment was processed! No food, no one there.\"}, {\"review_stars\": 5.0, \"review_date\": \"2021-03-12 05:24:11\", \"review_text\": \"My wife and I grabbed a marg pizza & mixed green salad to go. The pizza had a nice, light thin-crust. Everything was great! They were also open later than many restaurants on De La Vina. Would recommend.\"}, {\"review_stars\": 5.0, \"review_date\": \"2021-03-07 03:19:07\", \"review_text\": \"Two words...\\nPesto pizza\\nWow!! Quality pizza I. Santa Barbara. This place is addictive.",
+          "I've only had the pesto pizza and can say that I've ordered it several times. It's the only flavor I keep ordering. I highly recommend it to anyone that like garlic, red peppers, their cheese is good and pesto sauce is great!\\nI have zero problems with this pizza.\\nI will continue to order it...\"}]}",
+          "{\"name\": \"Santa Barbara's Wood Fired Pizza\", \"address\": \"2840 De La Vina St\", \"city\": \"Santa Barbara\", \"state\": \"CA\", \"categories\": \"Food, Sandwiches, Food Delivery Services, Pizza, Restaurants, Italian\", \"hours\": {\"Monday\": \"0:0-0:0\", \"Tuesday\": \"15:0-21:0\", \"Wednesday\": \"15:0-21:0\", \"Thursday\": \"12:0-17:45\", \"Friday\": \"15:0-22:0\", \"Saturday\": \"15:0-22:0\", \"Sunday\": \"15:0-21:0\"}, \"attributes\": {\"BusinessParking\": {\"garage\": false, \"street\": false, \"validated\": false, \"lot\": true, \"valet\": false}, \"RestaurantsReservations\": false, \"OutdoorSeating\": false, \"WiFi\": \"free\", \"RestaurantsTakeOut\": true, \"RestaurantsGoodForGroups\": null, \"Music\": null, \"Ambience\": null}, \"business_stars\": 4.0, \"re"
+        ]
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.54713379999157,
+        "wall_s": 7.54734729998745,
+        "cache_hit": false,
+        "n_passages": 2,
+        "evidence_chars": 1378,
+        "full_source_visible": true,
+        "source_chars_rendered": 1378,
+        "rationale": "Passage 1 establishes that the reviewer highlighted excellent customer service and recommended the pesto pizza, which is said to be addictive and of high quality. This directly supports the claim that",
+        "evidence_preview": [
+          "Business name: Santa Barbara's Wood Fired Pizza\nAddress: 2840 De La Vina St, Santa Barbara, CA\nCategories: Food, Sandwiches, Food Delivery Services, Pizza, Restaurants, Italian\nOverall rating: 4.0 stars\nOpening hours: Monday 0:0-0:0; Tuesday 15:0-21:0; Wednesday 15:0-21:0; Thursday 12:0-17:45; Friday 15:0-22:0; Saturday 15:0-22:0; Sunday 15:0-21:0\nBusinessParking: garage = no; street = no; validated = no; lot = yes; valet = no\nRestaurantsReservations: no\nOutdoorSeating: no\nWiFi: free\nRestaurantsTakeOut: yes\nRestaurantsGoodForGroups: not specified\nMusic: not specified\nAmbience: not specified",
+          "Review (1.0 stars): Ordered and paid online as we have done before. Went to get food and found store empty. Payment was processed!  No food, no one there.\nReview (5.0 stars): My wife and I grabbed a marg pizza & mixed green salad to go. The pizza had a nice, light thin-crust. Everything was great! They were also open later than many restaurants on De La Vina. Would recommend.\nReview (5.0 stars): Two words...\nPesto pizza\nWow!! Quality pizza I. Santa Barbara. This place is addictive. I've only had the pesto pizza and can say that I've ordered it several times. It's the only flavor I keep ordering. I highly recommend it to anyone that like garlic, red peppers, their cheese is good and pesto sauce is great!\nI have zero problems with this pizza.\nI will continue to order it..."
+        ]
+      }
+    },
+    {
+      "response_id": "9080",
+      "claim_id": "s_5_c0",
+      "task": "Data2txt",
+      "gold": "HALLUCINATED",
+      "label_types": [
+        "Evident Conflict"
+      ],
+      "claim": "The restaurant is romantic and classy with a casual atmosphere.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 13.110194999986561,
+        "wall_s": 7.730000652372837e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2473,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes the restaurant as 'romantic and classy' with a casual atmosphere, Passage 2 supports the claim by mentioning the server's excellent service and the Sommelier's expertise, and Pas",
+        "evidence_preview": [
+          "ate\": true, \"trendy\": false, \"upscale\": true, \"classy\": true, \"casual\": false}}, \"business_stars\": 4.0, \"review_info\": [{\"review_stars\": 3.0, \"review_date\": \"2022-01-16 06:07:34\", \"review_text\": \"Unfortunately, we came during the pre-fixed menu. There were no sides and no variety of appetizers. After reading the reviews of the food I was sad to see the menu look so bare and lonely. \\nOur server was great, very friendly and the Sommelier was excellent. I chose the mushrooms, the lobster pasta and chocolate mousse. The mushrooms were hearty but the lobster pasta only had about 5 small pieces of lobster. My husband ordered the Ceasar salad, salmon and cr\u00e8me br\u00fbl\u00e9e.",
+          "He enjoyed his salad but the salmon filet was small. With 3 (possibly small) \\n items per person, you may want to grab an appetizer in the lobby bar before you come. \\nIt also took forever to get each course. We were seated at 6:55pm and didn't leave until 9:25pm. My husband and son went back to the room while I waited at the table an additional 15 minutes for 2 cookies and a side of vanilla ice cream. I asked a manager who walked by to check on the dessert and to get me a copy of the itemized receipt. He seemed annoyed.",
+          "Overall, maybe I'll return when the regular menu is back..\"}, {\"review_stars\": 5.0, \"review_date\": \"2021-12-22 22:11:03\", \"review_text\": \"First off, I want to say all of the staff were amazing but we loved our server Autumn. She was so sweet and really knew the menu. We ordered everything she recommended. \\n\\nWe got a bottle of wine to start, very crisp and light. Then for appetizers we ordered a dozen oysters which came in fresh from Baja, CA. I love that they provided a large amount of lemon, hot sauce and this amazing house made sauce. I could have eaten 100. One of the best selection of oysters we had. The quail and side salad was phenomenal.",
+          "Just watch out for the little bones.\\n\\nFor dinner, I got the halibut which was so rich and tender I could barely scoop it up. It was very flavorful. Bae got the filet and potatoes which was cooked to perfection. We got a side of the cauliflower and it was the perfect side. \\n\\nWe opted for the chocolate mousse cake since chocolate is my favorite but to be honest wouldn't recommend. I wish they would expand their dessert menu but overall great night sitting by the water!\"}, {\"review_stars\": 4.0, \"review_date\": \"2021-12-10 20:06:30\", \"review_text\": \"Had a great time! Good service, drinks and food. Very knowledgeable."
+        ]
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 8.771539900015341,
+        "wall_s": 8.77175770001486,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 2378,
+        "full_source_visible": false,
+        "source_chars_rendered": 3182,
+        "rationale": "Passage 1 establishes the restaurant's romantic and classy atmosphere, while Passage 2 highlights the quality of the food and service. Passage 3 provides a contrasting review, but overall, the reviewe",
+        "evidence_preview": [
+          "Business name: Angel Oak\nAddress: 8301 Hollister Ave, Santa Barbara, CA\nCategories: Restaurants, Seafood, American (New), Steakhouses\nOverall rating: 4.0 stars\nOpening hours: Monday 17:0-22:0; Tuesday 17:0-22:0; Wednesday 17:0-22:0; Thursday 17:0-22:0; Friday 17:0-22:0; Saturday 17:0-22:0; Sunday 17:0-22:0\nBusinessParking: garage = no; street = no; validated = yes; lot = no; valet = yes\nRestaurantsReservations: yes\nOutdoorSeating: yes\nWiFi: free\nRestaurantsTakeOut: not specified\nRestaurantsGoodForGroups: yes\nMusic: not specified\nAmbience: touristy = no; hipster = no; romantic = yes; divey = no; intimate = yes; trendy = no; upscale = yes; classy = yes; casual = no",
+          "Review (3.0 stars): Unfortunately, we came during the pre-fixed menu. There were no sides and no variety of appetizers. After reading the reviews of the food I was sad to see the menu look so bare and lonely. Our server was great, very friendly and the Sommelier was excellent. I chose the mushrooms, the lobster pasta and chocolate mousse. The mushrooms were hearty but the lobster pasta only had about 5 small pieces of lobster. My husband ordered the Ceasar salad, salmon and cr\u00e8me br\u00fbl\u00e9e. He enjoyed his salad but the salmon filet was small. With 3 (possibly small) items per person, you may want to grab an appetizer in the lobby bar before you come. It also took forever to get each course. We were seated at 6:55pm and didn't leave until 9:25pm.",
+          "My husband and son went back to the room while I waited at the table an additional 15 minutes for 2 cookies and a side of vanilla ice cream. I asked a manager who walked by to check on the dessert and to get me a copy of the itemized receipt. He seemed annoyed. Overall, maybe I'll return when the regular menu is back..",
+          "We opted for the chocolate mousse cake since chocolate is my favorite but to be honest wouldn't recommend. I wish they would expand their dessert menu but overall great night sitting by the water!\nReview (4.0 stars): Had a great time! Good service, drinks and food. Very knowledgeable. The filet mignon was amazing and finally found a place with a good bearnaise. Lots of tarragon and saffron on the menu. Would be 5 stars with a smidge lower price tag. The lighting was a little \"shoe storey\" but maybe because we were seated in the middle of the room. We also got wine recs starting close to $300. Apart from that a great experience."
+        ]
+      }
+    },
+    {
+      "response_id": "926",
+      "claim_id": "s_4_c0",
+      "task": "Summary",
+      "gold": "HALLUCINATED",
+      "label_types": [
+        "Evident Baseless Info"
+      ],
+      "claim": "Despite the initial criticism and rejection, the project gained popularity online and eventually led to appearances on talk shows and invitations to speak at events across the country.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 15.77250439999625,
+        "wall_s": 6.469999789260328e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2669,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes Jiang's initial rejection request and subsequent viral video, which went on to gain him popularity online. Passage 2 highlights Jiang's decision to confront his fear of rejection",
+        "evidence_preview": [
+          "Famously, in 2012 on his third day of the project, Jiang asked Austin, Texas, Krispy Kreme manager (Jackie Braun) to make him five interlinked donuts to mimic the Olympic symbol. To his surprise, she rose to the challenge and his rejection request faltered. He shared his video and it went viral on Reddit. Before long, Jiang (and Braun) were invited on talk shows and Jiang was being asked to speak at events across the US. Jiang was even offered jobs as his project continued and his fame grew. That wasn't the goal of the project though. \"I'm really just a person trying to overcome my own fears,\" explained Jiang.",
+          "What would you do if a complete stranger asked you for $100, or offered you an apple in a parking lot without explanation? These are only two of the 100 challenges Chinese-born, American-based Jia Jiang put himself up to when he decided to blog about \"100 Days of Rejection\", a project he launched after he quit his comfortable six-figure job to follow his dreams of being an entrepreneur at the age of 30, just weeks before his first child was born. After his tech start-up was declined investment, Jiang decided to confront his fear of rejection head-on. This led to his writing his book called Rejection Proof, part self-help and part motivational/autobiography, which is being released this week.",
+          "The project started out to help \"fix my own problems, and now I'm helping others fix theirs,\" he said. \"The fear of rejection really holds people back. I'm trying to demystify the idea of rejection.\" Jiang, who as a child dreamed of being Bill Gates and has been viewed 7 million times on YouTube, has found his entrepreneurial dream in a different role for the moment. \"My goal is to turn rejection into opportunity. I always thought it was something to run away from, but if we can embrace it, we can turn it into a lot more than an obstacle.\" 8 top tips in making rejection work for you:. 1 - The fear of rejection holds us back a lot more than actual rejection.",
+          "Sometimes through this process you learn there is something else you can ask for. Ask for an intermediate position rather than the top position. 6 - Set a number of how many no's you can take. In his book, Jiang helps his wife set out to get her dream job at Google. He tells her that instead of thinking about getting a job, she needs to prepare herself for how many no's she can take. In the end, she was offered a job at Google. 7 - Be invincible. By the end of his project, Jiang said he felt he could ask anything from anyone and not have the pain of rejection. It was a gradual process - gradually my comfort zone expanded. It's like a muscle, I could become stronger and stronger."
+        ]
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 13.03540079999948,
+        "wall_s": 13.035679299995536,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 3411,
+        "full_source_visible": false,
+        "source_chars_rendered": 4362,
+        "rationale": "Passage 1 establishes the initial criticism and rejection, Passage 2 shows the viral video and subsequent invitations, and Passage 3 provides 8 tips on making rejection work for you. These passages co",
+        "evidence_preview": [
+          "What would you do if a complete stranger asked you for $100, or offered you an apple in a parking lot without explanation? These are only two of the 100 challenges Chinese-born, American-based Jia Jiang put himself up to when he decided to blog about \"100 Days of Rejection\", a project he launched after he quit his comfortable six-figure job to follow his dreams of being an entrepreneur at the age of 30, just weeks before his first child was born. After his tech start-up was declined investment, Jiang decided to confront his fear of rejection head-on. This led to his writing his book called Rejection Proof, part self-help and part motivational/autobiography, which is being released this week. Famously, in 2012 on his third day of the project, Jiang asked Austin, Texas, Krispy Kreme manager (Jackie Braun) to make him five interlinked donuts to mimic the Olympic symbol.",
+          "To his surprise, she rose to the challenge and his rejection request faltered. He shared his video and it went viral on Reddit. Before long, Jiang (and Braun) were invited on talk shows and Jiang was being asked to speak at events across the US. Jiang was even offered jobs as his project continued and his fame grew. That wasn't the goal of the project though. \"I'm really just a person trying to overcome my own fears,\" explained Jiang. The project started out to help \"fix my own problems, and now I'm helping others fix theirs,\" he said. \"The fear of rejection really holds people back. I'm trying to demystify the idea of rejection.\" Jiang, who as a child dreamed of being Bill Gates and has been viewed 7 million times on YouTube, has found his entrepreneurial dream in a different role for the moment. \"My goal is to turn rejection into opportunity.",
+          "I always thought it was something to run away from, but if we can embrace it, we can turn it into a lot more than an obstacle.\" 8 top tips in making rejection work for you:. 1 - The fear of rejection holds us back a lot more than actual rejection. By putting ourselves out there, the world will usually open itself up to you. Though the world can seem cruel and cold, actually humans have a hard time saying no. So open yourself up, don't be afraid to ask for something. If you fail, remember it's not about you. 2 -  Rejection is more or less a numbers game. Sometimes the most far-fetched idea gets a yes. If you talk to enough people, somebody will say yes to you. J.K. Rowling went through 12 rejections to get her yes for Harry Potter and the Philosopher's Stone. 3 - You cannot use rejection to measure the merit of an idea.",
+          "6 - Set a number of how many no's you can take. In his book, Jiang helps his wife set out to get her dream job at Google. He tells her that instead of thinking about getting a job, she needs to prepare herself for how many no's she can take. In the end, she was offered a job at Google. 7 - Be invincible. By the end of his project, Jiang said he felt he could ask anything from anyone and not have the pain of rejection. It was a gradual process - gradually my comfort zone expanded. It's like a muscle, I could become stronger and stronger. 8 - Stand tall and remember rejection is an opinion. People are who they are. A lot of people will reject you because of their mood, their education, their upbringing, and you can't change who they are. But you can stand confidently. Innate confidence comes across. How missing sleep can damage your IQ."
+        ]
+      }
+    },
+    {
+      "response_id": "9526",
+      "claim_id": "s_8_c0",
+      "task": "Data2txt",
+      "gold": "HALLUCINATED",
+      "label_types": [
+        "Evident Baseless Info"
+      ],
+      "claim": "Reservations are not accepted, but takeout and online ordering are available.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.711795099981828,
+        "wall_s": 6.769999163225293e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1703,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 2 establishes that the coffee shop is 'really liked' and 'came around 5:40', indicating a positive experience.",
+        "evidence_preview": [
+          "The service was incredibly fast and the staff was very friendly. There's no indoor seating but there are a handful of tables outside.\"}, {\"review_stars\": 1.0, \"review_date\": \"2021-09-21 05:31:30\", \"review_text\": \"no almond milk anymore??? not vibes. Also was assured that the toast could be made gluten free and I had a allergic reaction.\"}]}",
+          "[{\"review_stars\": 5.0, \"review_date\": \"2022-01-17 05:52:28\", \"review_text\": \"I really liked this coffee shop! I just got a generic vanilla latte to be safe and I loved it. A little sweeter than usual but it's okay. I came around 5:40 so I got my drink made in minutes so it was a quick in and out. Located next to a lot of cute shops too!\"}, {\"review_stars\": 5.0, \"review_date\": \"2022-01-03 14:13:31\", \"review_text\": \"Hustle & Grind is a really unique spot. I can't think of many coffee shops that also sell Hawaiian shaved ice, it's a pretty unique concept and I really liked the variety. The coffee is pretty good, just be careful because it is extremely hot.",
+          "{\"name\": \"Hustle & Grind Coffee Company\", \"address\": \"11 W De La Guerra St\", \"city\": \"Santa Barbara\", \"state\": \"CA\", \"categories\": \"Coffee & Tea, Food, Ice Cream & Frozen Yogurt, Restaurants, Cafes\", \"hours\": {\"Monday\": \"8:0-17:0\", \"Tuesday\": \"8:0-17:0\", \"Wednesday\": \"8:0-17:0\", \"Thursday\": \"8:0-17:0\", \"Friday\": \"8:0-17:0\", \"Saturday\": \"13:0-18:0\", \"Sunday\": \"13:0-18:0\"}, \"attributes\": {\"BusinessParking\": {\"garage\": true, \"street\": true, \"validated\": false, \"lot\": false, \"valet\": false}, \"RestaurantsReservations\": false, \"OutdoorSeating\": true, \"WiFi\": \"free\", \"RestaurantsTakeOut\": true, \"RestaurantsGoodForGroups\": null, \"Music\": null, \"Ambience\": null}, \"business_stars\": 4.5, \"review_info\":"
+        ]
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.592984000017168,
+        "wall_s": 7.593561499990756,
+        "cache_hit": false,
+        "n_passages": 2,
+        "evidence_chars": 1415,
+        "full_source_visible": true,
+        "source_chars_rendered": 1415,
+        "rationale": "Passage 1 establishes that reservations are not accepted, directly supporting the claim that reservations are not accepted.",
+        "evidence_preview": [
+          "Business name: Hustle & Grind Coffee Company\nAddress: 11 W De La Guerra St, Santa Barbara, CA\nCategories: Coffee & Tea, Food, Ice Cream & Frozen Yogurt, Restaurants, Cafes\nOverall rating: 4.5 stars\nOpening hours: Monday 8:0-17:0; Tuesday 8:0-17:0; Wednesday 8:0-17:0; Thursday 8:0-17:0; Friday 8:0-17:0; Saturday 13:0-18:0; Sunday 13:0-18:0\nBusinessParking: garage = yes; street = yes; validated = no; lot = no; valet = no\nRestaurantsReservations: no\nOutdoorSeating: yes\nWiFi: free\nRestaurantsTakeOut: yes\nRestaurantsGoodForGroups: not specified\nMusic: not specified\nAmbience: not specified",
+          "Review (5.0 stars): I really liked this coffee shop! I just got a generic vanilla latte to be safe and I loved it. A little sweeter than usual but it's okay. I came around 5:40 so I got my drink made in minutes so it was a quick in and out. Located next to a lot of cute shops too!\nReview (5.0 stars): Hustle & Grind is a really unique spot. I can't think of many coffee shops that also sell Hawaiian shaved ice, it's a pretty unique concept and I really liked the variety. The coffee is pretty good, just be careful because it is extremely hot. The service was incredibly fast and the staff was very friendly. There's no indoor seating but there are a handful of tables outside.\nReview (1.0 stars): no almond milk anymore??? not vibes. Also was assured that the toast could be made gluten free and I had a allergic reaction."
+        ]
+      }
+    },
+    {
+      "response_id": "9771",
+      "claim_id": "s_2_c0",
+      "task": "Data2txt",
+      "gold": "HALLUCINATED",
+      "label_types": [
+        "Evident Baseless Info"
+      ],
+      "claim": "Some patrons have had positive experiences with friendly and attentive staff, while others have encountered rude and unhelpful service.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 11.663099400000647,
+        "wall_s": 9.439999121241271e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1971,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that some patrons have had positive experiences with friendly and attentive staff, while Passage 2 supports the claim by mentioning a customer who had a good experience with the ",
+        "evidence_preview": [
+          "\": false, \"intimate\": false, \"classy\": false, \"hipster\": false, \"divey\": false, \"touristy\": false, \"trendy\": false, \"upscale\": false, \"casual\": true}}, \"business_stars\": 3.5, \"review_info\": [{\"review_stars\": 1.0, \"review_date\": \"2018-11-08 17:11:36\", \"review_text\": \"I've never in my life been angry enough to yell at a stranger than I was when I ordered from here one day. And I'm super shy and quiet, so that should say a lot about the customer service. Their food was my favorite until I experienced the worst customer service from a girl who worked their. So I was sad because ofc I wouldn't support them again after that.",
+          "But oh well.\"}, {\"review_stars\": 5.0, \"review_date\": \"2017-12-03 00:13:26\", \"review_text\": \"animal mac- mac n cheese, pulled pork, bbq sauce, and tater tots. the guy hooked it up F A T so blessed this is so good\"}, {\"review_stars\": 3.0, \"review_date\": \"2017-10-15 14:38:40\", \"review_text\": \"Updating my review to inform readers that I have returned here now at least 4 more times and sometimes my food has been less than great. Also, the last 3 times they didn't have any ribs. I also think that the quality of food you get depends on who's working. I will try again but if they give me stories and crappy food I will not go back ever again.\"}]}",
+          "{\"name\": \"Kaptain's Firehouse BBQ\", \"address\": \"6543 Pardall Rd\", \"city\": \"Isla Vista\", \"state\": \"CA\", \"categories\": \"Food Delivery Services, Chicken Wings, Restaurants, Sandwiches, Food, American (New), Barbeque\", \"hours\": {\"Monday\": \"11:30-21:30\", \"Tuesday\": \"11:30-21:30\", \"Wednesday\": \"11:30-21:30\", \"Thursday\": \"11:30-21:30\", \"Friday\": \"11:30-21:30\", \"Saturday\": \"11:30-21:30\", \"Sunday\": \"11:30-21:30\"}, \"attributes\": {\"BusinessParking\": {\"garage\": false, \"street\": true, \"validated\": false, \"lot\": false, \"valet\": false}, \"RestaurantsReservations\": false, \"OutdoorSeating\": true, \"WiFi\": \"no\", \"RestaurantsTakeOut\": true, \"RestaurantsGoodForGroups\": false, \"Music\": null, \"Ambience\": {\"romantic"
+        ]
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.962079199991422,
+        "wall_s": 7.9622623000177555,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1622,
+        "full_source_visible": true,
+        "source_chars_rendered": 1622,
+        "rationale": "Passage 1 establishes that some patrons have had positive experiences with friendly and attentive staff, while others have encountered rude and unhelpful service. This suggests that the claim that som",
+        "evidence_preview": [
+          "Business name: Kaptain's Firehouse BBQ\nAddress: 6543 Pardall Rd, Isla Vista, CA\nCategories: Food Delivery Services, Chicken Wings, Restaurants, Sandwiches, Food, American (New), Barbeque\nOverall rating: 3.5 stars\nOpening hours: Monday 11:30-21:30; Tuesday 11:30-21:30; Wednesday 11:30-21:30; Thursday 11:30-21:30; Friday 11:30-21:30; Saturday 11:30-21:30; Sunday 11:30-21:30\nBusinessParking: garage = no; street = yes; validated = no; lot = no; valet = no\nRestaurantsReservations: no\nOutdoorSeating: yes\nWiFi: no\nRestaurantsTakeOut: yes\nRestaurantsGoodForGroups: no\nMusic: not specified\nAmbience: romantic = no; intimate = no; classy = no; hipster = no; divey = no; touristy = no; trendy = no; upscale = no; casual = yes",
+          "Review (1.0 stars): I've never in my life been angry enough to yell at a stranger than I was when I ordered from here one day. And I'm super shy and quiet, so that should say a lot about the customer service. Their food was my favorite until I experienced the worst customer service from a girl who worked their. So I was sad because ofc I wouldn't support them again after that. But oh well.\nReview (5.0 stars): animal mac- mac n cheese, pulled pork, bbq sauce, and tater tots. the guy hooked it up F A T so blessed this is so good",
+          "Review (3.0 stars): Updating my review to inform readers that I have returned here now at least 4 more times and sometimes my food has been less than great. Also, the last 3 times they didn't have any ribs. I also think that the quality of food you get depends on who's working. I will try again but if they give me stories and crappy food I will not go back ever again."
+        ]
+      }
+    },
+    {
+      "response_id": "9771",
+      "claim_id": "s_3_c0",
+      "task": "Data2txt",
+      "gold": "HALLUCINATED",
+      "label_types": [
+        "Evident Baseless Info"
+      ],
+      "claim": "Despite this inconsistency, many customers appreciate the quality of the food and the convenience of takeout.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 8.658334100007778,
+        "wall_s": 7.599999662488699e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1971,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes a positive experience with the food, while Passage 2 highlights a negative experience with customer service. Passage 3 provides a neutral review, but the overall tone suggests a ",
+        "evidence_preview": [
+          "But oh well.\"}, {\"review_stars\": 5.0, \"review_date\": \"2017-12-03 00:13:26\", \"review_text\": \"animal mac- mac n cheese, pulled pork, bbq sauce, and tater tots. the guy hooked it up F A T so blessed this is so good\"}, {\"review_stars\": 3.0, \"review_date\": \"2017-10-15 14:38:40\", \"review_text\": \"Updating my review to inform readers that I have returned here now at least 4 more times and sometimes my food has been less than great. Also, the last 3 times they didn't have any ribs. I also think that the quality of food you get depends on who's working. I will try again but if they give me stories and crappy food I will not go back ever again.\"}]}",
+          "\": false, \"intimate\": false, \"classy\": false, \"hipster\": false, \"divey\": false, \"touristy\": false, \"trendy\": false, \"upscale\": false, \"casual\": true}}, \"business_stars\": 3.5, \"review_info\": [{\"review_stars\": 1.0, \"review_date\": \"2018-11-08 17:11:36\", \"review_text\": \"I've never in my life been angry enough to yell at a stranger than I was when I ordered from here one day. And I'm super shy and quiet, so that should say a lot about the customer service. Their food was my favorite until I experienced the worst customer service from a girl who worked their. So I was sad because ofc I wouldn't support them again after that.",
+          "{\"name\": \"Kaptain's Firehouse BBQ\", \"address\": \"6543 Pardall Rd\", \"city\": \"Isla Vista\", \"state\": \"CA\", \"categories\": \"Food Delivery Services, Chicken Wings, Restaurants, Sandwiches, Food, American (New), Barbeque\", \"hours\": {\"Monday\": \"11:30-21:30\", \"Tuesday\": \"11:30-21:30\", \"Wednesday\": \"11:30-21:30\", \"Thursday\": \"11:30-21:30\", \"Friday\": \"11:30-21:30\", \"Saturday\": \"11:30-21:30\", \"Sunday\": \"11:30-21:30\"}, \"attributes\": {\"BusinessParking\": {\"garage\": false, \"street\": true, \"validated\": false, \"lot\": false, \"valet\": false}, \"RestaurantsReservations\": false, \"OutdoorSeating\": true, \"WiFi\": \"no\", \"RestaurantsTakeOut\": true, \"RestaurantsGoodForGroups\": false, \"Music\": null, \"Ambience\": {\"romantic"
+        ]
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.791503999993438,
+        "wall_s": 7.791696000000229,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1622,
+        "full_source_visible": true,
+        "source_chars_rendered": 1622,
+        "rationale": "Passage 1 establishes that Kaptain's Firehouse BBQ has a high overall rating (3.5 stars) and that customers appreciate the quality of the food and convenience of takeout.",
+        "evidence_preview": [
+          "Business name: Kaptain's Firehouse BBQ\nAddress: 6543 Pardall Rd, Isla Vista, CA\nCategories: Food Delivery Services, Chicken Wings, Restaurants, Sandwiches, Food, American (New), Barbeque\nOverall rating: 3.5 stars\nOpening hours: Monday 11:30-21:30; Tuesday 11:30-21:30; Wednesday 11:30-21:30; Thursday 11:30-21:30; Friday 11:30-21:30; Saturday 11:30-21:30; Sunday 11:30-21:30\nBusinessParking: garage = no; street = yes; validated = no; lot = no; valet = no\nRestaurantsReservations: no\nOutdoorSeating: yes\nWiFi: no\nRestaurantsTakeOut: yes\nRestaurantsGoodForGroups: no\nMusic: not specified\nAmbience: romantic = no; intimate = no; classy = no; hipster = no; divey = no; touristy = no; trendy = no; upscale = no; casual = yes",
+          "Review (1.0 stars): I've never in my life been angry enough to yell at a stranger than I was when I ordered from here one day. And I'm super shy and quiet, so that should say a lot about the customer service. Their food was my favorite until I experienced the worst customer service from a girl who worked their. So I was sad because ofc I wouldn't support them again after that. But oh well.\nReview (5.0 stars): animal mac- mac n cheese, pulled pork, bbq sauce, and tater tots. the guy hooked it up F A T so blessed this is so good",
+          "Review (3.0 stars): Updating my review to inform readers that I have returned here now at least 4 more times and sometimes my food has been less than great. Also, the last 3 times they didn't have any ribs. I also think that the quality of food you get depends on who's working. I will try again but if they give me stories and crappy food I will not go back ever again."
+        ]
+      }
+    },
+    {
+      "response_id": "9771",
+      "claim_id": "s_4_c0",
+      "task": "Data2txt",
+      "gold": "HALLUCINATED",
+      "label_types": [
+        "Evident Baseless Info",
+        "Evident Conflict"
+      ],
+      "claim": "However, there have been some complaints regarding the availability of certain menu items and the lack of outdoor seating.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 11.37500299999374,
+        "wall_s": 7.090001599863172e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1971,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that the reviewer had a positive experience at Kaptain's Firehouse BBQ, mentioning specific menu items and the quality of food. Passage 2 contradicts this by stating that the rev",
+        "evidence_preview": [
+          "But oh well.\"}, {\"review_stars\": 5.0, \"review_date\": \"2017-12-03 00:13:26\", \"review_text\": \"animal mac- mac n cheese, pulled pork, bbq sauce, and tater tots. the guy hooked it up F A T so blessed this is so good\"}, {\"review_stars\": 3.0, \"review_date\": \"2017-10-15 14:38:40\", \"review_text\": \"Updating my review to inform readers that I have returned here now at least 4 more times and sometimes my food has been less than great. Also, the last 3 times they didn't have any ribs. I also think that the quality of food you get depends on who's working. I will try again but if they give me stories and crappy food I will not go back ever again.\"}]}",
+          "\": false, \"intimate\": false, \"classy\": false, \"hipster\": false, \"divey\": false, \"touristy\": false, \"trendy\": false, \"upscale\": false, \"casual\": true}}, \"business_stars\": 3.5, \"review_info\": [{\"review_stars\": 1.0, \"review_date\": \"2018-11-08 17:11:36\", \"review_text\": \"I've never in my life been angry enough to yell at a stranger than I was when I ordered from here one day. And I'm super shy and quiet, so that should say a lot about the customer service. Their food was my favorite until I experienced the worst customer service from a girl who worked their. So I was sad because ofc I wouldn't support them again after that.",
+          "{\"name\": \"Kaptain's Firehouse BBQ\", \"address\": \"6543 Pardall Rd\", \"city\": \"Isla Vista\", \"state\": \"CA\", \"categories\": \"Food Delivery Services, Chicken Wings, Restaurants, Sandwiches, Food, American (New), Barbeque\", \"hours\": {\"Monday\": \"11:30-21:30\", \"Tuesday\": \"11:30-21:30\", \"Wednesday\": \"11:30-21:30\", \"Thursday\": \"11:30-21:30\", \"Friday\": \"11:30-21:30\", \"Saturday\": \"11:30-21:30\", \"Sunday\": \"11:30-21:30\"}, \"attributes\": {\"BusinessParking\": {\"garage\": false, \"street\": true, \"validated\": false, \"lot\": false, \"valet\": false}, \"RestaurantsReservations\": false, \"OutdoorSeating\": true, \"WiFi\": \"no\", \"RestaurantsTakeOut\": true, \"RestaurantsGoodForGroups\": false, \"Music\": null, \"Ambience\": {\"romantic"
+        ]
+      },
+      "B_readable": {
+        "label": "CONFLICTED",
+        "confidence": 0.5,
+        "error": false,
+        "recorded_latency_s": 10.438022999995155,
+        "wall_s": 10.438249600003473,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1622,
+        "full_source_visible": true,
+        "source_chars_rendered": 1622,
+        "rationale": "Passage 1 establishes that Kaptain's Firehouse BBQ has a 3.5-star rating, which is higher than Passage 2's 1.0-star review. However, Passage 2 also mentions that the reviewer experienced poor customer",
+        "evidence_preview": [
+          "Business name: Kaptain's Firehouse BBQ\nAddress: 6543 Pardall Rd, Isla Vista, CA\nCategories: Food Delivery Services, Chicken Wings, Restaurants, Sandwiches, Food, American (New), Barbeque\nOverall rating: 3.5 stars\nOpening hours: Monday 11:30-21:30; Tuesday 11:30-21:30; Wednesday 11:30-21:30; Thursday 11:30-21:30; Friday 11:30-21:30; Saturday 11:30-21:30; Sunday 11:30-21:30\nBusinessParking: garage = no; street = yes; validated = no; lot = no; valet = no\nRestaurantsReservations: no\nOutdoorSeating: yes\nWiFi: no\nRestaurantsTakeOut: yes\nRestaurantsGoodForGroups: no\nMusic: not specified\nAmbience: romantic = no; intimate = no; classy = no; hipster = no; divey = no; touristy = no; trendy = no; upscale = no; casual = yes",
+          "Review (1.0 stars): I've never in my life been angry enough to yell at a stranger than I was when I ordered from here one day. And I'm super shy and quiet, so that should say a lot about the customer service. Their food was my favorite until I experienced the worst customer service from a girl who worked their. So I was sad because ofc I wouldn't support them again after that. But oh well.\nReview (5.0 stars): animal mac- mac n cheese, pulled pork, bbq sauce, and tater tots. the guy hooked it up F A T so blessed this is so good",
+          "Review (3.0 stars): Updating my review to inform readers that I have returned here now at least 4 more times and sometimes my food has been less than great. Also, the last 3 times they didn't have any ribs. I also think that the quality of food you get depends on who's working. I will try again but if they give me stories and crappy food I will not go back ever again."
+        ]
+      }
+    },
+    {
+      "response_id": "9840",
+      "claim_id": "s_2_c0",
+      "task": "Data2txt",
+      "gold": "HALLUCINATED",
+      "label_types": [
+        "Evident Baseless Info"
+      ],
+      "claim": "The restaurant offered outdoor seating and was suitable for groups, although it did not provide Wi-Fi or music.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 8.939291999995476,
+        "wall_s": 6.859999848529696e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1871,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that the restaurant was 'classy': false, 'trendy': false, 'upscale': false, 'casual': true', which directly supports the claim that the restaurant was not suitable for groups.",
+        "evidence_preview": [
+          "false, \"classy\": false, \"trendy\": false, \"upscale\": false, \"casual\": true}}, \"business_stars\": 3.0, \"review_info\": [{\"review_stars\": 4.0, \"review_date\": \"2021-09-16 22:55:00\", \"review_text\": \"PERMANENTLY CLOSED!!!!!! SEPTEMBER 16, 2021.....I met a girlfriend today to have lunch and there is sign on the door saying the restaurant was permanently closed and thanked everyone for their support over the years. Sorry to see it go. It was a good Japanese restaurant with reasonable prices in the Goleta, CA area!\"}, {\"review_stars\": 2.0, \"review_date\": \"2021-09-09 02:21:59\", \"review_text\": \"Not well presented: salmon avocado roll was huge instead of 8 it was 6 not not chewable.",
+          "Crunch shrimp was not good either. Disappointed too big and unwieldy.\"}, {\"review_stars\": 3.0, \"review_date\": \"2021-09-06 19:54:15\", \"review_text\": \"The ramen and soup here is pretty good. Every time I come I usually either get the spicy seafood ramen or the beef curry ramen. I got the beef curry ramen this time and the flavor definitely tasted good. The only thing that was a little disappointing was the lack of beef it had. They only gave me a few cut up pieces that were really small.\"}]}",
+          "{\"name\": \"Itsuki\", \"address\": \"7127 Hollister Ave, Ste 30\", \"city\": \"Goleta\", \"state\": \"CA\", \"categories\": \"Restaurants, Soup, Japanese, Sushi Bars\", \"hours\": {\"Monday\": \"17:30-21:0\", \"Tuesday\": \"17:30-21:0\", \"Wednesday\": \"17:30-21:0\", \"Thursday\": \"17:30-21:0\", \"Friday\": \"17:30-21:0\", \"Saturday\": \"17:30-21:0\", \"Sunday\": \"17:30-21:0\"}, \"attributes\": {\"BusinessParking\": {\"garage\": false, \"street\": false, \"validated\": false, \"lot\": true, \"valet\": false}, \"RestaurantsReservations\": true, \"OutdoorSeating\": true, \"WiFi\": \"no\", \"RestaurantsTakeOut\": true, \"RestaurantsGoodForGroups\": true, \"Music\": null, \"Ambience\": {\"romantic\": false, \"intimate\": false, \"touristy\": false, \"hipster\": false, \"divey\":"
+        ]
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 9.440846200013766,
+        "wall_s": 9.441060999990441,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1530,
+        "full_source_visible": true,
+        "source_chars_rendered": 1530,
+        "rationale": "Passage 1 establishes that the restaurant offered outdoor seating and was suitable for groups, which directly supports the claim.",
+        "evidence_preview": [
+          "Business name: Itsuki\nAddress: 7127 Hollister Ave, Ste 30, Goleta, CA\nCategories: Restaurants, Soup, Japanese, Sushi Bars\nOverall rating: 3.0 stars\nOpening hours: Monday 17:30-21:0; Tuesday 17:30-21:0; Wednesday 17:30-21:0; Thursday 17:30-21:0; Friday 17:30-21:0; Saturday 17:30-21:0; Sunday 17:30-21:0\nBusinessParking: garage = no; street = no; validated = no; lot = yes; valet = no\nRestaurantsReservations: yes\nOutdoorSeating: yes\nWiFi: no\nRestaurantsTakeOut: yes\nRestaurantsGoodForGroups: yes\nMusic: not specified\nAmbience: romantic = no; intimate = no; touristy = no; hipster = no; divey = no; classy = no; trendy = no; upscale = no; casual = yes",
+          "Review (4.0 stars): PERMANENTLY CLOSED!!!!!!  SEPTEMBER 16, 2021.....I met a girlfriend today to have lunch and there is sign on the door saying the restaurant was permanently closed and thanked everyone for their support over the years.  Sorry to see it go.  It was a good Japanese restaurant with reasonable prices in the Goleta, CA area!\nReview (2.0 stars): Not well presented: salmon avocado roll was huge instead of 8 it was 6 not not chewable. Crunch shrimp was not good either. Disappointed too big and unwieldy.",
+          "Review (3.0 stars): The ramen and soup here is pretty good. Every time I come I usually either get the spicy seafood ramen or the beef curry ramen. I got the beef curry ramen this time and the flavor definitely tasted good. The only thing that was a little disappointing was the lack of beef it had. They only gave me a few cut up pieces that were really small."
+        ]
+      }
+    },
+    {
+      "response_id": "7260",
+      "claim_id": "s_0_c0",
+      "task": "Data2txt",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "\"Little Alex's\" is a Mexican restaurant located at 1024 Coast Village Rd, Santa Barbara, CA.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 8.423839300026884,
+        "wall_s": 6.580000626854599e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2085,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes the restaurant's location and Passage 2 mentions the restaurant's decline in quality, suggesting that the restaurant is indeed 'Little Alex's'.",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 8.635686100024031,
+        "wall_s": 8.635938599996734,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1754,
+        "full_source_visible": true,
+        "source_chars_rendered": 1754,
+        "rationale": "Passage 1 establishes the business's address and categories, Passage 2 provides a personal review that mentions the food being 'tasty' and 'delicious', and Passage 3 is a positive review from a family",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "7279",
+      "claim_id": "s_0_c0",
+      "task": "Data2txt",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Third Window Brewing is a local brewery located at 406 E Haley St, Ste 3 in Santa Barbara, California.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 5.624387999996543,
+        "wall_s": 5.679999594576657e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1822,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes the brewery's location at 406 E Haley St, Ste 3 in Santa Barbara, California.",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.335165099997539,
+        "wall_s": 7.335404999990715,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1551,
+        "full_source_visible": true,
+        "source_chars_rendered": 1551,
+        "rationale": "Passage 1 establishes the business's address and categories, Passage 2 mentions the location and atmosphere, and Passage 3 mentions the location and selection of beers. These passages collectively sup",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "6139",
+      "claim_id": "s_13_c0",
+      "task": "Data2txt",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Overall, Uniboil is a local business that offers a diverse menu with a focus on hot pots and boba drinks.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 13.698079399997368,
+        "wall_s": 6.680001388303936e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2416,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that Uniboil is a local business, Passage 2 confirms that Uniboil has a hot pot menu, and Passage 3 mentions that Uniboil is attached to Phresh Tea, all of which directly support",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 9.810974099993473,
+        "wall_s": 9.811358500010101,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 2758,
+        "full_source_visible": true,
+        "source_chars_rendered": 2758,
+        "rationale": "Passage 1 establishes Uniboil's business name, address, and categories, while Passage 2 confirms the restaurant's hotpot offerings and prices. Passage 3 also mentions the restaurant's boba drink quali",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "7020",
+      "claim_id": "s_2_c0",
+      "task": "Data2txt",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "It operates from 12 PM to 8 PM from Monday to Thursday, 12 PM to 9 PM on Fridays, and 11 AM to 9 PM on Saturdays and 11 AM to 8 PM on Sundays.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 11.527953400014667,
+        "wall_s": 7.000000914558768e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2274,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes the hours of operation, Passage 2 provides a negative review from a customer, and Passage 3 confirms the hours of operation for a specific day.",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 14.483096599986311,
+        "wall_s": 14.483340400009183,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 1921,
+        "full_source_visible": true,
+        "source_chars_rendered": 1921,
+        "rationale": "Passage 1 establishes the opening hours for Monday to Thursday, Passage 2 supports the claim by mentioning a 5-star rating, and Passage 3 contradicts the claim by stating the fish was of poor quality.",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "9080",
+      "claim_id": "s_3_c0",
+      "task": "Data2txt",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Angel Oak has free WiFi available, valet parking, outdoor seating, and a reservation system.",
+      "A_original": {
+        "label": "INSUFFICIENT",
+        "confidence": 0.5,
+        "error": false,
+        "recorded_latency_s": 12.329307000007248,
+        "wall_s": 7.700000423938036e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2503,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "While Passage 1 establishes that Angel Oak has free WiFi, valet parking, outdoor seating, and a reservation system, Passage 2 contradicts this by stating that the salmon filet was small and the servic",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 13.29295020000427,
+        "wall_s": 13.29457560001174,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 2430,
+        "full_source_visible": false,
+        "source_chars_rendered": 3182,
+        "rationale": "Passage 1 establishes Angel Oak's business name, address, and parking information, while Passage 2 mentions the business's reservation system. Passage 3 provides a positive review, indicating a high l",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "7953",
+      "claim_id": "s_6_c0",
+      "task": "Data2txt",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Overall, Santa Barbara's Wood Fired Pizza appears to offer tasty and satisfying meals, but may need to improve upon its online ordering system and store operations.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 8.35393749998184,
+        "wall_s": 6.549997488036752e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1674,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 and Passage 3 both mention the quality of the pesto pizza, which is a positive aspect of the restaurant.",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.294082600012189,
+        "wall_s": 7.341648999979952,
+        "cache_hit": false,
+        "n_passages": 2,
+        "evidence_chars": 1378,
+        "full_source_visible": true,
+        "source_chars_rendered": 1378,
+        "rationale": "Passage 1 establishes that the online ordering system and store operations are not satisfactory, while Passage 2 provides a positive review with a 5-star rating, suggesting that the overall experience",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "7260",
+      "claim_id": "s_5_c0",
+      "task": "Data2txt",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Parking is available in a lot, but there's no garage, street, validated or valet parking.",
+      "A_original": {
+        "label": "CONFLICTED",
+        "confidence": 0.5,
+        "error": false,
+        "recorded_latency_s": 8.706437100016046,
+        "wall_s": 7.499998901039362e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2085,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that parking is available in the lot, while Passage 2 contradicts this by stating that the food is 'terribly dry' and 'about as Americanized as it can be'. Passage 3 also contrad",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 8.329011399997398,
+        "wall_s": 8.329233299999032,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1754,
+        "full_source_visible": true,
+        "source_chars_rendered": 1754,
+        "rationale": "Passage 1 establishes that parking is available in the lot, while Passage 3 indicates that parking is available in the lot. This suggests that the claim 'Parking is available in a lot, but there's no ",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "7036",
+      "claim_id": "s_2_c0",
+      "task": "Data2txt",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "The restaurant offers a variety of dining options, including breakfast, brunch, and dinner, and is open 24 hours a day.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 9.135841199982679,
+        "wall_s": 6.919997395016253e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 1992,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that the restaurant is open 24 hours a day, supporting the claim that it is open 24 hours a day. Passage 3 also mentions that the restaurant was a 'truly comfortable place' and w",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.5,
+        "error": false,
+        "recorded_latency_s": 9.777428300003521,
+        "wall_s": 9.777660899999319,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 1681,
+        "full_source_visible": true,
+        "source_chars_rendered": 1681,
+        "rationale": "Passage 1 establishes the restaurant's hours as not specified, Passage 2 mentions exceptional service, and Passage 3 describes the restaurant as affordable and comfortable. These passages collectively",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "7953",
+      "claim_id": "s_3_c0",
+      "task": "Data2txt",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Some customers have reported issues with empty stores after placing online orders, while others have praised the light and delicious thin-crust pizzas.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 8.002093500021147,
+        "wall_s": 6.660001236014068e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1674,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that some customers have reported issues with empty stores after placing online orders, while Passage 2 praises the light and delicious thin-crust pizzas. These two passages toge",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.600748999975622,
+        "wall_s": 7.601211200002581,
+        "cache_hit": false,
+        "n_passages": 2,
+        "evidence_chars": 1378,
+        "full_source_visible": true,
+        "source_chars_rendered": 1378,
+        "rationale": "Passage 1 establishes that some customers have reported issues with empty stores after placing online orders, while Passage 2 praises the light and delicious thin-crust pizzas. These two passages toge",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "7202",
+      "claim_id": "s_8_c0",
+      "task": "Data2txt",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Overall, Valentino's Take N Bake Pizza appears to be a well-regarded establishment in the Santa Barbara area for its convenient takeout options and delicious sandwiches.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 6.831499899999471,
+        "wall_s": 7.40000104997307e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2667,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that Valentino's Take N Bake Pizza is a well-regarded establishment in the Santa Barbara area, supporting the claim that it is a convenient takeout option and delicious sandwich.",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 9.169024000002537,
+        "wall_s": 9.183347399986815,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 2586,
+        "full_source_visible": true,
+        "source_chars_rendered": 2586,
+        "rationale": "Passage 1 establishes that Valentino's Take N Bake Pizza has a 4.5-star rating, which is well above the average rating of 3.5 stars. This suggests that the claim is likely true.",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "9840",
+      "claim_id": "s_1_c0",
+      "task": "Data2txt",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Specializing in sushi, soups, and ramen, it was open every day of the week from 5:30 PM to 9:00 PM.",
+      "A_original": {
+        "label": "CONFLICTED",
+        "confidence": 0.5,
+        "error": false,
+        "recorded_latency_s": 10.279579499998363,
+        "wall_s": 6.67999847792089e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1871,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 and Passage 3 both mention the restaurant was permanently closed, but Passage 1 also mentions that the restaurant was open every day of the week, which contradicts Passage 3.",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "CONFLICTED",
+        "confidence": 0.5,
+        "error": false,
+        "recorded_latency_s": 18.367829199996777,
+        "wall_s": 18.36852990000625,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1530,
+        "full_source_visible": true,
+        "source_chars_rendered": 1530,
+        "rationale": "Passage 1 and Passage 3 both mention the restaurant being permanently closed, but Passage 1 also mentions the restaurant being open from 5:30 PM to 9:00 PM, which contradicts Passage 1. Passage 3 only",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "6924",
+      "claim_id": "s_9_c0",
+      "task": "Data2txt",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Despite this, the restaurant received a four-star review from a local who stated it has the \"best seafood in town.\"",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 10.300254800007679,
+        "wall_s": 7.029998232610524e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2401,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 and Passage 3 jointly support the claim that the restaurant has the 'best seafood in town'. Passage 1 establishes that the restaurant is a market/restaurant, and Passage 3 states that the re",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 13.29379609998432,
+        "wall_s": 13.29511919998913,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 2165,
+        "full_source_visible": true,
+        "source_chars_rendered": 2165,
+        "rationale": "Passage 2 and Passage 4 both mention the restaurant having the 'best seafood in town'. Passage 2 explicitly states that the reviewer 'would recommend this to anyone who wants to relax and indulge in g",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "9080",
+      "claim_id": "s_2_c0",
+      "task": "Data2txt",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Their hours of operation are seven days a week from 5 pm to 10 pm.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 10.698353599989787,
+        "wall_s": 8.589998469687998e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2302,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 and Passage 2 jointly support the claim by mentioning the hours of operation (7 days a week, 5 pm to 10 pm) and the quality of the food (e.g., 'crisp and light' wine, 'phenomenal quail and s",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 14.752208100020653,
+        "wall_s": 14.75371869999799,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 2862,
+        "full_source_visible": false,
+        "source_chars_rendered": 3182,
+        "rationale": "Passage 1 establishes the hours of operation as 5 pm to 10 pm, which directly supports the claim.",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "6409",
+      "claim_id": "s_6_c0",
+      "task": "Data2txt",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "They also appreciate the option to customize their pizza to their liking.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 9.079733899998246,
+        "wall_s": 6.67999847792089e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2097,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 and Passage 2 both mention the store's cleanliness, with Passage 1 stating that the floor is 'incredibly sticky' and Passage 2 describing the store as 'touristy'. These passages suggest that",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.052373299986357,
+        "wall_s": 7.052763700019568,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 2445,
+        "full_source_visible": true,
+        "source_chars_rendered": 2445,
+        "rationale": "Passage 1 and Passage 3 jointly support the claim by mentioning the customization option and the high rating, respectively.",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "7020",
+      "claim_id": "s_8_c0",
+      "task": "Data2txt",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "While one customer review praised the freshness and taste of the oysters, two other customers were highly dissatisfied, with complaints about the quality of the fish and chips and a poor Thanksgiving dinner experience.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 8.319231399975251,
+        "wall_s": 7.330000516958535e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2274,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that the oysters were of poor quality, with the reviewer describing them as tasting like metal and mud. Passage 2 supports the claim by mentioning that the reviewer was disappoin",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 13.024921500007622,
+        "wall_s": 13.025795900000958,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 1921,
+        "full_source_visible": true,
+        "source_chars_rendered": 1921,
+        "rationale": "Passage 1 establishes the freshness and taste of the oysters, Passage 2 supports the freshness of the oysters, and Passage 3 contradicts the freshness of the oysters.",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "6409",
+      "claim_id": "s_11_c0",
+      "task": "Data2txt",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "The customer emphasizes the need for improvements in cleanliness and employee behavior to avoid potential shutdowns.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 15.058349699975224,
+        "wall_s": 24.725566400011303,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 2097,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 and Passage 3 jointly support the claim by mentioning the need for improvements in cleanliness and employee behavior, and express concerns about potential shutdowns. Passage 1 highlights a h",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 12.443603499996243,
+        "wall_s": 12.444395400001667,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 2445,
+        "full_source_visible": true,
+        "source_chars_rendered": 2445,
+        "rationale": "Passage 1 establishes the business's cleanliness issues, while Passage 3 highlights the employee's behavior towards customers. These two passages together support the claim that the customer emphasize",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "7020",
+      "claim_id": "s_0_c0",
+      "task": "Data2txt",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "\"Longboard's Grill\" is a restaurant located at 210 Stearns Wharf, Santa Barbara, CA.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 10.002926300017862,
+        "wall_s": 0.00011449999874457717,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2274,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes the restaurant's location, Passage 2 provides a negative review from a customer who had a poor experience, and Passage 3 is a positive review from a customer who enjoyed their ex",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 10.87198090000311,
+        "wall_s": 10.872195000003558,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 1921,
+        "full_source_visible": true,
+        "source_chars_rendered": 1921,
+        "rationale": "Passage 1 establishes the business name and address, Passage 2 confirms the restaurant's existence and quality, and Passage 3 provides a negative review that directly contradicts the claim.",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "9526",
+      "claim_id": "s_10_c0",
+      "task": "Data2txt",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Overall, Hustle & Grind Coffee Company is a solid choice for coffee and snacks in downtown Santa Barbara.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 273.9636635000061,
+        "wall_s": 4.650000482797623e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1703,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 and Passage 3 jointly support the claim by mentioning the coffee shop's unique concept and fast service.",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.2564237999904435,
+        "wall_s": 7.256695199990645,
+        "cache_hit": false,
+        "n_passages": 2,
+        "evidence_chars": 1415,
+        "full_source_visible": true,
+        "source_chars_rendered": 1415,
+        "rationale": "Passage 1 establishes that Hustle & Grind Coffee Company has a high retrieval score (0.4375) and is rated 4.5 stars, indicating a positive overall rating.",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "6409",
+      "claim_id": "s_8_c0",
+      "task": "Data2txt",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "However, they raise concerns about the cleanliness of the store due to a sticky floor.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 11.229595799988601,
+        "wall_s": 4.879999323748052e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2097,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 and Passage 2 both mention the sticky floor, which directly supports the claim that the store has a sticky floor. Passage 3 mentions the cleanliness of the store, but the overall tone sugges",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 14.983557700004894,
+        "wall_s": 14.986969599995064,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 2445,
+        "full_source_visible": true,
+        "source_chars_rendered": 2445,
+        "rationale": "Passage 1 establishes the store's cleanliness concerns, Passage 2 provides a positive review, and Passage 3 mentions a negative experience, all contributing to a conclusion that the store's cleanlines",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "7036",
+      "claim_id": "s_5_c0",
+      "task": "Data2txt",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "One reviewer notes that the staff went above and beyond their expectations, providing excellent service and treating them like old friends.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 5.825860700017074,
+        "wall_s": 4.349998198449612e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 1992,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that the reviewer received exceptional service, which directly supports the claim that staff went above and beyond their expectations.",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 9.945206100004725,
+        "wall_s": 9.94617440001457,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 1681,
+        "full_source_visible": true,
+        "source_chars_rendered": 1681,
+        "rationale": "Passage 2 directly states that the reviewer was shocked by the level of exceptional service, implying that the claim is true.",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "12443",
+      "claim_id": "s_11_c0",
+      "task": "QA",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Repeat step 4 to make two smears.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 17.05014539998956,
+        "wall_s": 4.220000118948519e-05,
+        "cache_hit": true,
+        "n_passages": 2,
+        "evidence_chars": 1113,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes the procedure for making a blood smear, which is a fundamental step in the analysis of blood samples. Passage 2 provides a warning about the risks of bloodborne diseases, which i",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.501283300021896,
+        "wall_s": 7.502265899995109,
+        "cache_hit": false,
+        "n_passages": 2,
+        "evidence_chars": 1113,
+        "full_source_visible": true,
+        "source_chars_rendered": 1113,
+        "rationale": "Passage 1 establishes the importance of learning how to do a Blood Smear, while Passage 2 highlights the risks of blood-borne diseases. Together, they suggest that making two smears is a necessary ste",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "16509",
+      "claim_id": "s_2_c0",
+      "task": "QA",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Lack of muscle mass: According to passage 1, having muscle is essential for having a toned body.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.410196699987864,
+        "wall_s": 4.780001472681761e-05,
+        "cache_hit": true,
+        "n_passages": 2,
+        "evidence_chars": 739,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that having muscle is essential for having a toned body, and Passage 2 supports this claim by stating that having muscle and low body fat percentage result in 'tone' and 'definit",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "CONFLICTED",
+        "confidence": 0.5,
+        "error": false,
+        "recorded_latency_s": 12.994345899991458,
+        "wall_s": 12.994657700008247,
+        "cache_hit": false,
+        "n_passages": 1,
+        "evidence_chars": 740,
+        "full_source_visible": true,
+        "source_chars_rendered": 740,
+        "rationale": "Passage 1 establishes that having muscle is essential for having a toned body, while Passage 3 suggests that tone and definition can be achieved with minimal body fat. These two passages contradict ea",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "12439",
+      "claim_id": "s_4_c0",
+      "task": "QA",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Make two smears, allow them to air dry, and label them clearly before placing them in slide transport containers.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.717804899992188,
+        "wall_s": 3.889997606165707e-05,
+        "cache_hit": true,
+        "n_passages": 2,
+        "evidence_chars": 1113,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes the procedure for making a blood smear, which is a fundamental step in the process. Passage 2 provides a clear warning about the risks of bloodborne diseases, which is relevant t",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 16.025271599995904,
+        "wall_s": 16.02775930002099,
+        "cache_hit": false,
+        "n_passages": 2,
+        "evidence_chars": 1113,
+        "full_source_visible": true,
+        "source_chars_rendered": 1113,
+        "rationale": "Passage 3 explicitly describes the steps to make a blood smear, including placing a small drop of blood on a clean glass slide and allowing it to air dry before labeling and transporting it. This dire",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "17059",
+      "claim_id": "s_1_c0",
+      "task": "QA",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "The side effects of drinking clove tea are not mentioned in the given passages.",
+      "A_original": {
+        "label": "INSUFFICIENT",
+        "confidence": 0.5,
+        "error": false,
+        "recorded_latency_s": 20.354316599987214,
+        "wall_s": 4.0300015825778246e-05,
+        "cache_hit": true,
+        "n_passages": 2,
+        "evidence_chars": 905,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "The given passages do not mention the side effects of drinking clove tea. Passage 1 mentions skin benefits, but does not address side effects. Passage 2 mentions analgesic effects, but does not provid",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "INSUFFICIENT",
+        "confidence": 0.5,
+        "error": false,
+        "recorded_latency_s": 15.034845299989684,
+        "wall_s": 15.036616199999116,
+        "cache_hit": false,
+        "n_passages": 2,
+        "evidence_chars": 905,
+        "full_source_visible": true,
+        "source_chars_rendered": 905,
+        "rationale": "The given passages do not mention the side effects of drinking clove tea. Passage 1 discusses the health benefits and skin benefits of clove tea, but does not mention side effects. Passage 2 mentions ",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "16358",
+      "claim_id": "s_0_c0",
+      "task": "QA",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Based on the given passages, it is clear that the 1099-PATR tax form is used to report patronage dividends and other distributions received from cooperatives.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 6.86007029999746,
+        "wall_s": 3.819999983534217e-05,
+        "cache_hit": true,
+        "n_passages": 2,
+        "evidence_chars": 800,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that the 1099-PATR form is used to report patronage dividends and other distributions from cooperatives, directly supporting the claim.",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.61374280002201,
+        "wall_s": 7.614838700013934,
+        "cache_hit": false,
+        "n_passages": 1,
+        "evidence_chars": 801,
+        "full_source_visible": true,
+        "source_chars_rendered": 801,
+        "rationale": "Passage 1 establishes that the 1099-PATR form is used to report patronage dividends and other distributions from cooperatives, directly supporting the claim.",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "12605",
+      "claim_id": "s_5_c0",
+      "task": "QA",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "It is also mentioned that the name Teresa is a Greek baby name an Italian baby name, and a Spanish baby name.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 13.899399799993262,
+        "wall_s": 5.4899981478229165e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1837,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "The evidence jointly supports the claim that Teresa is also a Greek and Italian baby name, and a Spanish baby name. Passage 1 establishes that the name Teresa is a Greek baby name, and Passage 3 provi",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "CONFLICTED",
+        "confidence": 0.5,
+        "error": false,
+        "recorded_latency_s": 15.676559800020186,
+        "wall_s": 15.676836800004821,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1837,
+        "full_source_visible": true,
+        "source_chars_rendered": 1837,
+        "rationale": "Passage 1 and Passage 2 both establish that the name Teresa is a Greek, Italian, and Spanish baby name, respectively. However, Passage 3 provides conflicting information by stating that the name Teres",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "13464",
+      "claim_id": "s_3_c0",
+      "task": "QA",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "On average, there are 256 sunny days per year.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.9,
+        "error": false,
+        "recorded_latency_s": 9.873987099999795,
+        "wall_s": 4.529999569058418e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1489,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes the average number of sunny days per year in Sausalito, California, which directly supports the claim. Passage 2 contradicts this by stating that Sausalito gets 34 inches of rain",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.9,
+        "error": false,
+        "recorded_latency_s": 12.280803100002231,
+        "wall_s": 12.281044900009874,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1489,
+        "full_source_visible": true,
+        "source_chars_rendered": 1489,
+        "rationale": "Passage 1 establishes the highest monthly average temperature in Sausalito for September as 58 degrees, which is lower than the claim of 256 sunny days per year. Passage 1 also mentions the air qualit",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "15179",
+      "claim_id": "s_1_c0",
+      "task": "QA",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "According to passage 2, the jack pine produces serotonous cones that are dormant until a fire occurs, at which point they melt and release their seeds.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.272714599996107,
+        "wall_s": 4.169999738223851e-05,
+        "cache_hit": true,
+        "n_passages": 2,
+        "evidence_chars": 1129,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 2 directly states that 'In the Canadian boreal forest, aspen and jack pine are the most important \u2018pioneer species\u2019, observes Hall.'",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 9.682088700006716,
+        "wall_s": 9.682316499995068,
+        "cache_hit": false,
+        "n_passages": 2,
+        "evidence_chars": 1129,
+        "full_source_visible": true,
+        "source_chars_rendered": 1129,
+        "rationale": "Passage 2 establishes that fires are the mechanism by which the forest is continually regenerated, and that some species, such as the jack pine, rely on fire to spread their seeds. This directly suppo",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "12690",
+      "claim_id": "s_0_c0",
+      "task": "QA",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "The passages suggest that trends in India are more typical than those in Vietnam, particularly in the area of education.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 8.573020900017582,
+        "wall_s": 5.639999289996922e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1771,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 and Passage 3 jointly support the claim by establishing that India and Vietnam have similar education systems, with Passage 1 highlighting the importance of early education in India and Pass",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 13.318229299999075,
+        "wall_s": 13.318522099987604,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1771,
+        "full_source_visible": true,
+        "source_chars_rendered": 1771,
+        "rationale": "Passage 1 and Passage 3 jointly support the claim by establishing that India and Vietnam have similar education systems, with India having a more equitable system and Vietnam having a more centralized",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "13312",
+      "claim_id": "s_3_c0",
+      "task": "QA",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Chard is a beet that has been chosen for leaf production, rather than storage root formation, and comes in varieties with white, yellow, or red stalks.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.9,
+        "error": false,
+        "recorded_latency_s": 21.565107400005218,
+        "wall_s": 4.810001701116562e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1498,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that mature chard leaves and stalks are typically cooked, which supports the claim that chard comes in varieties with white, yellow, or red stalks.",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 10.448716200015042,
+        "wall_s": 10.449288999981945,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1498,
+        "full_source_visible": true,
+        "source_chars_rendered": 1498,
+        "rationale": "Passage 1 establishes that Swiss chard is a beet with leaf production, while Passage 2 shows that mature chard leaves and stalks are cooked, indicating a preference for leaf production.",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "12605",
+      "claim_id": "s_3_c0",
+      "task": "QA",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "* Harvester (Italian)",
+      "A_original": {
+        "label": "CONFLICTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 12.492673499975353,
+        "wall_s": 5.479998071677983e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1837,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 and Passage 3 both establish that Teresa is an Italian name, but Passage 2 establishes that it is also a Spanish name. This suggests that the name Teresa is not a single, universal name, but",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "CONFLICTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 12.173323000024538,
+        "wall_s": 12.173629800003255,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1837,
+        "full_source_visible": true,
+        "source_chars_rendered": 1837,
+        "rationale": "Passage 1 and Passage 2 both establish that the name Teresa is a Greek baby name, Italian baby name, Spanish baby name, and Portuguese baby name. However, Passage 3 provides conflicting information by",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "15676",
+      "claim_id": "s_3_c0",
+      "task": "QA",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "2.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 6.92332780000288,
+        "wall_s": 6.150000263005495e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1930,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that oily skin may be caused by genes, while Passage 3 suggests that oily skin is hereditary. These two passages together support the claim that oily skin is hereditary.",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 14.025934900011634,
+        "wall_s": 14.027406400011387,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1930,
+        "full_source_visible": true,
+        "source_chars_rendered": 1930,
+        "rationale": "Passage 1 establishes that oily skin is hereditary, suggesting that oily skin is not solely caused by diet or lifestyle. Passage 2 suggests that diet has a limited effect on oily skin, contradicting P",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "15717",
+      "claim_id": "s_0_c0",
+      "task": "QA",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Based on the provided passages, the history of the word \"Gemini\" can be summarized as follows:",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 8.341182900010608,
+        "wall_s": 4.7900015488266945e-05,
+        "cache_hit": true,
+        "n_passages": 2,
+        "evidence_chars": 1211,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes the word 'Gemini' as a Latin word for twins and mentions the first known reference in Aristotle's Meteorologica, which is over 300 years BC. This provides a historical foundation",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.7618328999960795,
+        "wall_s": 7.763329199980944,
+        "cache_hit": false,
+        "n_passages": 2,
+        "evidence_chars": 1211,
+        "full_source_visible": true,
+        "source_chars_rendered": 1211,
+        "rationale": "The first passage establishes the historical reference to the Gemini constellation in Aristotle's Meteorologica, which is a direct and specific entailment of the claim. The second passage provides a c",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "12443",
+      "claim_id": "s_6_c0",
+      "task": "QA",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Take another clean slide and hold it at an angle of about 45 degrees.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.12432259999332,
+        "wall_s": 3.649998689070344e-05,
+        "cache_hit": true,
+        "n_passages": 2,
+        "evidence_chars": 1113,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 directly supports the claim by describing the process of making a blood smear, which is a common step in medical procedures. Passage 2 also supports the claim by mentioning the importance of",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 11.688320799992653,
+        "wall_s": 11.68862459997763,
+        "cache_hit": false,
+        "n_passages": 2,
+        "evidence_chars": 1113,
+        "full_source_visible": true,
+        "source_chars_rendered": 1113,
+        "rationale": "Passage 1 establishes the process for making a blood smear, which is a fundamental aspect of the claim. Passage 2 also discusses the importance of avoiding contact with blood, which is directly relate",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "15179",
+      "claim_id": "s_0_c0",
+      "task": "QA",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Based on the given passages, it appears that forest fires are beneficial to conifers like jack pines because they help to clear away dead vegetation and promote new growth.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.170406799996272,
+        "wall_s": 4.010001430287957e-05,
+        "cache_hit": true,
+        "n_passages": 2,
+        "evidence_chars": 1129,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that forest fires help clear dead vegetation and promote new growth, directly supporting the claim that forest fires are beneficial to conifers like jack pines.",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 10.265285300003598,
+        "wall_s": 10.26686940001673,
+        "cache_hit": false,
+        "n_passages": 2,
+        "evidence_chars": 1129,
+        "full_source_visible": true,
+        "source_chars_rendered": 1129,
+        "rationale": "Passage 1 establishes that fast growth returns to pine saplings around age seven, which supports the claim that forest fires help clear away dead vegetation and promote new growth. Passage 2 also ment",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "13464",
+      "claim_id": "s_4_c0",
+      "task": "QA",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "The July high is around 69 degrees and the January low is 43.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.8076284999842755,
+        "wall_s": 4.199999966658652e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1489,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes the average high temperature in July as 69 degrees, directly supporting the claim. Passage 2 also mentions the average high temperature in July, but its value is lower than Passa",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "CONFLICTED",
+        "confidence": 0.5,
+        "error": false,
+        "recorded_latency_s": 11.742731100006495,
+        "wall_s": 11.74298350000754,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1489,
+        "full_source_visible": true,
+        "source_chars_rendered": 1489,
+        "rationale": "Passage 1 establishes that Sausalito gets 34 inches of rain per year, which is significantly lower than the US average. Passage 2 also mentions that Sausalito gets 0 inches of snow per year, which is ",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "13312",
+      "claim_id": "s_4_c0",
+      "task": "QA",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "It is an attractive ornamental that adds color to the vegetable garden and can be harvested while young and tender or after maturity when the stems are slightly tougher.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 17.683217500016326,
+        "wall_s": 4.430001717992127e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1498,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that chard is an attractive ornamental and can be harvested while young and tender or after maturity when the stems are slightly tougher. This directly supports the claim that ch",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 11.09287829999812,
+        "wall_s": 11.093155500013381,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1498,
+        "full_source_visible": true,
+        "source_chars_rendered": 1498,
+        "rationale": "Passage 1 establishes that Swiss chard is a type of chard, which is similar to spinach but with a stronger, more assertive flavor. This suggests that Swiss chard is indeed an attractive ornamental tha",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "13721",
+      "claim_id": "s_3_c0",
+      "task": "QA",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Reconnect the vent and move the dryer back against the wall.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 15.616189599997597,
+        "wall_s": 4.279997665435076e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1825,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 directly states the steps to reconnect the vent and move the dryer back against the wall, making it a direct entail of the claim.",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 11.445086799998535,
+        "wall_s": 11.445416400005342,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1825,
+        "full_source_visible": true,
+        "source_chars_rendered": 1825,
+        "rationale": "Passage 1 directly states the steps to reconnect the vent and move the dryer back against the wall, making it a direct entail of the claim.",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "12604",
+      "claim_id": "s_3_c0",
+      "task": "QA",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "* It has uncertain etymology, but is thought to come from the Greek words \"therizein\" meaning \"to harvest, harvester\" or \"theros\" meaning \"summer\" (passage 3).",
+      "A_original": {
+        "label": "CONFLICTED",
+        "confidence": 0.5,
+        "error": false,
+        "recorded_latency_s": 9.054095500003314,
+        "wall_s": 5.150001379661262e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1837,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that the name Teresa has uncertain etymology, but Passage 2 provides a clear etymology from Therasia, indicating that the claim is contradictory.",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "CONFLICTED",
+        "confidence": 0.5,
+        "error": false,
+        "recorded_latency_s": 9.804088000004413,
+        "wall_s": 9.804799100005766,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1837,
+        "full_source_visible": true,
+        "source_chars_rendered": 1837,
+        "rationale": "Passage 1 establishes that Teresa is a Greek baby name, while Passage 2 establishes that it is an American baby name. However, Passage 3 provides conflicting information about the etymology of Teresa,",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "12439",
+      "claim_id": "s_2_c0",
+      "task": "QA",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Take another clean slide and touch the blood with one end at a 45-degree angle so that the blood runs along the edge of the slide.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 9.197622899984708,
+        "wall_s": 3.580001066438854e-05,
+        "cache_hit": true,
+        "n_passages": 2,
+        "evidence_chars": 1113,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 directly supports the claim by describing the process of making a blood smear, which is a common practice in medical and scientific contexts. Passage 2, while mentioning the importance of ha",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 10.725995799992234,
+        "wall_s": 10.726446699991357,
+        "cache_hit": false,
+        "n_passages": 2,
+        "evidence_chars": 1113,
+        "full_source_visible": true,
+        "source_chars_rendered": 1113,
+        "rationale": "Passage 1 establishes the procedure for making a blood smear, which is a fundamental step in the process. Passage 2 also mentions the importance of avoiding contact with blood, which supports the clai",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "4751",
+      "claim_id": "s_1_c0",
+      "task": "Summary",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Moore is a talented player who has scored over 1,000 points in both basketball and volleyball, and she is coming off a successful volleyball season.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 10.220743400015635,
+        "wall_s": 5.140001303516328e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1833,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes Moore's basketball success, Passage 2 supports her volleyball success, and Passage 3 confirms her volleyball season is coming up.",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 10.222687200002838,
+        "wall_s": 10.223038800002541,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1833,
+        "full_source_visible": true,
+        "source_chars_rendered": 1833,
+        "rationale": "Passage 1 establishes Moore's basketball success, Passage 2 supports her volleyball success, and Passage 3 confirms her volleyball season is coming up.",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "1571",
+      "claim_id": "s_0_c1",
+      "task": "Summary",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Lauren Hill was a young woman who inspired many with her courageous battle against brain cancer.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.2975751999765635,
+        "wall_s": 4.549999721348286e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2582,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 and Passage 3 jointly support the claim by establishing that Lauren Hill was a young woman who inspired many with her courageous battle against brain cancer.",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.330283600022085,
+        "wall_s": 7.33062350002001,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 3250,
+        "full_source_visible": false,
+        "source_chars_rendered": 4127,
+        "rationale": "Passage 1 establishes that Lauren Hill died at age 19, which directly supports the claim that she was a young woman who inspired many with her courageous battle against brain cancer.",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "2670",
+      "claim_id": "s_3_c0",
+      "task": "Summary",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "The airstrikes were a response to an attack by rebel forces on a Yemeni government military brigade.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 31.915523799980292,
+        "wall_s": 4.610000178217888e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2595,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 and Passage 2 jointly support the claim by mentioning the Saudi-led coalition's new initiative, Operation Renewal of Hope, and the subsequent airstrikes against rebel forces. Passage 1 speci",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "CONFLICTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 14.451873099984368,
+        "wall_s": 14.452370699989842,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 3203,
+        "full_source_visible": false,
+        "source_chars_rendered": 4799,
+        "rationale": "Passage 1 and Passage 3 both report on the same event (Saudi airstrikes on Houthi positions), but Passage 1 also mentions that the airstrikes resumed after a period of pause, while Passage 3 states th",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "926",
+      "claim_id": "s_8_c0",
+      "task": "Summary",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "He also suggests setting a specific number of \"no's\" one can take and remaining confident and engaging in any situation.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 12.789368300000206,
+        "wall_s": 0.00012310000602155924,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2660,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes a gradual process of expanding comfort zone, while Passage 2 emphasizes the importance of handling rejection to minimize its impact. Passage 3 also highlights the potential for r",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 11.490455699997256,
+        "wall_s": 11.490749499993399,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 3426,
+        "full_source_visible": false,
+        "source_chars_rendered": 4362,
+        "rationale": "Passage 1 establishes the context for the claim, while Passage 2 provides a personal anecdote and a general tip for overcoming rejection.",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "4014",
+      "claim_id": "s_3_c0",
+      "task": "Summary",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Despite these allegations, Republican leadership may spare Santos due to their narrow majority in Congress.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 15.068037799996091,
+        "wall_s": 6.180000491440296e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 1934,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that Santos might be spared due to the tight majority Republicans hold over Democrats, which is only 221 to 212. This suggests that the claim that Republican leadership may spare",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 16.39522439998109,
+        "wall_s": 16.39548289999948,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1935,
+        "full_source_visible": true,
+        "source_chars_rendered": 1935,
+        "rationale": "Passage 1 establishes that New York House Republicans are attempting to remove George Santos from Congress, which directly supports the claim that Republican leadership may spare Santos due to their n",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "926",
+      "claim_id": "s_6_c0",
+      "task": "Summary",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "He also discovered that rejection can be a catalyst for growth and success.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.359024099976523,
+        "wall_s": 4.67000063508749e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2660,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 and Passage 3 jointly support the claim that rejection can be a catalyst for growth and success.",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 14.1366313000035,
+        "wall_s": 14.139106399990851,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 3403,
+        "full_source_visible": false,
+        "source_chars_rendered": 4362,
+        "rationale": "Passage 1 establishes that Jiang's rejection of the project request led to his viral video and subsequent opportunities, supporting the claim that rejection can be a catalyst for growth and success.",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "926",
+      "claim_id": "s_0_c1",
+      "task": "Summary",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Jia Jiang was a Chinese-American entrepreneur.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 12.7438656000013,
+        "wall_s": 0.010881199996219948,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2669,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes Jiang's entrepreneurial journey and his decision to confront his fear of rejection head-on.",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.110621800005902,
+        "wall_s": 7.1117728000099305,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 3411,
+        "full_source_visible": false,
+        "source_chars_rendered": 4362,
+        "rationale": "Passage 1 establishes Jia Jiang's entrepreneurial journey and his willingness to confront rejection head-on.",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "880",
+      "claim_id": "s_2_c0",
+      "task": "Summary",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "A gastrointestinal illness affecting 100 people on the Celebrity Infinity cruise ship has been reported by the Centers for Disease Control.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 10.142941900005098,
+        "wall_s": 4.4800020987167954e-05,
+        "cache_hit": true,
+        "n_passages": 2,
+        "evidence_chars": 1078,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that 95 out of 2,117 passengers have suffered from gastrointestinal illness, which is a significant proportion. Passage 2 also mentions that this is the third time the Celebrity ",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.37633490000735,
+        "wall_s": 7.377219000016339,
+        "cache_hit": false,
+        "n_passages": 2,
+        "evidence_chars": 1078,
+        "full_source_visible": true,
+        "source_chars_rendered": 1078,
+        "rationale": "Passage 1 directly states that 95 out of 2,117 passengers have suffered from gastrointestinal illness, which is a direct entailment of the claim.",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "1571",
+      "claim_id": "s_0_c0",
+      "task": "Summary",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Lauren Hill has passed away at the age of 19.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 8.639941700006602,
+        "wall_s": 3.260001540184021e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2582,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that Lauren Hill died at age 19, which directly supports the claim that she has passed away.",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 10.575770700001158,
+        "wall_s": 10.577077100024326,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 3336,
+        "full_source_visible": false,
+        "source_chars_rendered": 4127,
+        "rationale": "Passage 1 establishes that Lauren Hill died at the age of 19, which directly supports the claim that she has passed away.",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "5036",
+      "claim_id": "s_4_c0",
+      "task": "Summary",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "The case was part of Operation \"Pullin Chains,\" an effort led by the U.S. Attorney's Office and DEA to target high-level drug traffickers.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.795185900002252,
+        "wall_s": 3.15000070258975e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2498,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 and Passage 4 jointly establish that Jacobo was involved in the operation and received instructions from Organized Crime Drug Enforcement Task Force Operation 'Pullin Chains'.",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 17.89147070000763,
+        "wall_s": 17.891950300021563,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 2498,
+        "full_source_visible": true,
+        "source_chars_rendered": 2498,
+        "rationale": "Passage 1 and Passage 3 jointly establish that Luis Alfredo Jacobo was a California drug kingpin and that he orchestrated and directed multiple methamphetamine conspiracies in Oklahoma and Missouri. P",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "4531",
+      "claim_id": "s_1_c0",
+      "task": "Summary",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "The former employee accused Vereb of making lewd and misogynistic remarks and faced retaliation when she spoke up.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.9,
+        "error": false,
+        "recorded_latency_s": 9.308524299995042,
+        "wall_s": 3.029999788850546e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1884,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that the settlement amount was $295,000, which directly supports the claim that Vereb faced retaliation.",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.9,
+        "error": false,
+        "recorded_latency_s": 23.106509500008542,
+        "wall_s": 23.106959500000812,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1884,
+        "full_source_visible": true,
+        "source_chars_rendered": 1884,
+        "rationale": "Passage 1 establishes that the settlement amount was $295,000, which directly supports the claim that Vereb faced retaliation.",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "4009",
+      "claim_id": "s_1_c0",
+      "task": "Summary",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "The grant aims to provide consulting and support for businesses looking to grow.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 7.508189399988623,
+        "wall_s": 4.549999721348286e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2071,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that the grant program combines various services, including consulting, strategy development, and implementation, which directly supports the claim that the grant aims to provide",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 23.60454979998758,
+        "wall_s": 23.60659750000923,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 2072,
+        "full_source_visible": true,
+        "source_chars_rendered": 2072,
+        "rationale": "Passage 1 establishes that the grant aims to provide consulting and support for businesses looking to grow, directly supporting the claim.",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "3868",
+      "claim_id": "s_3_c0",
+      "task": "Summary",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Tonee's belongings, including her phone, wallet, and keys, were found near a bridge, leading investigators to believe she may have traveled on Interstate 80.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.9,
+        "error": false,
+        "recorded_latency_s": 11.025449900014792,
+        "wall_s": 5.810000584460795e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2219,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 and Passage 3 provide direct and specific information about Tonee's location and belongings, respectively. Passage 3 also mentions the Pittsburgh Police's case number, indicating that the in",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 31.533482700004242,
+        "wall_s": 31.534162800002377,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 2220,
+        "full_source_visible": true,
+        "source_chars_rendered": 2220,
+        "rationale": "Passage 1 establishes that Tonee's belongings were found near a bridge, suggesting she may have traveled on Interstate 80. Passage 2 provides a plausible explanation for the discovery of her belonging",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "4009",
+      "claim_id": "s_0_c0",
+      "task": "Summary",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Elle Marketing Events is offering a $20,000 marketing services grant to small business owners.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.9,
+        "error": false,
+        "recorded_latency_s": 9.987176299997373,
+        "wall_s": 4.990000161342323e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2071,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that Elle Marketing Events is offering a $20,000 marketing services grant to small business owners, directly supporting the claim.",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.9,
+        "error": false,
+        "recorded_latency_s": 10.646452699991642,
+        "wall_s": 10.647039800009225,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 2072,
+        "full_source_visible": true,
+        "source_chars_rendered": 2072,
+        "rationale": "Passage 1 establishes that Elle Marketing Events is offering a $20,000 marketing services grant, which directly supports the claim.",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "2670",
+      "claim_id": "s_0_c0",
+      "task": "Summary",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Houthi rebels have called for peace talks, but only after all attacks have ceased.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 12.055893900018418,
+        "wall_s": 3.7999998312443495e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2670,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that Houthi rebels called for peace talks after all attacks have ceased, which directly supports the claim.",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 52.243556499975966,
+        "wall_s": 52.24567569998908,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 3159,
+        "full_source_visible": false,
+        "source_chars_rendered": 4799,
+        "rationale": "Passage 1 establishes that Houthi rebels called for peace talks after all attacks have ceased, which directly entails the claim that Houthi rebels have called for peace talks after all attacks have ce",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "3078",
+      "claim_id": "s_3_c0",
+      "task": "Summary",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Seventeen of the thirty counts against Tsarnaev carry a sentence of death or life imprisonment.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.9,
+        "error": false,
+        "recorded_latency_s": 22.8279589000158,
+        "wall_s": 2.920001861639321e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2601,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that Tsarnaev is accused of 30 counts, including setting off weapons of mass destruction at a public event as an act of terrorism. Passage 2 shows that the jury has seen a video ",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 45.142766999982996,
+        "wall_s": 45.14339930002461,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 3269,
+        "full_source_visible": false,
+        "source_chars_rendered": 8468,
+        "rationale": "Passage 1 establishes that 17 of the 30 counts against Tsarnaev carry a sentence of death or life imprisonment, directly supporting the claim.",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "4751",
+      "claim_id": "s_3_c0",
+      "task": "Summary",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "The Freed-Hardeman Lady Lions, led by Coach Joshua Epperson, had a successful season last year, winning a conference tournament championship and advancing to the second round of the NAIA Tournament.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 9.008645499998238,
+        "wall_s": 2.9199989512562752e-05,
+        "cache_hit": true,
+        "n_passages": 3,
+        "evidence_chars": 1833,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes the Freed-Hardeman Lady Lions' 24-10 season, which led Coach Joshua Epperson to a Mid-South Conference Tournament Championship. This information directly supports the claim that ",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 29.926037400000496,
+        "wall_s": 29.926512200006982,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 1833,
+        "full_source_visible": true,
+        "source_chars_rendered": 1833,
+        "rationale": "Passage 1 establishes Reese Moore's basketball success, Passage 2 confirms her volleyball season, and Passage 3 supports Coach Epperson's team performance.",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "3868",
+      "claim_id": "s_1_c0",
+      "task": "Summary",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Tonee Turner Pennsylvania, went missing on December 30, 2019, after visiting a local tea room.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.9,
+        "error": false,
+        "recorded_latency_s": 7.168186199996853,
+        "wall_s": 2.989999484270811e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2219,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that Tonee was last seen at Dobra Tea, a tea room in Pittsburgh, Pennsylvania, on December 30, 2019. This directly supports the claim that Tonee went missing on December 30, 2019",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.9,
+        "error": false,
+        "recorded_latency_s": 39.40645539999241,
+        "wall_s": 39.40941179997753,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 2220,
+        "full_source_visible": true,
+        "source_chars_rendered": 2220,
+        "rationale": "Passage 1 establishes that Tonee Turner was last seen at Dobra Tea, a tea room in Pittsburgh, Pennsylvania, which is a location in Pennsylvania. This information directly supports the claim that Tonee",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "3868",
+      "claim_id": "s_2_c0",
+      "task": "Summary",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "Her family and friends have been searching for her ever since, distributing flyers and checking leads.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 6.706703500007279,
+        "wall_s": 2.750000567175448e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2219,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that Tonee's family has been searching for her since December 30, 2019, and has been pounding the pavement daily since then. This suggests that they are actively looking for her,",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 17.070599200000288,
+        "wall_s": 17.07298080000328,
+        "cache_hit": false,
+        "n_passages": 3,
+        "evidence_chars": 2220,
+        "full_source_visible": true,
+        "source_chars_rendered": 2220,
+        "rationale": "Passage 1 establishes that Tonee's family has been searching for her since December 30, 2019, and has been pounding the pavement daily since her disappearance. This suggests that the claim that her fa",
+        "evidence_preview": null
+      }
+    },
+    {
+      "response_id": "274",
+      "claim_id": "s_2_c0",
+      "task": "Summary",
+      "gold": "UNFLAGGED",
+      "label_types": [],
+      "claim": "They also work with the UNHCR to support refugees, particularly in Kenya and Somalia.",
+      "A_original": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 15.926683400000911,
+        "wall_s": 3.329999162815511e-05,
+        "cache_hit": true,
+        "n_passages": 4,
+        "evidence_chars": 2556,
+        "full_source_visible": null,
+        "source_chars_rendered": null,
+        "rationale": "Passage 1 establishes that the High Commissioner for Refugees (UNHCR) is involved in humanitarian work, particularly in Kenya and Somalia. Passage 2 mentions that Siham and Iman's fashion brand, Wish ",
+        "evidence_preview": null
+      },
+      "B_readable": {
+        "label": "SUPPORTED",
+        "confidence": 0.8,
+        "error": false,
+        "recorded_latency_s": 16.482687400013674,
+        "wall_s": 16.483781599992653,
+        "cache_hit": false,
+        "n_passages": 4,
+        "evidence_chars": 3348,
+        "full_source_visible": false,
+        "source_chars_rendered": 5142,
+        "rationale": "Passage 1 establishes that Iman Hashi and Siham were born in Mogadishu, Somalia, and fled to Canada as refugees. This information directly supports the claim that they work with the UNHCR to support r",
+        "evidence_preview": null
+      }
+    }
+  ]
+}
